@@ -12,6 +12,10 @@
   "attributes": {
     "Label": {
       "type": "string"
+    },
+    "categorie": {
+      "via": "produits",
+      "model": "categorie"
     }
   }
 }

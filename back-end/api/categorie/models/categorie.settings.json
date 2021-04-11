@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "categories",
   "info": {
-    "name": "Categorie"
+    "name": "Categorie",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,6 +13,10 @@
   "attributes": {
     "Libelle": {
       "type": "string"
+    },
+    "produits": {
+      "collection": "produit",
+      "via": "categorie"
     }
   }
 }
