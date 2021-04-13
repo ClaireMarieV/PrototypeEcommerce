@@ -1,13 +1,12 @@
 export default async (req, res) => {
   if (req.method === "GET") {
     const {
-      query: { id },
+      query: { slug },
     } = req;
-    return fetch(process.env.BACKOFFICE_HOST + "/categories/" + id)
+    return fetch(process.env.BACKOFFICE_HOST + "/categories?slug=" + slug)
       .then((response) => response.json())
       .then((categorie) => {
-        res.statusCode = 200;
-        res.end(JSON.stringify(categorie));
+        res.status(200).json(categorie[0]);
       })
       .catch((error) => {
         console.error(error);
