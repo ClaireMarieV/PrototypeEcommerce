@@ -11,12 +11,17 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "Libelle": {
-      "type": "string"
+    "label": {
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "produits": {
-      "via": "categorie",
-      "collection": "produit"
+      "collection": "produit",
+      "via": "categorie"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }

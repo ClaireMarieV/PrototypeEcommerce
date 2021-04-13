@@ -15,8 +15,8 @@
       "type": "string"
     },
     "categorie": {
-      "model": "categorie",
-      "via": "produits"
+      "via": "produits",
+      "model": "categorie"
     },
     "date": {
       "type": "date"
