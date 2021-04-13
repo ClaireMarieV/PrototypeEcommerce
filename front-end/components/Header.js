@@ -7,17 +7,17 @@ const Header = () => (
       <div>
         <ul>
           <li>
-            <Link href="/vetements">
+            <Link href="/produits">
               <a>COLLECTION</a>
             </Link>
           </li>
           <li>
-            <Link href="/vetements">
+            <Link href="/nouveaux-produits">
               <a>NOUVEAUTÉS</a>
             </Link>
           </li>
           <li>
-            <Link href="">
+            <Link href="/about">
               <a>ABOUT US</a>
             </Link>
           </li>
@@ -71,6 +71,7 @@ const Header = () => (
         text-decoration: none;
         margin-top: 2rem 0 0 0;
         padding: 1.5rem;
+        text-transform: uppercase;
       }
       nav ul {
         list-style: none;
