@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import ThreeColumns from "../components/ThreeColumns";
 import Picture from "../components/Picture";
 import sub from "date-fns/sub";
-
+import ShopButton from "../components/ShopButton";
 const ListingPage = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
@@ -49,9 +49,7 @@ const ListingPage = () => {
                 </div>
                 <div>{product.Label}</div>
                 <div>{product.prix}</div>
-                <div className="button">
-                  <span>SHOP NOW</span>
-                </div>
+                <ShopButton />
               </a>
             </Link>
           ))}
