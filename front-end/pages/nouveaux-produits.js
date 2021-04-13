@@ -42,7 +42,7 @@ const ListingPage = () => {
                   <Picture
                     picture={{
                       picture:
-                        process.env.BACKOFFICE_HOST +
+                        process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
                         product.images[0].formats.small.url,
                     }}
                   />
