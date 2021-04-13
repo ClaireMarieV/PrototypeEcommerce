@@ -35,7 +35,7 @@ const Layout = ({ children }) => (
           color: #40363e;
         }
         body {
-          font-family: astoria-sans-condensed, sans-serif;
+          font-family: arboria, sans-serif;
           font-weight: 100;
           letter-spacing: 0.05rem;
           margin: 0;
