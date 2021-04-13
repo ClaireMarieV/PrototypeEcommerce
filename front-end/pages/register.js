@@ -73,6 +73,8 @@ const InscriptionPage = () => {
       </div>
       <style jsx>{`
         .container {
+          display: flex;
+          flex-direction: column;
           width: 44rem;
           margin: auto;
         }

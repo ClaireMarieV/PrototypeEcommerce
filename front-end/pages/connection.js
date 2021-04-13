@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Cookies from "js-cookie";
-import Container from "../components/Container";
+import TwoColumns from "../components/TwoColumns";
 import Link from "next/link";
 
 const ConnectPage = () => {
@@ -32,49 +32,46 @@ const ConnectPage = () => {
 
   return (
     <Layout>
-      <Container>
-        <div className="form">
-          <h2>CONNECTEZ-VOUS</h2>
+      <TwoColumns>
+        <div>
+          <h2>INSCRIVEZ-VOUS</h2>
+          <p>
+            SI VOUS N'AVEZ PAS ENCORE DE COMPTE D'UTILISATEUR, UTILISEZ CETTE
+            OPTION POUR ACCÉDER AU FORMULAIRE D'INSCRIPTION. NOUS VOUS
+            DEMANDERONS LES INFORMATIONS NOUS PERMETTANT D'ACCÉLÉRER LE
+            PROCESSUS D'ACHAT.
+          </p>
+          <Link href="/register">
+            <a>
+              <button>Créer un compte</button>
+            </a>
+          </Link>
+        </div>
 
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </div>
+        <div>
+          <h2>CONNECTEZ-VOUS</h2>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
           <div className="button">
             <button onClick={connect}>Se connecter</button>
           </div>
         </div>
-        <div>
-          <h2>INSCRIVEZ-VOUS</h2>
-          <div className="button">
-            <Link href="/inscription">
-              <a>
-                <button>Créer un compte</button>
-              </a>
-            </Link>
-          </div>
-        </div>
-      </Container>
+      </TwoColumns>
       <style jsx>{`
-        .form {
+        div {
           display: flex;
           flex-direction: column;
-        }
-        .form div {
-          display: flex;
-          flex-direction: column;
+          align-items: center;
           margin: 0.5rem;
         }
         .button {

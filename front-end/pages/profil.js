@@ -1,4 +1,3 @@
-mport React from "react";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 
@@ -46,6 +45,7 @@ const ProfilPage = () => {
           grid-gap: 1rem;
           align-self: center;
           justify-self: center;
+          justify-items: center;
         }
         .div {
           flex-direction: column;
