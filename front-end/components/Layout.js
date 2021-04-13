@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./header";
 import Head from "next/head";
-
+import Footer from "./Footer";
 const Layout = ({ children }) => (
   <div className="layout">
     <Head>
@@ -17,6 +17,7 @@ const Layout = ({ children }) => (
     >
       <main>{children}</main>
     </div>
+    <Footer />
     <style jsx global>
       {`
         html {
@@ -31,11 +32,14 @@ const Layout = ({ children }) => (
           margin: 0;
           padding: 0;
           border: 0;
-          font-family: arboria, sans-serif;
           color: #40363e;
         }
         body {
+          font-family: astoria-sans-condensed, sans-serif;
+          font-weight: 100;
+          letter-spacing: 0.05rem;
           margin: 0;
+          height: 100vh;
           overflow-x: hidden;
           overflow-y: auto;
           height: 100%;
@@ -75,6 +79,9 @@ const Layout = ({ children }) => (
         h2 {
           font-weight: 500;
         }
+        h3 {
+          margin: 0;
+        }
         h4 {
           margin: 0.5em;
           font-family: astoria-sans-condensed, sans-serif;
@@ -83,11 +90,11 @@ const Layout = ({ children }) => (
           margin-bottom: 0.5em;
         }
         p {
-          font-family: astoria-sans-condensed, sans-serif;
-          font-weight: 100;
-          font-size: 1.3rem;
           padding: 2em;
           text-align: justify;
+        }
+        span {
+          padding: 1rem;
         }
         ul {
           padding: 0;
