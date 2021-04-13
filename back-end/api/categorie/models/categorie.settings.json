@@ -15,8 +15,8 @@
       "type": "string"
     },
     "produits": {
-      "collection": "produit",
-      "via": "categorie"
+      "via": "categorie",
+      "collection": "produit"
     }
   }
 }
