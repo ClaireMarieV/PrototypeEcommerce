@@ -8,12 +8,17 @@ const Header = () => (
         <ul>
           <li>
             <Link href="/vetements">
-              <a>VETEMENTS</a>
+              <a>COLLECTION</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/vetements">
+              <a>NOUVEAUTÉS</a>
             </Link>
           </li>
           <li>
             <Link href="">
-              <a>MAISON</a>
+              <a>ABOUT US</a>
             </Link>
           </li>
         </ul>
@@ -22,13 +27,16 @@ const Header = () => (
       <Link href="/">
         <a>
           <div className="logo">
-            <h1>KIRU</h1>
+            <h1>HABA</h1>
           </div>
         </a>
       </Link>
 
       <div>
         <ul>
+          <li>
+            <img src="/svg/iconSearch.svg" />
+          </li>
           <li>
             <Link href="/like">
               <a>
