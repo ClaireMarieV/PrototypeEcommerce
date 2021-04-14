@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-
+import OneColumn from "../components/OneColumn";
 const InscriptionPage = () => {
   const [lastname, setLastname] = useState("");
   const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [adress, setAdress] = useState("");
+  const [postal, setPostal] = useState("");
+  const [town, setTown] = useState("");
+
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -31,53 +35,68 @@ const InscriptionPage = () => {
 
   return (
     <Layout>
-      <div className="container">
+      <OneColumn>
+        <h2>informations personnelles</h2>
         <div className="form">
-          <h2>INSCRIVEZ-VOUS</h2>
-          <div>
-            <label htmlFor="lastname">Nom</label>
-            <input
-              type="text"
-              value={lastname}
-              onChange={(event) => setLastname(event.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="firstname">Prénom</label>
-            <input
-              type="text"
-              value={firstname}
-              onChange={(event) => setFirstname(event.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </div>
+          <input
+            type="text"
+            placeholder="Nom"
+            value={lastname}
+            onChange={(event) => setLastname(event.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Prénom"
+            value={firstname}
+            onChange={(event) => setFirstname(event.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Adresse"
+            value={adress}
+            onChange={(event) => setAdress(event.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Code postal"
+            value={postal}
+            onChange={(event) => setPostal(event.target.value)}
+          />
+
+          <input
+            type="text"
+            placeholder="Ville"
+            value={town}
+            onChange={(event) => setTown(event.target.value)}
+          />
         </div>
         <div className="button">
           <button onClick={register}>Bienvenue</button>
         </div>
-      </div>
+      </OneColumn>
       <style jsx>{`
-        .container {
-          display: flex;
-          flex-direction: column;
-          width: 44rem;
-          margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.5rem;
+
+        h2 {
+          text-transform: uppercase;
+          justify-content: flex-end;
         }
+
         .form {
           display: grid;
           flex-direction: column;
@@ -88,8 +107,13 @@ const InscriptionPage = () => {
           flex-direction: column;
           margin: 0.5rem;
         }
-        .button {
-          margin: auto;
+        h2 {
+          width: fit-content;
+        }
+        @media (max-width: 700px) {
+          .form {
+            grid-template-columns: 1fr;
+          }
         }
       `}</style>
     </Layout>
