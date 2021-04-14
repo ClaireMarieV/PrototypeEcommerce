@@ -23,7 +23,7 @@ const InscriptionPage = () => {
     })
       .then((response) => response.json())
       .then(({ jwt }) => {
-        Cookies.set("jwt", jwt);
+        Cookies.set("token", jwt);
       })
       .then(() => {
         window.location = "/";

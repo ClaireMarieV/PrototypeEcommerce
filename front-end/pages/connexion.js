@@ -13,13 +13,13 @@ const ConnectPage = () => {
   const connect = () => {
     setLoading(true);
     setError(null);
-    fetch("/api/auth", {
+    fetch("/api/login", {
       method: "post",
       body: JSON.stringify({ email, password }),
     })
       .then((response) => response.json())
       .then(({ jwt }) => {
-        Cookies.set("jwt", jwt);
+        Cookies.set("token", jwt);
       })
       .then(() => {
         window.location = "/profil";
@@ -62,7 +62,7 @@ const ConnectPage = () => {
           <span>
             Rejoignez HABAAH et bénéficiez d'une experience simplifié!
           </span>
-          <Link href="/register">
+          <Link href="/inscription">
             <a>
               <button>Créer un compte</button>
             </a>
@@ -75,7 +75,6 @@ const ConnectPage = () => {
         align-items: center;
         margin: 0.5rem;
         justify-content: center;
-
         .connect {
         }
         section > input {

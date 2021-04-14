@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useStore } from "../lib/store";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const username = useStore((state) =>
+    state.user ? state.user.username : null
+  );
 
   useEffect(() => {
     setLoading(true);
@@ -60,12 +64,13 @@ const Header = () => {
         </Link>
 
         <div>
+          <span>{username}</span>
           <ul>
             <li>
               <img src="/svg/iconSearch.svg" />
             </li>
             <li>
-              <Link href="/connection">
+              <Link href={username ? "/profil" : "/connexion"}>
                 <a>
                   <img src="/svg/iconUserProfil.svg" />
                 </a>
