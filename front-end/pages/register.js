@@ -9,6 +9,7 @@ const InscriptionPage = () => {
   const [adress, setAdress] = useState("");
   const [postal, setPostal] = useState("");
   const [town, setTown] = useState("");
+  const [number, setNumber] = useState("");
 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -37,7 +38,7 @@ const InscriptionPage = () => {
     <Layout>
       <OneColumn>
         <h2>informations personnelles</h2>
-        <div className="form">
+        <section className="form">
           <input
             type="text"
             placeholder="Nom"
@@ -74,14 +75,19 @@ const InscriptionPage = () => {
             value={postal}
             onChange={(event) => setPostal(event.target.value)}
           />
-
           <input
             type="text"
             placeholder="Ville"
             value={town}
             onChange={(event) => setTown(event.target.value)}
           />
-        </div>
+          <input
+            type="text"
+            placeholder="Téléphone"
+            value={number}
+            onChange={(event) => setNumber(event.target.value)}
+          />
+        </section>
         <div className="button">
           <button onClick={register}>Bienvenue</button>
         </div>
