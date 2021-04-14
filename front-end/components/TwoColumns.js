@@ -7,7 +7,7 @@ const TwoColumns = ({ children }) => (
         grid-template-columns: repeat(2, 1fr);
         justify-self: center;
         grid-gap: 2rem;
-        height: 100vh;
+        height: 100%;
       }
     `}</style>
   </div>
