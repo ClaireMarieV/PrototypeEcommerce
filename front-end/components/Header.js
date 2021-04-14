@@ -96,7 +96,7 @@ const Header = () => {
           justify-items: center;
           align-items: center;
           text-decoration: none;
-          text-transform: uppercase;
+          text-transform: capitalize;
         }
         nav ul {
           list-style: none;
@@ -132,7 +132,7 @@ const Header = () => {
           height: 1rem;
           z-index: -1;
           opacity: 0.8;
-          background: #f7c289;
+          background: #dedbeb;
           transform: scale3d(0, 1, 1);
           transform-origin: 0% 50%;
           transition: transform 0.5s;
