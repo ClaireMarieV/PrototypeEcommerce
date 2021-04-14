@@ -26,6 +26,7 @@ const Layout = ({ children }) => (
         }
         main {
           perspective: 2px;
+          height: 100vh;
         }
         html,
         body {
@@ -33,7 +34,6 @@ const Layout = ({ children }) => (
           padding: 0;
           border: 0;
           color: #1c1b1b;
-          height: 100vh;
         }
         body {
           font-family: arboria, sans-serif;

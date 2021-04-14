@@ -54,7 +54,7 @@ const Header = () => {
         <Link href="/">
           <a>
             <div className="logo">
-              <h1>HABA</h1>
+              <h1>HABAAH</h1>
             </div>
           </a>
         </Link>
@@ -63,13 +63,6 @@ const Header = () => {
           <ul>
             <li>
               <img src="/svg/iconSearch.svg" />
-            </li>
-            <li>
-              <Link href="/like">
-                <a>
-                  <img src="/svg/like.svg" />
-                </a>
-              </Link>
             </li>
             <li>
               <Link href="/connection">
