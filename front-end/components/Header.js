@@ -25,7 +25,7 @@ const Header = () => {
     <header>
       <nav>
         <div>
-          <ul>
+          <ul className="products">
             <li>
               COLLECTION
               <ul>
@@ -102,24 +102,49 @@ const Header = () => {
           list-style: none;
           display: flex;
         }
-        div:nth-child(1) > ul:nth-child(1) li {
+        .products:nth-child(1) li {
           position: relative;
           font-weight: 500;
           letter-spacing: 0.05rem;
         }
-        div:nth-child(1) > ul:nth-child(1) li > ul:nth-child(1) {
+        .products:nth-child(1) li > ul:nth-child(1) {
           padding: 2rem;
           position: absolute;
         }
-        div:nth-child(1) > ul:nth-child(1) li > ul:nth-child(1) li {
+        .products:nth-child(1) li > ul:nth-child(1) li {
           visibility: hidden;
         }
 
         div:nth-child(1) > ul:nth-child(1) li:hover > ul:nth-child(1) li {
           visibility: visible;
         }
+        .products {
+          position: relative;
+          transition: 0.5s;
+          transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .products:nth-child(1) > li::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1rem;
+          z-index: -1;
+          opacity: 0.8;
+          background: #f7c289;
+          transform: scale3d(0, 1, 1);
+          transform-origin: 0% 50%;
+          transition: transform 0.5s;
+          transition-timing-function: cubic-bezier(0.1, 1, 0.3, 1);
+        }
+        /* Hover */
+        .products li:hover::before,
+        .products li:focus::before {
+          transform: scale3d(1, 1, 1);
+        }
         nav ul > li {
-          padding: 0 0.5rem 0.5rem 1rem;
+          padding: 0 0.5rem 0.5rem 0.5rem;
         }
         img {
           width: 2rem;
