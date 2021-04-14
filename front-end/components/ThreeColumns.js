@@ -4,9 +4,10 @@ const Container = ({ children }) => (
     <style jsx>{`
       .container {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         justify-self: center;
         grid-gap: 2rem;
+        height: 100vh;
         margin-top: 4rem;
       }
     `}</style>

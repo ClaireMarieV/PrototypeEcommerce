@@ -4,10 +4,10 @@ const TwoColumns = ({ children }) => (
     <style jsx>{`
       .container {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         justify-self: center;
         grid-gap: 2rem;
-        margin-top: 4rem;
+        height: 100vh;
       }
     `}</style>
   </div>

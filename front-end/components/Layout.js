@@ -32,19 +32,19 @@ const Layout = ({ children }) => (
           margin: 0;
           padding: 0;
           border: 0;
-          color: #40363e;
+          color: #1c1b1b;
+          height: 100vh;
         }
         body {
           font-family: arboria, sans-serif;
           font-weight: 100;
           letter-spacing: 0.05rem;
           margin: 0;
-          height: 100vh;
           overflow-x: hidden;
           overflow-y: auto;
-          height: 100%;
           perspective: 1px;
           background-color: #fffff;
+          font-size: 1rem;
         }
         ::-webkit-scrollbar {
           scrollbar-width: 5px;
@@ -63,12 +63,9 @@ const Layout = ({ children }) => (
           overflow: hidden;
         }
         a {
-          font-family: arboria, sans-serif;
-          font-weight: 500;
-          font-style: normal;
           letter-spacing: 0.25em;
           text-decoration: none;
-          color: #40363e;
+          color: #1c1b1b;
         }
         h1 {
           font-size: 3rem;
@@ -98,6 +95,29 @@ const Layout = ({ children }) => (
         }
         ul {
           padding: 0;
+        }
+        button {
+          border: none;
+          padding: 1rem;
+          background: #1c1b1b;
+          color: white;
+          text-transform: uppercase;
+          font-weight: 600;
+          letter-spacing: 0.05rem;
+        }
+        label {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        input {
+          border: none;
+          border-bottom: 1.5px solid;
+          margin-top: 0.5rem;
+        }
+        input[type="email"],
+        input[type="password"] {
+          background: transparent;
         }
       `}
     </style>

@@ -33,13 +33,35 @@ const ConnectPage = () => {
   return (
     <Layout>
       <TwoColumns>
+        <div className="connect">
+          <h2>CONNECTEZ-VOUS</h2>
+          <label htmlFor="email">
+            Email
+            <input
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </label>
+          <label htmlFor="password">
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </label>
+          <div className="button">
+            <button onClick={connect}>Se connecter</button>
+          </div>
+        </div>
         <div>
           <h2>INSCRIVEZ-VOUS</h2>
           <p>
-            SI VOUS N'AVEZ PAS ENCORE DE COMPTE D'UTILISATEUR, UTILISEZ CETTE
-            OPTION POUR ACCÉDER AU FORMULAIRE D'INSCRIPTION. NOUS VOUS
-            DEMANDERONS LES INFORMATIONS NOUS PERMETTANT D'ACCÉLÉRER LE
-            PROCESSUS D'ACHAT.
+            Si vous n'avez pas encore de compte utilisateur, utilisez cette
+            option pour acceder au formulaire d'inscription. Nous vous
+            demanderons des informations permettant d'accelerer le processus
+            d'achat.
           </p>
           <Link href="/register">
             <a>
@@ -47,35 +69,15 @@ const ConnectPage = () => {
             </a>
           </Link>
         </div>
-
-        <div>
-          <h2>CONNECTEZ-VOUS</h2>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-          <div className="button">
-            <button onClick={connect}>Se connecter</button>
-          </div>
-        </div>
       </TwoColumns>
       <style jsx>{`
-        div {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: 0.5rem;
-        }
-        .button {
-          margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0.5rem;
+        justify-content: center;
+
+        .connect {
         }
       `}</style>
     </Layout>
