@@ -115,7 +115,7 @@ const Header = () => {
           visibility: hidden;
         }
 
-        div:nth-child(1):hover > ul:nth-child(1) li > ul:nth-child(1) li {
+        div:nth-child(1) > ul:nth-child(1) li:hover > ul:nth-child(1) li {
           visibility: visible;
         }
         nav ul > li {
