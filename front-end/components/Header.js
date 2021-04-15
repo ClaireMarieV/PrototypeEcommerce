@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Search from "../components/Search";
 import { useStore } from "../lib/store";
 
 const Header = () => {
@@ -64,10 +65,12 @@ const Header = () => {
         </Link>
 
         <div>
-          <span>{username}</span>
           <ul>
             <li>
-              <img src="/svg/iconSearch.svg" />
+              <span>{username}</span>
+            </li>
+            <li>
+              <Search />
             </li>
             <li>
               <Link href={username ? "/profil" : "/connexion"}>
@@ -99,6 +102,7 @@ const Header = () => {
         nav ul {
           list-style: none;
           display: flex;
+          align-items: center;
         }
         .products:nth-child(1) li {
           position: relative;

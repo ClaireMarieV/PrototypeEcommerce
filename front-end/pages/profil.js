@@ -7,32 +7,25 @@ const ProfilPage = () => {
         <h2>Bienvenue sur votre profil</h2>
 
         <div className="div">
-          <label>Nom</label>
-          <input></input>
+          <input placeholder="Nom" />
         </div>
         <div className="div">
-          <label>Prénom</label>
-          <input></input>
+          <input placeholder="Prénom" />
         </div>
         <div className="div">
-          <label>Adresse</label>
-          <input></input>
+          <input placeholder="Adresse" />
         </div>
         <div className="div">
-          <label>Ville</label>
-          <input></input>
+          <input placeholder="Ville" />
         </div>
         <div className="div">
-          <label>Code Postal</label>
-          <input></input>
+          <input placeholder="Code postal" />
         </div>
         <div className="div">
-          <label>Email</label>
-          <input />
+          <input placeholder="Email" />
         </div>
         <div className="div">
-          <label>Numéro de téléphone</label>
-          <input />
+          <input placeholder="Numéro de téléphone" />
         </div>
       </div>
       <style jsx>{`
