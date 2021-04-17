@@ -17,8 +17,8 @@
       "unique": true
     },
     "produits": {
-      "collection": "produit",
-      "via": "categorie"
+      "via": "categorie",
+      "collection": "produit"
     },
     "slug": {
       "type": "string"

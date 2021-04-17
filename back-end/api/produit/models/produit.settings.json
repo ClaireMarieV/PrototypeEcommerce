@@ -15,8 +15,8 @@
       "type": "string"
     },
     "categorie": {
-      "via": "produits",
-      "model": "categorie"
+      "model": "categorie",
+      "via": "produits"
     },
     "date": {
       "type": "date"
@@ -34,6 +34,9 @@
     },
     "prix": {
       "type": "decimal"
+    },
+    "slug": {
+      "type": "string"
     }
   }
 }
