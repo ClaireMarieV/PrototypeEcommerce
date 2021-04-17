@@ -5,8 +5,32 @@ import Footer from "./Footer";
 const Layout = ({ children }) => (
   <div className="layout">
     <Head>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>{" "}
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/favicon/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/favicon/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/favicon/favicon-16x16.png"
+      />
+      <link rel="manifest" href="/site.webmanifest" />
+      <link
+        rel="mask-icon"
+        href="/favicon/safari-pinned-tab.svg"
+        color="#5bbad5"
+      />
+      <meta name="msapplication-TileColor" content="#da532c" />
+      <meta name="theme-color" content="#ffffff" />
+    </Head>
     <Header />
     <link rel="stylesheet" href="https://use.typekit.net/nfm0nuv.css"></link>
     <div
@@ -41,7 +65,7 @@ const Layout = ({ children }) => (
           overflow-x: hidden;
           overflow-y: auto;
           perspective: 1px;
-          background-color: #fffff;
+          background-color: #f6f5f9;
           font-size: 1rem;
         }
         ::-webkit-scrollbar {
@@ -94,6 +118,9 @@ const Layout = ({ children }) => (
         ul {
           padding: 0;
         }
+        li {
+          padding: 1rem;
+        }
         button {
           border: none;
           padding: 1rem;
@@ -112,6 +139,7 @@ const Layout = ({ children }) => (
           border: none;
           border-bottom: 1.5px solid;
           margin-top: 0.5rem;
+          background-color: #f6f5f9;
         }
         input[type="email"],
         input[type="password"] {
