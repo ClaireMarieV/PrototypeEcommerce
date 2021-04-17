@@ -9,6 +9,14 @@
       }
     },
     {
+      "method": "POST",
+      "path": "/paniers/produits/:id",
+      "handler": "panier.addProduct",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/paniers/count",
       "handler": "panier.count",

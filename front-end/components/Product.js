@@ -1,16 +1,14 @@
 import Link from "next/link";
-import Picture from "../components/Picture";
 import ShopButton from "../components/ShopButton";
 
 const Product = ({ product }) => (
   <div className="one-product">
     {product.images.length && (
-      <Picture
-        picture={{
-          picture:
-            process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-            product.images[0].formats.small.url,
-        }}
+      <img
+        src={
+          process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
+          product.images[0].formats.small.url
+        }
       />
     )}
     <div className="info">
@@ -20,7 +18,7 @@ const Product = ({ product }) => (
       <div>
         <span>{product.prix}</span>
       </div>
-      <ShopButton />
+      <ShopButton productId={product.id} />
     </div>
     <style jsx>{`
       .one-product {

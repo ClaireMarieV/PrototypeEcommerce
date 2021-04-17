@@ -32,15 +32,46 @@ const controller = {
     let entity;
     if (ctx.is("multipart")) {
       const { data, files } = parseMultipartData(ctx);
-      data.customer = ctx.state.user.id;
+      data.users_permissions_user = ctx.state.user.id;
       entity = await strapi.services.panier.create(data, { files });
     } else {
-      ctx.request.body.customer = ctx.state.user.id;
+      ctx.request.body.users_permissions_user = ctx.state.user.id;
       entity = await strapi.services.panier.create(ctx.request.body);
     }
     return sanitizeEntity(entity, { model: strapi.models.panier });
   },
 
+  async addProduct(ctx) {
+    let entity;
+
+    const [cart] = await strapi.services.panier.find({
+      "users_permissions_user.id": ctx.state.user.id,
+    });
+
+    if (!cart) {
+      return ctx.unauthorized(`You can't update this entry`);
+    }
+
+    const [product] = await strapi.services.produit.find({
+      id: ctx.params.id,
+    });
+
+    if (ctx.is("multipart")) {
+      const { data, files } = parseMultipartData(ctx);
+      entity = await strapi.services.panier.update({ id }, data, {
+        files,
+      });
+    } else {
+      entity = await strapi.services.panier.update(
+        { id: cart.id },
+        {
+          produits: cart.produits.concat([ctx.params.id]),
+        }
+      );
+    }
+
+    return sanitizeEntity(entity, { model: strapi.models.panier });
+  },
   /**
    * Update a record.
    *
@@ -54,7 +85,7 @@ const controller = {
 
     const [panier] = await strapi.services.panier.find({
       id: ctx.params.id,
-      "customer.id": ctx.state.user.id,
+      "users_permissions_user.id": ctx.state.user.id,
     });
 
     if (!panier) {
@@ -86,7 +117,7 @@ const controller = {
 
     const [panier] = await strapi.services.panier.find({
       id: ctx.params.id,
-      "customer.id": ctx.state.user.id,
+      "users_permissions_user.id": ctx.state.user.id,
     });
 
     if (!panier) {

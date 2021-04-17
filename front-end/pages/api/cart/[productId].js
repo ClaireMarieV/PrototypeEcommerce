@@ -1,9 +1,16 @@
 export default async (req, res) => {
   if (req.method === "POST") {
+    const {
+      query: { productId },
+    } = req;
     //passage du token a strapi pour verifier si authentification
-    return fetch(process.env.BACKOFFICE_HOST + "/paniers", {
-      headers: { Authorization: `Bearer ${req.cookies.token}` },
-    })
+    return fetch(
+      process.env.BACKOFFICE_HOST + "/paniers/produits/" + productId,
+      {
+        method: "POST",
+        headers: { Authorization: `Bearer ${req.cookies.token}` },
+      }
+    )
       .then((response) => response.json())
       .then((user) => {
         res.status(200).json(user);

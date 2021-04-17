@@ -23,7 +23,7 @@ const ProductList = ({ products }) => (
               <div>
                 <span>{product.prix}</span>
               </div>
-              <ShopButton />
+              <ShopButton productId={product.id} />
             </div>
           </div>
         </a>
