@@ -59,11 +59,9 @@ const Header = () => {
           </ul>
         </div>
 
-        <Link href="/">
+        <Link className="logo" href="/">
           <a>
-            <div className="logo">
-              <h1>HABAAH</h1>
-            </div>
+            <h1>HABAAH</h1>
           </a>
         </Link>
 
@@ -127,42 +125,17 @@ const Header = () => {
         div:nth-child(1) > ul:nth-child(1) li:hover > ul:nth-child(1) li {
           visibility: visible;
         }
-        .products {
-          position: relative;
-          transition: 0.5s;
-          transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-        }
-        .products:nth-child(1) > li::before {
-          content: "";
-          position: absolute;
-          bottom: 40%;
-          width: 85%;
-          height: 0.5rem;
-          z-index: -1;
-          opacity: 0.7;
-          background: #dedbeb;
-          transform: scale3d(0, 1, 1);
-          transform-origin: 0% 50%;
-          transition: transform 0.5s;
-          transition-timing-function: cubic-bezier(0.1, 1, 0.3, 1);
-        }
-        /* Hover */
-        .products li:hover::before,
-        .products li:focus::before {
-          transform: scale3d(1, 1, 1);
-        }
-        nav ul > li {
-          padding: 0 0.5rem 0.5rem 0.5rem;
-        }
+
         img {
           width: 2rem;
         }
         .logo img {
           width: 100%;
         }
-        @media (max-width: 730px) {
+        @media (max-width: 1100px) {
           nav {
-            grid-template-rows: repeat(2, minmax(0, 1fr));
+            grid-template-columns: auto;
+            justify-items: center;
           }
           nav > h2 {
             margin-left: 0.5em;
@@ -170,9 +143,6 @@ const Header = () => {
           }
         }
         @media (max-width: 600px) {
-          nav {
-            display: block;
-          }
           nav > .title {
             padding-left: 1.5rem;
           }
