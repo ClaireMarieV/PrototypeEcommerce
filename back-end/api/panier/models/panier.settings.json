@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paniers",
+  "info": {
+    "name": "Panier"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "produits": {
+      "collection": "produit",
+      "via": "paniers",
+      "dominant": true
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "panier"
+    }
+  }
+}
