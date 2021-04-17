@@ -3,6 +3,7 @@ import Link from "next/link";
 import Search from "../components/Search";
 import DropdownMenu from "../components/DropdownMenu";
 import { useStore } from "../lib/store";
+import Cookie from "js-cookie";
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -11,6 +12,10 @@ const Header = () => {
   const username = useStore((state) =>
     state.user ? state.user.username : null
   );
+  const disconnect = () => {
+    Cookie.remove("token");
+    window.location = "/";
+  };
 
   useEffect(() => {
     setLoading(true);
@@ -35,7 +40,7 @@ const Header = () => {
             <li>
               <DropdownMenu title="COLLECTION">
                 {categories.map((category) => (
-                  <Link href={"/categorie/" + category.slug}>
+                  <Link key={category.id} href={"/categorie/" + category.slug}>
                     <a>{category.label}</a>
                   </Link>
                 ))}
@@ -64,11 +69,13 @@ const Header = () => {
 
         <div>
           <ul>
-            <li>
-              <DropdownMenu title={username}>
-                <span>Deconnexion</span>
-              </DropdownMenu>
-            </li>
+            {username && (
+              <li>
+                <DropdownMenu title={username}>
+                  <span onClick={disconnect}>Deconnexion</span>
+                </DropdownMenu>
+              </li>
+            )}
             <li>
               <Search />
             </li>
