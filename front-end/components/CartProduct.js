@@ -31,9 +31,7 @@ const ProductList = ({ products }) => (
               justify-items: center;
               gap: 2rem;
             }
-            a {
-              justify-self: center;
-            }
+
             img {
               max-width: 20rem;
               width: 100%;
