@@ -1,6 +1,5 @@
 import Link from "next/link";
 import ThreeColumns from "../components/ThreeColumns";
-import Picture from "../components/Picture";
 import ShopButton from "../components/ShopButton";
 
 const ProductList = ({ products }) => (
@@ -10,12 +9,11 @@ const ProductList = ({ products }) => (
         <a>
           <div className="one-product">
             {product.images.length && (
-              <Picture
-                picture={{
-                  picture:
-                    process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                    product.images[0].formats.small.url,
-                }}
+              <img
+                src={
+                  process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
+                  product.images[0].formats.small.url
+                }
               />
             )}
             <div className="info">

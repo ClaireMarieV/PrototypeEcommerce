@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Search from "../components/Search";
+import DropdownMenu from "../components/DropdownMenu";
 import { useStore } from "../lib/store";
 
 const Header = () => {
@@ -32,16 +33,13 @@ const Header = () => {
         <div>
           <ul className="products">
             <li>
-              COLLECTION
-              <ul>
+              <DropdownMenu title="COLLECTION">
                 {categories.map((category) => (
-                  <li>
-                    <Link href={"/categorie/" + category.slug}>
-                      <a>{category.label}</a>
-                    </Link>
-                  </li>
+                  <Link href={"/categorie/" + category.slug}>
+                    <a>{category.label}</a>
+                  </Link>
                 ))}
-              </ul>
+              </DropdownMenu>
             </li>
             <li>
               <Link href="/nouveaux-produits">
@@ -67,7 +65,9 @@ const Header = () => {
         <div>
           <ul>
             <li>
-              <span>{username}</span>
+              <DropdownMenu title={username}>
+                <span>Deconnexion</span>
+              </DropdownMenu>
             </li>
             <li>
               <Search />
