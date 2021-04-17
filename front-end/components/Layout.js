@@ -12,7 +12,6 @@ const Layout = ({ children }) => (
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 1400,
       }}
     >
       <main>{children}</main>
@@ -26,7 +25,6 @@ const Layout = ({ children }) => (
         }
         main {
           perspective: 2px;
-          height: 100vh;
         }
         html,
         body {

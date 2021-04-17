@@ -97,7 +97,6 @@ const Header = () => {
           justify-items: center;
           align-items: center;
           text-decoration: none;
-          text-transform: capitalize;
         }
         nav ul {
           list-style: none;
@@ -110,8 +109,9 @@ const Header = () => {
           letter-spacing: 0.05rem;
         }
         .products:nth-child(1) li > ul:nth-child(1) {
-          padding: 2rem;
+          margin: 2rem;
           position: absolute;
+          align-items: baseline;
         }
         .products:nth-child(1) li > ul:nth-child(1) li {
           visibility: hidden;
@@ -128,12 +128,11 @@ const Header = () => {
         .products:nth-child(1) > li::before {
           content: "";
           position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 1rem;
+          bottom: 40%;
+          width: 85%;
+          height: 0.5rem;
           z-index: -1;
-          opacity: 0.8;
+          opacity: 0.7;
           background: #dedbeb;
           transform: scale3d(0, 1, 1);
           transform-origin: 0% 50%;
