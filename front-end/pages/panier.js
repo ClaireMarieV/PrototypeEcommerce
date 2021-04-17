@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import ProductList from "../components/ProductList";
+import CartProduct from "../components/CartProduct";
+import OneColumn from "../components/OneColumn";
 import { useStore } from "../lib/store";
 
 const CartPage = () => {
@@ -8,7 +9,9 @@ const CartPage = () => {
 
   return (
     <Layout>
-      <ProductList products={products} />
+      <OneColumn>
+        <CartProduct products={products} />
+      </OneColumn>
     </Layout>
   );
 };

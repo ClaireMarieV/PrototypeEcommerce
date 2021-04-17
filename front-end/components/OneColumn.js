@@ -4,11 +4,12 @@ const TwoColumns = ({ children }) => (
     <style jsx>{`
       .container {
         display: grid;
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
+        gap: 2rem;
         justify-self: center;
-        width: 50vw;
+        width: 60vw;
         height: 100%;
-        margin: auto;
+        margin: 4rem auto;
       }
       @media (max-width: 500px) {
         .container {

@@ -87,7 +87,7 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/">
+              <Link href="/panier">
                 <a>
                   <img src="/svg/sale.svg" />
                 </a>

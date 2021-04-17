@@ -3,7 +3,7 @@ import ThreeColumns from "../components/ThreeColumns";
 import ShopButton from "../components/ShopButton";
 
 const ProductList = ({ products }) => (
-  <ThreeColumns>
+  <section>
     {products.map((product) => (
       <Link href={"/produit/" + product.slug}>
         <a>
@@ -26,15 +26,15 @@ const ProductList = ({ products }) => (
               <ShopButton productId={product.id} />
             </div>
           </div>
+          <style jsx>{`
+            a {
+              justify-self: center;
+            }
+          `}</style>
         </a>
       </Link>
     ))}
-    <style jsx>{`
-      a {
-        justify-self: center;
-      }
-    `}</style>
-  </ThreeColumns>
+  </section>
 );
 
 export default ProductList;
