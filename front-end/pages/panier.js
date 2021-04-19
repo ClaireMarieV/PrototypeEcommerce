@@ -9,9 +9,20 @@ const CartPage = () => {
 
   return (
     <Layout>
-      <OneColumn>
-        <CartProduct products={products} />
-      </OneColumn>
+      <CartProduct products={products} />
+      <div className="checkout">
+        <span>Total:</span>
+        <button>checkout</button>
+      </div>
+
+      <style jsx>{`
+        .checkout {
+          margin: auto;
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+        }
+      `}</style>
     </Layout>
   );
 };

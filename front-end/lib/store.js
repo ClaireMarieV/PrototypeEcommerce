@@ -22,4 +22,13 @@ export const useStore = create((set, get) => ({
           set({ cart: cart });
         })
     ),
+  removeProductFromCart: (productId) =>
+    fetch("/api/cart/" + productId, { method: "DELETE" }).then((res) =>
+      res
+        .json()
+        .then((response) => (res.ok ? response : Promise.reject(response)))
+        .then((cart) => {
+          set({ cart: cart });
+        })
+    ),
 }));

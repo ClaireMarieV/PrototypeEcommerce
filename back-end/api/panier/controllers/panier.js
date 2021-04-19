@@ -72,6 +72,46 @@ const controller = {
 
     return sanitizeEntity(entity, { model: strapi.models.panier });
   },
+
+  async removeProduct(ctx) {
+    let entity;
+
+    const [cart] = await strapi.services.panier.find({
+      "users_permissions_user.id": ctx.state.user.id,
+    });
+
+    if (!cart) {
+      return ctx.unauthorized(`You can't update this entry`);
+    }
+
+    const [product] = await strapi.services.produit.find({
+      id: ctx.params.id,
+    });
+
+    if (ctx.is("multipart")) {
+      const { data, files } = parseMultipartData(ctx);
+      entity = await strapi.services.panier.update({ id }, data, {
+        files,
+      });
+    } else {
+      const products = cart.produits.map((product) => product.id);
+
+      const index = products.indexOf(ctx.params.id);
+
+      if (index > -1) {
+        products.splice(index, 1);
+      }
+
+      entity = await strapi.services.panier.update(
+        { id: cart.id },
+        {
+          produits: products,
+        }
+      );
+    }
+
+    return sanitizeEntity(entity, { model: strapi.models.panier });
+  },
   /**
    * Update a record.
    *

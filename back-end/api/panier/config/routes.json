@@ -17,6 +17,14 @@
       }
     },
     {
+      "method": "DELETE",
+      "path": "/paniers/produits/:id",
+      "handler": "panier.removeProduct",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "GET",
       "path": "/paniers/count",
       "handler": "panier.count",
