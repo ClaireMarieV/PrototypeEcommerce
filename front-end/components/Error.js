@@ -10,9 +10,14 @@ const TwoColumns = ({ children }) => (
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
+        justify-items: center;
         gap: 2rem;
-        justify-self: center;
         margin: 4rem auto;
+      }
+      secton {
+        display: flex;
+        flex-direction: column;
+        font-size: 2rem;
       }
       img {
         max-width: 50rem;
