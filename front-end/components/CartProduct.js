@@ -43,7 +43,7 @@ const CartProduct = ({ products }) => {
             <span>{product.quantity}</span>
           </div>
           <div className="price">
-            <span>{product.prix}</span>
+            <span>{product.prix * product.quantity}</span>
           </div>
           <style jsx>{`
             .one-product {
