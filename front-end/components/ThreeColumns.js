@@ -4,9 +4,9 @@ const Container = ({ children }) => (
     <style jsx>{`
       .container {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        justify-self: center;
-        grid-gap: 2rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        justify-items: center;
+        gap: 2rem;
         height: 100%;
         margin: 4rem 2rem 4rem 2rem;
       }

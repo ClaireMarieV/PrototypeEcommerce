@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
 import ThreeColumns from "../components/ThreeColumns";
 
-const ListingPage = () => {
+const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -31,4 +31,4 @@ const ListingPage = () => {
     </Layout>
   );
 };
-export default ListingPage;
+export default ProductsPage;

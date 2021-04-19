@@ -81,9 +81,6 @@ const Layout = ({ children }) => (
         header {
           margin-top: 1rem;
         }
-        img {
-          overflow: hidden;
-        }
         a {
           letter-spacing: 0.25em;
           text-decoration: none;
@@ -113,7 +110,7 @@ const Layout = ({ children }) => (
           text-align: justify;
         }
         span {
-          padding: 1rem;
+          // padding: 1rem;
         }
         ul {
           padding: 0;

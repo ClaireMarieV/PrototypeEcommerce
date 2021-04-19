@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import sub from "date-fns/sub";
 import ProductList from "../components/ProductList";
 
-const ListingPage = () => {
+const NewProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -37,4 +37,4 @@ const ListingPage = () => {
     </Layout>
   );
 };
-export default ListingPage;
+export default NewProductsPage;
