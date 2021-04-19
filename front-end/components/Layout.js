@@ -91,7 +91,7 @@ const Layout = ({ children }) => (
           letter-spacing: 1rem;
           margin: 0;
         }
-        span,
+
         h2 {
           font-weight: 500;
         }
