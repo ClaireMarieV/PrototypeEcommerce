@@ -50,6 +50,7 @@ const CartProduct = ({ products, productId }) => {
             .label {
               display: flex;
               flex-direction: column;
+              gap: 0.5rem;
             }
             img {
               max-width: 20rem;
