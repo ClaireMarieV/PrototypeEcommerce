@@ -60,8 +60,11 @@ const CartProduct = ({ products }) => {
               gap: 0.5rem;
             }
             img {
-              max-width: 20rem;
+              max-height: 20rem;
               width: 100%;
+              max-width: 20rem;
+              height: 100%;
+              object-fit: cover;
             }
             .price {
               font-weight: 700;
