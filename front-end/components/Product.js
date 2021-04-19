@@ -16,7 +16,7 @@ const Product = ({ product }) => (
         <span>{product.label}</span>
       </div>
       <div>
-        <span>{product.prix}</span>
+        <span>{product.prix}€</span>
       </div>
       <ShopButton productId={product.id} />
     </div>

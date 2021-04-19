@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
-import ThreeColumns from "../components/ThreeColumns";
+import FourColumns from "../components/FourColumns";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -25,9 +25,9 @@ const ProductsPage = () => {
 
   return (
     <Layout>
-      <ThreeColumns>
+      <FourColumns>
         <ProductList products={products} />
-      </ThreeColumns>
+      </FourColumns>
     </Layout>
   );
 };
