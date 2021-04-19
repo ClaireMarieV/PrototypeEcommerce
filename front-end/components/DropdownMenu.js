@@ -27,14 +27,15 @@ const DropdownMenu = ({ title, children }) => {
         }
         .dropdown-menu {
           transition: all 5s;
+          height: auto;
+
           position: absolute;
           overflow: hidden;
           list-style: none;
+          margin: 0.5rem;
         }
-        .dropdown-menu.visible {
-          height: auto;
-        }
-        .dropdown-menu.hidden {
+
+        .dropdown-menu.hidden:not(:hover) {
           height: 0;
         }
       `}</style>

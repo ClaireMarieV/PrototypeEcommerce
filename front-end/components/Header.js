@@ -35,29 +35,27 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <div>
-          <ul className="products">
-            <li>
-              <DropdownMenu title="COLLECTION">
-                {categories.map((category) => (
-                  <Link key={category.id} href={"/categorie/" + category.slug}>
-                    <a>{category.label}</a>
-                  </Link>
-                ))}
-              </DropdownMenu>
-            </li>
-            <li>
-              <Link href="/nouveaux-produits">
-                <a>NOUVEAUTÉS</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>ABOUT US</a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <ul className="products">
+          <li>
+            <DropdownMenu title="COLLECTION">
+              {categories.map((category) => (
+                <Link key={category.id} href={"/categorie/" + category.slug}>
+                  <a onClick={() => console.log("bonjour")}>{category.label}</a>
+                </Link>
+              ))}
+            </DropdownMenu>
+          </li>
+          <li>
+            <Link href="/nouveaux-produits">
+              <a>NOUVEAUTÉS</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about">
+              <a>ABOUT US</a>
+            </Link>
+          </li>
+        </ul>
 
         <Link className="logo" href="/">
           <a>
@@ -65,34 +63,32 @@ const Header = () => {
           </a>
         </Link>
 
-        <div>
-          <ul>
-            {username && (
-              <li>
-                <DropdownMenu title={username}>
-                  <span onClick={disconnect}>Deconnexion</span>
-                </DropdownMenu>
-              </li>
-            )}
+        <ul>
+          {username && (
             <li>
-              <Search />
+              <DropdownMenu title={username}>
+                <span onClick={disconnect}>Deconnexion</span>
+              </DropdownMenu>
             </li>
-            <li>
-              <Link href={username ? "/profil" : "/connexion"}>
-                <a>
-                  <img src="/svg/iconUserProfil.svg" />
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/panier">
-                <a>
-                  <img src="/svg/sale.svg" />
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </div>
+          )}
+          <li>
+            <Search />
+          </li>
+          <li>
+            <Link href={username ? "/profil" : "/connexion"}>
+              <a>
+                <img src="/svg/iconUserProfil.svg" />
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/panier">
+              <a>
+                <img src="/svg/sale.svg" />
+              </a>
+            </Link>
+          </li>
+        </ul>
       </nav>
 
       <style jsx>{`
@@ -100,6 +96,8 @@ const Header = () => {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           justify-items: center;
+          justify-content: space-around;
+          gap: 2rem;
           align-items: center;
           text-decoration: none;
         }
