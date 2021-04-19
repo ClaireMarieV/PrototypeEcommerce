@@ -2,15 +2,22 @@ import Link from "next/link";
 import OneColumn from "../components/OneColumn";
 import { useStore } from "../lib/store";
 
-const CartProduct = ({ products, productId }) => {
+const CartProduct = ({ products }) => {
   const removeProductFromCart = useStore(
     (state) => state.removeProductFromCart
   );
-
+  const aggregatedProducts = products.reduce((acc, product) => {
+    if (!acc.some((p) => p.id === product.id)) {
+      acc.push({ ...product, quantity: 0 });
+    }
+    const p = acc.find((p) => p.id === product.id);
+    p.quantity++;
+    return acc;
+  }, []);
   return (
     <OneColumn>
       <h2>Panier</h2>
-      {products.map((product) => (
+      {aggregatedProducts.map((product) => (
         <div className="one-product">
           <Link href={"/produit/" + product.slug}>
             <a>
