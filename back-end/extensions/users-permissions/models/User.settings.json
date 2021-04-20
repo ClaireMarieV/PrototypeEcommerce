@@ -60,8 +60,26 @@
       "configurable": false
     },
     "panier": {
-      "via": "users_permissions_user",
-      "model": "panier"
+      "model": "panier",
+      "via": "users_permissions_user"
+    },
+    "adresse": {
+      "type": "string"
+    },
+    "ville": {
+      "type": "string"
+    },
+    "postal": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
     }
   }
 }
