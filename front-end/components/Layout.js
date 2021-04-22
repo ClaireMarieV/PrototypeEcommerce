@@ -116,7 +116,6 @@ const Layout = ({ children }) => (
           padding: 0;
         }
         li {
-          padding: 1rem;
         }
         button {
           border: none;
