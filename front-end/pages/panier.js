@@ -6,12 +6,14 @@ import { useStore } from "../lib/store";
 
 const CartPage = () => {
   const products = useStore((state) => (state.cart ? state.cart.produits : []));
-
+  const total =
+    Math.round(products.reduce((acc, product) => product.prix + acc, 0) * 100) /
+    100;
   return (
     <Layout>
       <CartProduct products={products} />
       <div className="checkout">
-        <span>Total:</span>
+        <span>Total : {total}</span>
         <button>checkout</button>
       </div>
 
@@ -21,6 +23,10 @@ const CartPage = () => {
           width: 30%;
           display: flex;
           flex-direction: column;
+          gap: 1rem;
+        }
+        .checkout span {
+          font-weight: 500;
         }
       `}</style>
     </Layout>
