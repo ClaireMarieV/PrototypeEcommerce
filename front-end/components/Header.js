@@ -105,6 +105,8 @@ const Header = () => {
           list-style: none;
           display: flex;
           align-items: center;
+          justify-content: space-around;
+          gap: 2rem;
         }
         .products:nth-child(1) li {
           position: relative;

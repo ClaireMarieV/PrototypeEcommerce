@@ -26,9 +26,11 @@ const DropdownMenu = ({ title, children }) => {
           position: relative;
         }
         .dropdown-menu {
+          display: flex;
+          gap: 1rem;
+          flex-direction: column;
           transition: all 5s;
           height: auto;
-
           position: absolute;
           overflow: hidden;
           list-style: none;
