@@ -1,18 +1,18 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import Cookies from "js-cookie";
-import TwoColumns from "../components/TwoColumns";
-import Link from "next/link";
+import Connexion from "../components/Connexion";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
 
 const ConnectPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const connect = () => {
-    setLoading(true);
-    setError(null);
     fetch("/api/login", {
       method: "post",
       body: JSON.stringify({ email, password }),
@@ -32,43 +32,9 @@ const ConnectPage = () => {
 
   return (
     <Layout>
-      <TwoColumns>
-        <div className="connect">
-          <h2>CONNECTEZ-VOUS</h2>
-          <section>
-            <label htmlFor="email">
-              Email
-              <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </label>
-            <label htmlFor="password">
-              Password
-              <input
-                type="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </label>
-            <div className="button">
-              <button onClick={connect}>Se connecter</button>
-            </div>
-          </section>
-        </div>
-        <div>
-          <h2>INSCRIVEZ-VOUS</h2>
-          <span>
-            Rejoignez HABAAH et bénéficiez d'une experience simplifié!
-          </span>
-          <Link href="/inscription">
-            <a>
-              <button>Créer un compte</button>
-            </a>
-          </Link>
-        </div>
-      </TwoColumns>
+      {error && <Error />}
+      {loading && <Loading />}
+      {!loading && !error && <Connexion />}
       <style jsx>{`
         display: flex;
         flex-direction: column;
