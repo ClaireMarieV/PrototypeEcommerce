@@ -29,11 +29,15 @@ const NewProductsPage = () => {
 
   return (
     <Layout>
-      <ProductList
-        products={products.filter(
-          (product) => new Date(product.published_at) > oneWeekAgo
-        )}
-      />
+      {error && <Error />}
+      {loading && <div>je charge</div>}
+      {!loading && !error && (
+        <ProductList
+          products={products.filter(
+            (product) => new Date(product.published_at) > oneWeekAgo
+          )}
+        />
+      )}
     </Layout>
   );
 };

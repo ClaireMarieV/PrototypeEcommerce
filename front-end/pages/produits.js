@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
 import FourColumns from "../components/FourColumns";
+import Error from "../components/Error";
 
 const ProductsPage = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-    setError(null);
     fetch("/api/produits")
       .then((response) => response.json())
       .then((products) => {
@@ -26,7 +25,9 @@ const ProductsPage = () => {
   return (
     <Layout>
       <FourColumns>
-        <ProductList products={products} />
+        {error && <Error />}
+        {loading && <div>je charge</div>}
+        {!loading && !error && <ProductList products={products} />}
       </FourColumns>
     </Layout>
   );
