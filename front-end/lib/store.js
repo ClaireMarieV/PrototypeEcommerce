@@ -3,6 +3,16 @@ import create from "zustand";
 export const useStore = create((set, get) => ({
   user: null,
   setUser: (user) => set({ user: user }),
+  updateUser: (user) =>
+    fetch("/api/me", { method: "POST", body: JSON.stringify(user) }).then(
+      (res) =>
+        res
+          .json()
+          .then((response) => (res.ok ? response : Promise.reject(response)))
+          .then((user) => {
+            set({ user: user });
+          })
+    ),
   cart: null,
   fetchCart: () =>
     fetch("/api/cart").then((res) =>
