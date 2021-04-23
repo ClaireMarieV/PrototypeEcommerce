@@ -10,9 +10,11 @@ const ConnectPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const connect = () => {
+    setLoading(true);
+    setError(null);
     fetch("/api/login", {
       method: "post",
       body: JSON.stringify({ email, password }),
@@ -35,18 +37,7 @@ const ConnectPage = () => {
       {error && <Error />}
       {loading && <Loading />}
       {!loading && !error && <Connexion />}
-      <style jsx>{`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0.5rem;
-        justify-content: center;
-        .connect {
-        }
-        section > input {
-          width: 35% !important;
-        }
-      `}</style>
+      <style jsx>{``}</style>
     </Layout>
   );
 };

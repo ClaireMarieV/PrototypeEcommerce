@@ -29,29 +29,27 @@ const Connexion = () => {
     <TwoColumns>
       <div className="connect">
         <h2>CONNECTEZ-VOUS</h2>
-        <section>
-          <label htmlFor="email">
-            Email
-            <input
-              type="email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-          </label>
-          <label htmlFor="password">
-            Password
-            <input
-              type="password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </label>
-          <div className="button">
-            <button onClick={connect}>Se connecter</button>
-          </div>
-        </section>
+        <label htmlFor="email">
+          Email
+          <input
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+        </label>
+        <label htmlFor="password">
+          Password
+          <input
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </label>
+        <div className="button">
+          <button onClick={connect}>Se connecter</button>
+        </div>
       </div>
-      <div>
+      <div className="register">
         <h2>INSCRIVEZ-VOUS</h2>
         <span>Rejoignez HABAAH et bénéficiez d'une experience simplifié!</span>
         <Link href="/inscription">
@@ -59,16 +57,18 @@ const Connexion = () => {
             <button>Créer un compte</button>
           </a>
         </Link>
-        <style jsx>{`
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: 0.5rem;
-          justify-content: center;
-          .connect {
+
+        <style jsx global>{`
+          .connect,
+          .register {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
           }
-          section > input {
-            width: 35% !important;
+
+          input {
           }
         `}</style>
       </div>

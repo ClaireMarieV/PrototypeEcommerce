@@ -71,7 +71,7 @@ const ProfilPage = () => {
           />
           <input
             type="password"
-            placeholder="Email"
+            placeholder="Mot de passe"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />

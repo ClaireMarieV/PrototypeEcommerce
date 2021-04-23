@@ -49,8 +49,8 @@ const Error = () => (
         top: 20px;
         left: -10px;
         width: 100px;
-        -webkit-animation: dots 4s ease infinite 1s;
-        animation: dots 4s ease infinite 1s;
+        -webkit-animation: dots 1.5s ease infinite 1.5s;
+        animation: dots 1.5s ease infinite 1.5s;
       }
       .dots div {
         position: relative;
@@ -65,13 +65,13 @@ const Error = () => (
         height: 0px;
         margin: 5px;
         margin-right: 15px;
-        -webkit-animation: show-dot 4s ease-out infinite 1s;
-        animation: show-dot 4s ease-out infinite 1s;
+        -webkit-animation: show-dot 1.5s ease-out infinite 1.5s;
+        animation: show-dot 1.5s ease-out infinite 1.5s;
       }
       .dots div:nth-child(4) {
         background-color: transparent;
-        -webkit-animation: dot-fall-left 4s linear infinite 1s;
-        animation: dot-fall-left 4s linear infinite 1s;
+        -webkit-animation: dot-fall-left 1.5s linear infinite 1.5s;
+        animation: dot-fall-left 1.5s linear infinite 1.5s;
       }
       .dots div:nth-child(4):before {
         position: absolute;
@@ -81,10 +81,10 @@ const Error = () => (
         border-radius: 100%;
         background-color: black;
         content: "";
-        -webkit-animation: dot-fall-top 4s cubic-bezier(0.46, 0.02, 0.94, 0.54)
-          infinite 1s;
-        animation: dot-fall-top 4s cubic-bezier(0.46, 0.02, 0.94, 0.54) infinite
-          1s;
+        -webkit-animation: dot-fall-top 1.5s
+          cubic-bezier(0.46, 0.02, 0.94, 0.54) infinite 1.5s;
+        animation: dot-fall-top 1.5s cubic-bezier(0.46, 0.02, 0.94, 0.54)
+          infinite 1.5s;
       }
 
       @-webkit-keyframes dots {
