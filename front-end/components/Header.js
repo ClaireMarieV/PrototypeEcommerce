@@ -37,7 +37,7 @@ const Header = () => {
       <nav>
         <ul className="products">
           <li>
-            <DropdownMenu title="COLLECTION">
+            <DropdownMenu title="PRODUITS">
               {categories.map((category) => (
                 <Link key={category.id} href={"/categorie/" + category.slug}>
                   <a onClick={() => console.log("bonjour")}>{category.label}</a>
