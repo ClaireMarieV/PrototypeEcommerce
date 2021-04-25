@@ -2,56 +2,45 @@ import React from "react";
 import Link from "next/link";
 
 const Footer = () => (
-  <header>
-    <div className="footer">
-      <div>
-        <Link href="/">
-          <a>
-            <h1>HABAAH</h1>
-          </a>
-        </Link>
-      </div>
-      <div>
-        <ul className="ul">
-          <li>
-            <ul>
-              <li>
-                <Link href="/newsletter">
-                  <a>
-                    <span>newsletter</span>
-                  </a>
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/about">
-                  <a>
-                    <span>about us</span>
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact">
-                  <a>
-                    <span>contact</span>
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/aide">
-                  <a>
-                    <span>aide</span>
-                  </a>
-                </Link>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+  <footer>
+    <div>
+      <Link href="/">
+        <a>
+          <h1>HABAAH</h1>
+        </a>
+      </Link>
     </div>
-
+    <div>
+      <ul className="ul">
+        <li>
+          <ul>
+            <li>
+              <Link href="/about">
+                <a>
+                  <span>about us</span>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact">
+                <a>
+                  <span>contact</span>
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/aide">
+                <a>
+                  <span>aide</span>
+                </a>
+              </Link>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
     <style jsx>{`
-      .footer {
+      footer {
         display: grid;
         justify-items: center;
         align-items: center;
@@ -102,7 +91,7 @@ const Footer = () => (
         }
       }
     `}</style>
-  </header>
+  </footer>
 );
 
 export default Footer;
