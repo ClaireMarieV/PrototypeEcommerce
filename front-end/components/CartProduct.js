@@ -16,7 +16,7 @@ const CartProduct = ({ products }) => {
   }, []);
   return (
     <OneColumn>
-      <h2>Panier</h2>
+      <h2>Panier ({products.length})</h2>
       {aggregatedProducts.map((product) => (
         <div className="one-product">
           <Link href={"/produit/" + product.slug}>

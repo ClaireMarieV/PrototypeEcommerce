@@ -6,6 +6,8 @@ import { useStore } from "../lib/store";
 import Cookie from "js-cookie";
 
 const Header = () => {
+  const products = useStore((state) => (state.cart ? state.cart.produits : []));
+
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -81,10 +83,11 @@ const Header = () => {
               </a>
             </Link>
           </li>
-          <li>
+          <li className="cart">
             <Link href="/panier">
               <a>
                 <img src="/svg/sale.svg" />
+                <span>{products.length}</span>
               </a>
             </Link>
           </li>
@@ -131,6 +134,9 @@ const Header = () => {
         }
         .logo img {
           width: 100%;
+        }
+        .cart span {
+          font-weight: 500;
         }
         @media (max-width: 1100px) {
           nav {
