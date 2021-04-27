@@ -59,10 +59,6 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "panier": {
-      "model": "panier",
-      "via": "users_permissions_user"
-    },
     "adresse": {
       "type": "string"
     },

@@ -38,10 +38,6 @@
     "slug": {
       "type": "string"
     },
-    "paniers": {
-      "collection": "panier",
-      "via": "produits"
-    },
     "reference": {
       "type": "string"
     },
