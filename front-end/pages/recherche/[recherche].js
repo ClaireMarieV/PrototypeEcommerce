@@ -8,7 +8,7 @@ const Search = (product) => {
   const { recherche } = router.query;
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const value = (event) => {
     setSearch(event.target.value);
   };
@@ -32,20 +32,24 @@ const Search = (product) => {
 
   return (
     <Layout>
-      <div className="search">
-        <span>
-          Votre recherche : <span>{recherche}</span>
-        </span>
-        <div>
-          <ProductList products={products} />
+      {error && <Error />}
+      {loading && <Loading />}
+      {!loading && !error && (
+        <div className="search">
+          <span>
+            Votre recherche : <span>{recherche}</span>
+          </span>
+          <div>
+            <ProductList products={products} />
+          </div>
+          <style jsx>{`
+            .search {
+              display: inline-flex;
+              gap: 1rem;
+            }
+          `}</style>
         </div>
-        <style jsx>{`
-          .search {
-            display: inline-flex;
-            gap: 1rem;
-          }
-        `}</style>
-      </div>
+      )}
     </Layout>
   );
 };

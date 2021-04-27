@@ -4,20 +4,22 @@ const ShopButton = ({ productId }) => {
   const addProductToCart = useStore((state) => state.addProductToCart);
 
   return (
-    <div className="shop-button" onClick={() => addProductToCart(productId)}>
-      <span>shop now</span>
+    <div>
+      <button
+        className="shop-button"
+        onClick={() => addProductToCart(productId)}
+      >
+        Ajouter au panier
+      </button>
       <style jsx>{`
-        .shop-button {
+        button {
           display: flex;
           justify-content: center;
-        }
-        span {
-          text-transform: uppercase;
-          background: transparent;
           border: 2px solid #40363e;
-          padding: 0.5rem;
-          font-family: astoria-sans-condensed, sans-serif;
+          background: transparent;
           font-weight: 600;
+          color: black;
+          margin: auto;
         }
       `}</style>
     </div>

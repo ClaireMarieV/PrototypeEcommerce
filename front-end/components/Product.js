@@ -5,34 +5,59 @@ import OneColumn from "../components/OneColumn";
 const Product = ({ product }) => (
   <OneColumn>
     <div className="one-product">
-      {product.images.length && (
-        <img
-          src={
-            process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-            product.images[0].formats.small.url
-          }
-        />
-      )}
+      <div className="images">
+        {product.images.map((image) => (
+          <img
+            src={
+              process.env.NEXT_PUBLIC_BACKOFFICE_HOST + image.formats.small.url
+            }
+          />
+        ))}
+      </div>
       <div className="info">
         <div>
-          <span>{product.label}</span>
+          <div className="label">
+            <span>{product.label}</span>
+          </div>
+          <div>
+            <span>REF.{product.reference}</span>
+          </div>
+          <div>
+            <span>{product.description}</span>
+          </div>
+          <div className="price">
+            <span>{product.prix}€</span>
+          </div>
+          <ShopButton productId={product.id} />
         </div>
-        <div>
-          <span>{product.prix}€</span>
-        </div>
-        <ShopButton productId={product.id} />
       </div>
       <style jsx>{`
         .one-product {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: auto 1fr;
+          gap: 2rem;
           justify-items: center;
-          align-items: center;
+          position: relative;
+        }
+        .images {
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
         }
         .info {
+          position: relative;
+        }
+        .info > div {
+          position: fixed;
           gap: 1rem;
           display: flex;
           flex-direction: column;
+        }
+        .label > span,
+        .price > span {
+          text-transform: uppercase;
+          font-weight: 500;
         }
       `}</style>
     </div>

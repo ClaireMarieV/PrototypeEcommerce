@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 import Connexion from "../components/Connexion";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
+import TwoColumns from "../components/TwoColumns";
 
 const ConnectPage = () => {
   const [email, setEmail] = useState("");
@@ -36,8 +37,59 @@ const ConnectPage = () => {
     <Layout>
       {error && <Error />}
       {loading && <Loading />}
-      {!loading && !error && <Connexion />}
-      <style jsx>{``}</style>
+      {!loading && !error && (
+        <TwoColumns>
+          <div className="connect">
+            <h2>CONNECTEZ-VOUS</h2>
+            <label htmlFor="email">
+              Email
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </label>
+            <label htmlFor="password">
+              Password
+              <input
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </label>
+            <div className="button">
+              <button onClick={connect} disabled={loading}>
+                Se connecter
+              </button>
+            </div>
+          </div>
+          <div className="register">
+            <h2>INSCRIVEZ-VOUS</h2>
+            <span>
+              Rejoignez HABAAH et bénéficiez d'une experience simplifié!
+            </span>
+            <Link href="/inscription">
+              <a>
+                <button>Créer un compte</button>
+              </a>
+            </Link>
+
+            <style jsx global>{`
+              .connect,
+              .register {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+              }
+
+              input {
+              }
+            `}</style>
+          </div>
+        </TwoColumns>
+      )}
     </Layout>
   );
 };

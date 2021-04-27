@@ -1,179 +1,56 @@
 const Error = () => (
   <div className="loading">
-    <h1 className="load">Loading</h1>
     <div className="dots">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
     <style jsx>{`
-      .loading {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        justify-items: center;
-        gap: 2rem;
-        margin: 4rem auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        height: 100vh;
-      }
-      h1 {
-        text-transform: uppercase;
-        font-size: 5rem;
-        display: flex;
-      }
-      section {
-        display: flex;
-        flex-direction: column;
-      }
-      img {
-        max-width: 50rem;
-        width: 100%;
-      }
-      @media (max-width: 500px) {
-        .container {
-          width: 100%;
-        }
-      }
-
-      .dots {
-        display: flex;
-        position: relative;
-        top: 20px;
-        left: -10px;
-        width: 100px;
-        -webkit-animation: dots 1.5s ease infinite 1.5s;
-        animation: dots 1.5s ease infinite 1.5s;
-      }
-      .dots div {
-        position: relative;
-        width: 10px;
-        height: 10px;
-        margin-right: 10px;
-        border-radius: 100%;
-        background-color: black;
-      }
-      .dots div:nth-child(1) {
-        width: 0px;
-        height: 0px;
-        margin: 5px;
-        margin-right: 15px;
-        -webkit-animation: show-dot 1.5s ease-out infinite 1.5s;
-        animation: show-dot 1.5s ease-out infinite 1.5s;
-      }
-      .dots div:nth-child(4) {
-        background-color: transparent;
-        -webkit-animation: dot-fall-left 1.5s linear infinite 1.5s;
-        animation: dot-fall-left 1.5s linear infinite 1.5s;
-      }
-      .dots div:nth-child(4):before {
+      .dots span {
+        width: 96px;
+        height: 96px;
         position: absolute;
-        width: 10px;
-        height: 10px;
-        margin-right: 10px;
-        border-radius: 100%;
-        background-color: black;
-        content: "";
-        -webkit-animation: dot-fall-top 1.5s
-          cubic-bezier(0.46, 0.02, 0.94, 0.54) infinite 1.5s;
-        animation: dot-fall-top 1.5s cubic-bezier(0.46, 0.02, 0.94, 0.54)
-          infinite 1.5s;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        margin: auto;
+        border: 2px solid transparent;
+        border-top-color: RGB(255, 255, 255);
+        border-radius: 64px;
+        animation: spin 1s ease infinite;
       }
 
-      @-webkit-keyframes dots {
-        0% {
-          left: -10px;
-        }
-        20%,
-        100% {
-          left: 10px;
-        }
+      span:nth-child(1) {
+        opacity: 0.2;
+        animation-delay: 0.4s;
       }
 
-      @keyframes dots {
-        0% {
-          left: -10px;
-        }
-        20%,
-        100% {
-          left: 10px;
-        }
+      span:nth-child(2) {
+        opacity: 0.4;
+        animation-delay: 0.3s;
       }
-      @-webkit-keyframes show-dot {
-        0%,
-        20% {
-          width: 0px;
-          height: 0px;
-          margin: 5px;
-          margin-right: 15px;
-        }
-        30%,
-        100% {
-          width: 10px;
-          height: 10px;
-          margin: 0px;
-          margin-right: 10px;
-        }
+
+      span:nth-child(3) {
+        opacity: 0.6;
+        animation-delay: 0.2s;
       }
-      @keyframes show-dot {
-        0%,
-        20% {
-          width: 0px;
-          height: 0px;
-          margin: 5px;
-          margin-right: 15px;
-        }
-        30%,
-        100% {
-          width: 10px;
-          height: 10px;
-          margin: 0px;
-          margin-right: 10px;
-        }
+
+      span:nth-child(4) {
+        opacity: 0.8;
+        animation-delay: 0.1s;
       }
-      @-webkit-keyframes dot-fall-left {
-        0%,
-        5% {
-          left: 0px;
-        }
-        100% {
-          left: 200px;
-        }
+
+      span:nth-child(5) {
+        opacity: 1;
+        animation-delay: 0s;
       }
-      @keyframes dot-fall-left {
-        0%,
-        5% {
-          left: 0px;
-        }
+
+      @keyframes spin {
         100% {
-          left: 200px;
-        }
-      }
-      @-webkit-keyframes dot-fall-top {
-        0%,
-        5% {
-          top: 0px;
-        }
-        30%,
-        100% {
-          top: 50vh;
-        }
-      }
-      @keyframes dot-fall-top {
-        0%,
-        5% {
-          top: 0px;
-        }
-        30%,
-        100% {
-          top: 50vh;
+          transform: rotate(360deg);
         }
       }
     `}</style>

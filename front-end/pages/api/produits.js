@@ -1,4 +1,6 @@
 export default async (req, res) => {
+  // res.statusCode = 500;
+  // res.end();
   if (req.method === "GET") {
     return fetch(process.env.BACKOFFICE_HOST + "/produits/")
       .then((response) => response.json())

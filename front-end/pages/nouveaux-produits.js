@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import sub from "date-fns/sub";
 import ProductList from "../components/ProductList";
+import Loading from "../components/Loading";
 
 const NewProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -30,7 +31,7 @@ const NewProductsPage = () => {
   return (
     <Layout>
       {error && <Error />}
-      {loading && <div>je charge</div>}
+      {loading && <Loading />}
       {!loading && !error && (
         <ProductList
           products={products.filter(

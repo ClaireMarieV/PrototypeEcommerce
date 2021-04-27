@@ -39,8 +39,14 @@
       "type": "string"
     },
     "paniers": {
-      "via": "produits",
-      "collection": "panier"
+      "collection": "panier",
+      "via": "produits"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

@@ -40,48 +40,56 @@ const InscriptionPage = () => {
         <h2>informations personnelles</h2>
         <section className="form">
           <input
+            required
             type="text"
             placeholder="Nom"
             value={lastname}
             onChange={(event) => setLastname(event.target.value)}
           />
           <input
+            required
             type="text"
             placeholder="Prénom"
             value={firstname}
             onChange={(event) => setFirstname(event.target.value)}
           />
           <input
+            required
             type="email"
             placeholder="Email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
           />
           <input
+            required
             type="password"
             placeholder="Password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
           <input
+            required
             type="text"
             placeholder="Adresse"
             value={adress}
             onChange={(event) => setAdress(event.target.value)}
           />
           <input
+            required
             type="text"
             placeholder="Code postal"
             value={postal}
             onChange={(event) => setPostal(event.target.value)}
           />
           <input
+            required
             type="text"
             placeholder="Ville"
             value={town}
             onChange={(event) => setTown(event.target.value)}
           />
           <input
+            required
             type="text"
             placeholder="Téléphone"
             value={number}

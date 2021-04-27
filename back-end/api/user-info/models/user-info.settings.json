@@ -2,31 +2,13 @@
   "kind": "collectionType",
   "collectionName": "user_infos",
   "info": {
-    "name": "UserInfo"
+    "name": "UserInfo",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": true
   },
-  "attributes": {
-    "firstname": {
-      "type": "string"
-    },
-    "lastname": {
-      "type": "string"
-    },
-    "address": {
-      "type": "string"
-    },
-    "postal": {
-      "type": "string"
-    },
-    "town": {
-      "type": "string"
-    },
-    "phone": {
-      "type": "string"
-    }
-  }
+  "attributes": {}
 }

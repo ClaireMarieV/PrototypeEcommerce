@@ -11,8 +11,8 @@
   },
   "attributes": {
     "produits": {
-      "collection": "produit",
       "via": "paniers",
+      "collection": "produit",
       "dominant": true
     },
     "users_permissions_user": {
