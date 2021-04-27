@@ -5,7 +5,7 @@ import OneColumn from "../components/OneColumn";
 import { useStore } from "../lib/store";
 
 const CartPage = () => {
-  const products = useStore((state) => (state.cart ? state.cart.produits : []));
+  const products = useStore((state) => (state.cart ? state.cart.products : []));
   const total =
     Math.round(products.reduce((acc, product) => product.prix + acc, 0) * 100) /
     100;

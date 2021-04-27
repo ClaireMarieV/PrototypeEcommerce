@@ -28,7 +28,7 @@ const Product = ({ product }) => (
           <div className="price">
             <span>{product.prix}€</span>
           </div>
-          <ShopButton productId={product.id} />
+          <ShopButton product={product} />
         </div>
       </div>
       <style jsx>{`

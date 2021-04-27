@@ -6,7 +6,7 @@ import { useStore } from "../lib/store";
 import Cookie from "js-cookie";
 
 const Header = () => {
-  const products = useStore((state) => (state.cart ? state.cart.produits : []));
+  const products = useStore((state) => (state.cart ? state.cart.products : []));
 
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);

@@ -4,7 +4,6 @@ import { useStore } from "../lib/store";
 
 const App = ({ Component, pageProps }) => {
   const setUser = useStore((state) => state.setUser);
-  const fetchCart = useStore((state) => state.fetchCart);
 
   //Appel l'api pour verifier si l'utilisateur est connecté
   useEffect(() => {
@@ -21,7 +20,6 @@ const App = ({ Component, pageProps }) => {
             Cookie.remove("token");
             setUser(null);
           })
-          .then(() => fetchCart())
       );
     }
   }, []);
