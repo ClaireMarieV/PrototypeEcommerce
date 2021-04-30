@@ -19,7 +19,7 @@ const CartProduct = ({ products }) => {
       <h2>Panier ({products.length})</h2>
       {aggregatedProducts.map((product) => (
         <div className="one-product">
-          <Link href={"/produit/" + product.slug}>
+          <Link key={product.id} href={"/produit/" + product.slug}>
             <a>
               {product.images.length && (
                 <img
