@@ -44,6 +44,7 @@ const Product = ({ product }) => (
           display: flex;
           flex-direction: column;
           flex-grow: 1;
+          gap: 2rem;
         }
         .info {
           position: relative;
@@ -57,7 +58,7 @@ const Product = ({ product }) => (
         .label > span,
         .price > span {
           text-transform: uppercase;
-          font-weight: 500;
+          font-weight: 600;
         }
       `}</style>
     </div>
