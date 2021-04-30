@@ -17,8 +17,8 @@ const Error = () => (
         bottom: 0px;
         left: 0px;
         margin: auto;
-        border: 2px solid transparent;
-        border-top-color: RGB(255, 255, 255);
+        border: 4px solid transparent;
+        border-top-color: #efd3d7;
         border-radius: 64px;
         animation: spin 1s ease infinite;
       }
