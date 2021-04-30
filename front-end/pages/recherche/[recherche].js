@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import ProductList from "../../components/ProductList";
 import { useRouter } from "next/router";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 
 const Search = (product) => {
   const router = useRouter();

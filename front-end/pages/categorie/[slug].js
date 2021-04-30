@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import ProductList from "../../components/ProductList";
+import Filter from "../../components/Filter";
 const Category = () => {
   const router = useRouter();
   const { slug } = router.query;
