@@ -39,13 +39,9 @@ const Header = () => {
       <nav>
         <ul className="products">
           <li>
-            <DropdownMenu title="PRODUITS">
-              {categories.map((category) => (
-                <Link key={category.id} href={"/categorie/" + category.slug}>
-                  <a onClick={() => console.log("bonjour")}>{category.label}</a>
-                </Link>
-              ))}
-            </DropdownMenu>
+            <Link href="/produits">
+              <a>PRODUITS</a>
+            </Link>
           </li>
           <li>
             <Link href="/nouveaux-produits">
@@ -103,6 +99,7 @@ const Header = () => {
           gap: 2rem;
           align-items: center;
           text-decoration: none;
+          margin: 2rem;
         }
         nav ul {
           list-style: none;
@@ -113,7 +110,7 @@ const Header = () => {
         }
         .products:nth-child(1) li {
           position: relative;
-          font-weight: 500;
+          font-weight: 600;
           letter-spacing: 0.05rem;
         }
         .products:nth-child(1) li > ul:nth-child(1) {
