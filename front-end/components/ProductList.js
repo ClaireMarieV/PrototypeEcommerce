@@ -5,7 +5,7 @@ import ShopButton from "../components/ShopButton";
 const ProductList = ({ products }) => (
   <FourColumns>
     {products.map((product) => (
-      <Link href={"/produit/" + product.slug}>
+      <Link key={product.id} href={"/produit/" + product.slug}>
         <a>
           {product.images.length && product.images[0].formats.small && (
             <img
