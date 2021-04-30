@@ -32,7 +32,7 @@ const Layout = ({ children }) => (
       <meta name="theme-color" content="#ffffff" />
     </Head>
     <Header />
-    <link rel="stylesheet" href="https://use.typekit.net/nfm0nuv.css"></link>
+    <link rel="stylesheet" href="https://use.typekit.net/ljf5get.css" />
     <div
       style={{
         margin: `0 auto`,
@@ -49,6 +49,8 @@ const Layout = ({ children }) => (
         }
         main {
           perspective: 2px;
+          width: 90vw;
+          margin: 0 auto;
         }
         html,
         body {
@@ -58,8 +60,7 @@ const Layout = ({ children }) => (
           color: #1c1b1b;
         }
         body {
-          font-family: arboria, sans-serif;
-          font-weight: 100;
+          font-family: p22-underground, sans-serif;
           letter-spacing: 0.05rem;
           margin: 0;
           overflow-x: hidden;
