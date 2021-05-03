@@ -116,7 +116,9 @@ const Layout = ({ children }) => (
         ul {
           padding: 0;
         }
-        li {
+        img {
+          object-fit: cover;
+          overflow: hidden;
         }
         button {
           border: none;

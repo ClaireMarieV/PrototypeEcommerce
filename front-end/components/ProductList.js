@@ -1,18 +1,20 @@
 import Link from "next/link";
 import FourColumns from "../components/FourColumns";
 import ShopButton from "../components/ShopButton";
+import Image from "next/image";
 
 const ProductList = ({ products }) => (
   <FourColumns>
     {products.map((product) => (
       <Link key={product.id} href={"/produit/" + product.slug}>
         <a>
-          {product.images.length && product.images[0].formats.small && (
-            <img
+          {product.images.length && product.images[0] && (
+            <Image
               src={
-                process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                product.images[0].formats.small.url
+                process.env.NEXT_PUBLIC_BACKOFFICE_HOST + product.images[0].url
               }
+              width={500}
+              height={700}
             />
           )}
           <div className="info">

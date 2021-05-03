@@ -1,16 +1,17 @@
 import Link from "next/link";
 import ShopButton from "../components/ShopButton";
 import OneColumn from "../components/OneColumn";
+import Image from "next/image";
 
 const Product = ({ product }) => (
   <OneColumn>
     <div className="one-product">
       <div className="images">
         {product.images.map((image) => (
-          <img
-            src={
-              process.env.NEXT_PUBLIC_BACKOFFICE_HOST + image.formats.small.url
-            }
+          <Image
+            src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + image.url}
+            width={500}
+            height={700}
           />
         ))}
       </div>

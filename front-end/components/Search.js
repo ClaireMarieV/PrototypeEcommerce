@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Search = (product) => {
   const [search, setSearch] = useState("");
@@ -12,11 +13,13 @@ const Search = (product) => {
 
   return (
     <div className="search">
-      <img
+      <Image
         src="/svg/iconSearch.svg"
         onClick={() => {
           setVisible(true);
         }}
+        width={30}
+        height={30}
       />
       <input
         className={"input-search " + (visible ? "visible" : "hidden")}

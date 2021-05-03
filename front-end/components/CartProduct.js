@@ -1,6 +1,7 @@
 import Link from "next/link";
 import OneColumn from "../components/OneColumn";
 import { useStore } from "../lib/store";
+import Image from "next/image";
 
 const CartProduct = ({ products }) => {
   const removeProductFromCart = useStore(
@@ -22,11 +23,13 @@ const CartProduct = ({ products }) => {
           <Link key={product.id} href={"/produit/" + product.slug}>
             <a>
               {product.images.length && (
-                <img
+                <Image
                   src={
                     process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                    product.images[0].formats.small.url
+                    product.images[0].url
                   }
+                  width={500}
+                  height={700}
                 />
               )}
             </a>
