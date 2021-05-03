@@ -11,14 +11,14 @@ const DropdownMenu = ({ title, children }) => {
   return (
     <div
       className="dropdown-menu-container"
-      tabindex="0"
+      tabIndex="0"
       ref={menuRef}
       onBlur={() => setDeployed(false)}
     >
       <span onClick={deploy}>{title}</span>
       <ul className={"dropdown-menu " + (deployed ? "visible" : "hidden")}>
         {(Array.isArray(children) ? children : [children]).map((child) => (
-          <li>{child}</li>
+          <li key={child.key}>{child}</li>
         ))}
       </ul>
       <style jsx>{`

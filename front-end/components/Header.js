@@ -62,13 +62,13 @@ const Header = () => {
         </Link>
 
         <ul>
-          {username && (
-            <li>
+          <li>
+            {username && (
               <DropdownMenu title={username}>
                 <span onClick={disconnect}>Deconnexion</span>
               </DropdownMenu>
-            </li>
-          )}
+            )}
+          </li>
           <li>
             <Search />
           </li>
@@ -92,8 +92,7 @@ const Header = () => {
 
       <style jsx>{`
         nav {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          display: flex;
           justify-items: center;
           justify-content: space-around;
           gap: 2rem;
