@@ -1,9 +1,9 @@
-const TwoColumns = ({ children }) => (
+const OneColumn = ({ children }) => (
   <div className="container">
     {children}
     <style jsx>{`
       .container {
-        display: grid;
+        display: flex;
         grid-template-columns: 1fr;
         gap: 2rem;
         justify-self: center;
@@ -20,4 +20,4 @@ const TwoColumns = ({ children }) => (
   </div>
 );
 
-export default TwoColumns;
+export default OneColumn;

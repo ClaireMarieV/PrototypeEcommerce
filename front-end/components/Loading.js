@@ -1,4 +1,4 @@
-const Error = () => (
+const Loading = () => (
   <div className="loading">
     <div className="dots">
       <span></span>
@@ -57,4 +57,4 @@ const Error = () => (
   </div>
 );
 
-export default Error;
+export default Loading;
