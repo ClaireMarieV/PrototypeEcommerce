@@ -9,6 +9,7 @@ const OneColumn = ({ children }) => (
         justify-self: center;
         height: 100%;
         margin: 4rem auto;
+        width: 60vw;
       }
       @media (max-width: 500px) {
         .container {
