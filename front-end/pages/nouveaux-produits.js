@@ -9,16 +9,17 @@ const NewProductsPage = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const oneWeekAgo = sub(new Date(), {
+  const oneMonthAgo = sub(new Date(), {
     months: 1,
   });
 
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch("/api/produits")
+    fetch("/api/produits?skip=0")
       .then((response) => response.json())
       .then((products) => {
+        console.log(products);
         setProducts(products);
         setLoading(false);
       })
@@ -35,7 +36,7 @@ const NewProductsPage = () => {
       {!loading && !error && (
         <ProductList
           products={products.filter(
-            (product) => new Date(product.published_at) > oneWeekAgo
+            (product) => new Date(product.published_at) > oneMonthAgo
           )}
         />
       )}
