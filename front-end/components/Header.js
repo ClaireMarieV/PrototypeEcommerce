@@ -106,7 +106,7 @@ const Header = () => {
           display: flex;
           align-items: center;
           justify-content: space-around;
-          justify-self: normal;
+          justify-self: center;
           gap: 2rem;
         }
         .products:nth-child(1) li {
