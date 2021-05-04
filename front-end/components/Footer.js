@@ -41,7 +41,8 @@ const Footer = () => (
     </div>
     <style jsx>{`
       footer {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         justify-items: center;
         align-items: center;
         text-decoration: none;
