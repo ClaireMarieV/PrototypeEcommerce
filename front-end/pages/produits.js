@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import ProductList from "../components/ProductList";
-import FourColumns from "../components/FourColumns";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
 import Filter from "../components/Filter";
 import Link from "next/link";
+import OneColumn from "../components/OneColumn";
 import TwoColumns from "../components/TwoColumns";
 
 const ProductsPage = () => {
@@ -17,17 +17,23 @@ const ProductsPage = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetch("/api/produits")
+  const loadProducts = () => {
+    setLoading(true);
+    setError(null);
+    fetch("/api/produits?skip=" + produits.length)
       .then((response) => response.json())
-      .then((produits) => {
-        setProduits(produits);
+      .then((p) => {
+        setProduits(produits.concat(p));
         setLoading(false);
       })
       .catch((error) => {
         setError(error);
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    loadProducts();
   }, []);
 
   useEffect(() => {
@@ -58,7 +64,10 @@ const ProductsPage = () => {
               </Link>
             ))}
           </Filter>
-          <ProductList products={produits} />
+          <OneColumn>
+            <ProductList products={produits} />
+            <button onClick={loadProducts}>Load More</button>
+          </OneColumn>
         </TwoColumns>
       )}
 
@@ -79,6 +88,13 @@ const ProductsPage = () => {
 
         div:nth-child(1) > ul:nth-child(1) li:hover > ul:nth-child(1) li {
           visibility: visible;
+        }
+        button {
+          width: fit-content;
+          height: fit-content;
+          padding: 1rem;
+          border-radius: 5px;
+          justify-self: center;
         }
       `}</style>
     </Layout>

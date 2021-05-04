@@ -2,7 +2,12 @@ export default async (req, res) => {
   // res.statusCode = 500;
   // res.end();
   if (req.method === "GET") {
-    return fetch(process.env.BACKOFFICE_HOST + "/produits/")
+    return fetch(
+      process.env.BACKOFFICE_HOST +
+        "/produits?_start=" +
+        req.query.skip +
+        "&_limit=10"
+    )
       .then((response) => response.json())
       .then((produit) => {
         res.statusCode = 200;
