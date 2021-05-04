@@ -48,7 +48,6 @@ const Layout = ({ children }) => (
           height: 100%;
         }
         main {
-          perspective: 2px;
           width: 90vw;
           margin: 0 auto;
         }
