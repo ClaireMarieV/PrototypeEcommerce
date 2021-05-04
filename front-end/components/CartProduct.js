@@ -28,8 +28,8 @@ const CartProduct = ({ products }) => {
                     process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
                     product.images[0].url
                   }
-                  width={500}
-                  height={700}
+                  width={250}
+                  height={350}
                 />
               )}
             </a>
@@ -54,7 +54,10 @@ const CartProduct = ({ products }) => {
               grid-template-columns: auto auto auto auto;
               align-self: center;
               justify-items: center;
-              gap: 2rem;
+              gap: 8rem;
+            }
+            img {
+              object-fit: contain;
             }
 
             .label {
