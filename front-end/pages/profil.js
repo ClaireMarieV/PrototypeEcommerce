@@ -18,14 +18,14 @@ const ProfilPage = () => {
 
   useEffect(() => {
     if (user) {
-      setFirstname(user.firstname);
-      setLastname(user.lastname);
-      setTown(user.town);
-      setAddress(user.address);
-      setNumber(user.number);
-      setPostal(user.postal);
-      setEmail(user.email);
-      setPassword(user.password);
+      setFirstname(user.firstname || "");
+      setLastname(user.lastname || "");
+      setTown(user.town || "");
+      setAddress(user.address || "");
+      setNumber(user.number || "");
+      setPostal(user.postal || "");
+      setEmail(user.email || "");
+      setPassword(user.password || "");
     }
   }, [user]);
   return (
