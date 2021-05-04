@@ -7,7 +7,6 @@ const OneColumn = ({ children }) => (
         grid-template-columns: 1fr;
         gap: 2rem;
         justify-self: center;
-        width: 60vw;
         height: 100%;
         margin: 4rem auto;
       }
