@@ -57,13 +57,7 @@ const ProductsPage = () => {
       {loading && <Loading />}
       {!loading && !error && (
         <TwoColumns>
-          <Filter>
-            {categories.map((category) => (
-              <Link key={category.slug} href={"/categorie/" + category.slug}>
-                <a onClick={() => console.log("bonjour")}>{category.label}</a>
-              </Link>
-            ))}
-          </Filter>
+          <Filter />
           <OneColumn>
             <ProductList products={produits} />
             <button onClick={loadProducts}>Load More</button>
