@@ -92,7 +92,8 @@ const Header = () => {
 
       <style jsx>{`
         nav {
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
           justify-items: center;
           justify-content: space-around;
           gap: 2rem;
@@ -105,6 +106,7 @@ const Header = () => {
           display: flex;
           align-items: center;
           justify-content: space-around;
+          justify-self: normal;
           gap: 2rem;
         }
         .products:nth-child(1) li {
