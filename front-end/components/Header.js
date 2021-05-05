@@ -48,11 +48,6 @@ const Header = () => {
               <a>NOUVEAUTÉS</a>
             </Link>
           </li>
-          <li>
-            <Link href="/about">
-              <a>ABOUT US</a>
-            </Link>
-          </li>
         </ul>
 
         <Link className="logo" href="/">
@@ -63,13 +58,6 @@ const Header = () => {
 
         <ul>
           <li>
-            {username && (
-              <DropdownMenu title={username}>
-                <span onClick={disconnect}>Deconnexion</span>
-              </DropdownMenu>
-            )}
-          </li>
-          <li>
             <Search />
           </li>
           <li>
@@ -78,6 +66,15 @@ const Header = () => {
                 <img src="/svg/iconUserProfil.svg" />
               </a>
             </Link>
+            <ul>
+              <li>
+                {username && (
+                  <DropdownMenu title={username}>
+                    <span onClick={disconnect}>Deconnexion</span>
+                  </DropdownMenu>
+                )}
+              </li>
+            </ul>
           </li>
           <li className="cart">
             <Link href="/panier">
@@ -135,6 +132,11 @@ const Header = () => {
         }
         .cart span {
           font-weight: 500;
+        }
+        nav > ul:nth-child(3) > li:nth-child(2) {
+          display: flex;
+          align-items: baseline;
+          gap: 0.5rem;
         }
         @media (max-width: 1100px) {
           nav {
