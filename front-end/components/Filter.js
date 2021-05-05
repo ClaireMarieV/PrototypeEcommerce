@@ -21,22 +21,20 @@ const Filter = ({ children }) => {
       });
   }, []);
   return (
-    <div>
-      <ul>
-        <li>
-          <h3>Categories</h3>
-        </li>
-        {categories.map((category) => (
-          <Link key={category.key} href={"/categorie/" + category.slug}>
-            <a>{category.label}</a>
-          </Link>
-        ))}
-        <Link href="/produits">
-          <a>
-            <li>Shop all</li>
-          </a>
+    <ul>
+      <li>
+        <h3>Categories</h3>
+      </li>
+      {categories.map((category) => (
+        <Link key={category.key} href={"/categorie/" + category.slug}>
+          <a>{category.label}</a>
         </Link>
-      </ul>
+      ))}
+      <Link href="/produits">
+        <a>
+          <li>Shop all</li>
+        </a>
+      </Link>
       <style jsx>{`
         ul {
           display: flex;
@@ -44,12 +42,10 @@ const Filter = ({ children }) => {
           gap: 2rem;
           list-style: none;
           text-transform: capitalize;
-          border-right: 1px solid black;
           padding: 1rem;
-          height: 100%;
         }
       `}</style>
-    </div>
+    </ul>
   );
 };
 
