@@ -7,6 +7,7 @@ import Cookie from "js-cookie";
 
 const Header = () => {
   const products = useStore((state) => (state.cart ? state.cart.products : []));
+  const setUser = useStore((state) => state.setUser);
 
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
@@ -16,6 +17,7 @@ const Header = () => {
   );
   const disconnect = () => {
     Cookie.remove("token");
+    setUser(null);
     window.location = "/";
   };
 
