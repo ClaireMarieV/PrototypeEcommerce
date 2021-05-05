@@ -8,7 +8,7 @@ const OneColumn = ({ children }) => (
         gap: 2rem;
         justify-self: center;
         height: 100%;
-        margin: 4rem auto;
+        margin: auto;
         width: 60vw;
       }
       @media (max-width: 500px) {

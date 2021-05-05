@@ -49,7 +49,7 @@ const Layout = ({ children }) => (
         }
         main {
           width: 90vw;
-          margin: 0 auto;
+          margin: 8rem auto 8rem auto;
         }
         html,
         body {
