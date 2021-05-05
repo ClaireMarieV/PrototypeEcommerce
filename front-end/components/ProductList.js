@@ -1,10 +1,10 @@
 import Link from "next/link";
-import FourColumns from "../components/FourColumns";
+import ThreeColumns from "../components/ThreeColumns";
 import ShopButton from "../components/ShopButton";
 import Image from "next/image";
 
 const ProductList = ({ products }) => (
-  <FourColumns>
+  <ThreeColumns>
     {products.map((product) => (
       <Link key={product.id} href={"/produit/" + product.slug}>
         <a>
@@ -13,8 +13,8 @@ const ProductList = ({ products }) => (
               src={
                 process.env.NEXT_PUBLIC_BACKOFFICE_HOST + product.images[0].url
               }
-              width={500}
-              height={700}
+              width={450}
+              height={550}
             />
           )}
           <div className="info">
@@ -47,7 +47,7 @@ const ProductList = ({ products }) => (
         flex-grow: 1;
       }
     `}</style>
-  </FourColumns>
+  </ThreeColumns>
 );
 
 export default ProductList;
