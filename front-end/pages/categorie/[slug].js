@@ -52,7 +52,7 @@ const Category = () => {
       {category && (
         <>
           <TwoColumns>
-            <Filter />
+            <Filter categorySlug={slug} />
             <OneColumn>
               <ProductList products={category.produits} />
               <button onClick={loadProducts}>Load More</button>
