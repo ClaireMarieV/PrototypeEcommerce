@@ -9,8 +9,7 @@ import OneColumn from "../../components/OneColumn";
 const Search = (product) => {
   const router = useRouter();
   const { recherche } = router.query;
-  const [search, setSearch] = useState({ recherche });
-
+  const [search, setSearch] = useState(recherche);
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
