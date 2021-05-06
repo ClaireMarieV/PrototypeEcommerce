@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Filter = ({ children }) => {
+const Filter = ({ categorySlug }) => {
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -23,18 +24,22 @@ const Filter = ({ children }) => {
   return (
     <ul>
       <li>
-        <h3>Categories</h3>
+        <span>Filtre</span>
       </li>
       {categories.map((category) => (
-        <Link key={category.key} href={"/categorie/" + category.slug}>
-          <a>{category.label}</a>
-        </Link>
+        <li key={category.key}>
+          <Link href={"/categorie/" + category.slug}>
+            <a className={category.slug === categorySlug ? "focus" : ""}>
+              {category.label}
+            </a>
+          </Link>
+        </li>
       ))}
-      <Link href="/produits">
-        <a>
-          <li>Shop all</li>
-        </a>
-      </Link>
+      <li>
+        <Link href="/produits">
+          <a className={categorySlug ? "" : "focus"}>Tout voir</a>
+        </Link>
+      </li>
       <style jsx>{`
         ul {
           display: flex;
@@ -43,6 +48,9 @@ const Filter = ({ children }) => {
           list-style: none;
           text-transform: capitalize;
           padding: 1rem;
+        }
+        ul > li a.focus {
+          font-weight: 600;
         }
       `}</style>
     </ul>
