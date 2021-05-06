@@ -59,7 +59,9 @@ const Layout = ({ children }) => (
           color: #1c1b1b;
         }
         body {
-          font-family: p22-underground, sans-serif;
+          font-family: arboria, sans-serif;
+          font-weight: 400;
+          font-style: normal;
           letter-spacing: 0.05rem;
           margin: 0;
           overflow-x: hidden;
@@ -104,6 +106,13 @@ const Layout = ({ children }) => (
           font-weight: 100;
           font-size: 1.2rem;
           margin-bottom: 0.5em;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+          font-family: komet, sans-serif;
         }
         p {
           padding: 2em;
