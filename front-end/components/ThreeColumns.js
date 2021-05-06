@@ -8,7 +8,6 @@ const Container = ({ children }) => (
         justify-items: center;
         gap: 2rem;
         height: 100%;
-        margin: 0 2rem 0 2rem;
       }
       @media (max-width: 1100px) {
         .container {
