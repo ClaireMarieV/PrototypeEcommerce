@@ -127,7 +127,8 @@ const Header = () => {
         }
 
         img {
-          width: 2rem;
+          max-width: 2rem;
+          width: 100%;
         }
         .logo img {
           width: 100%;
