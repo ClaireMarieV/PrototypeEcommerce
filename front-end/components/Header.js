@@ -8,7 +8,6 @@ import Cookie from "js-cookie";
 const Header = () => {
   const products = useStore((state) => (state.cart ? state.cart.products : []));
   const setUser = useStore((state) => state.setUser);
-
   const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -39,6 +38,11 @@ const Header = () => {
   return (
     <header>
       <nav>
+        <Link className="logo" href="/">
+          <a>
+            <h1>HABAAH</h1>
+          </a>
+        </Link>
         <ul className="products">
           <li>
             <Link href="/produits">
@@ -47,20 +51,21 @@ const Header = () => {
           </li>
           <li>
             <Link href="/nouveaux-produits">
-              <a>NOUVEAUTÉS</a>
+              <a>NEW IN</a>
             </Link>
+          </li>
+          <li>
+            <Search />
           </li>
         </ul>
 
-        <Link className="logo" href="/">
-          <a>
-            <h1>HABAAH</h1>
-          </a>
-        </Link>
-
         <ul>
           <li>
-            <Search />
+            {username && (
+              <DropdownMenu title={username}>
+                <span onClick={disconnect}>Deconnexion</span>
+              </DropdownMenu>
+            )}
           </li>
           <li>
             <Link href={username ? "/profil" : "/connexion"}>
@@ -68,15 +73,6 @@ const Header = () => {
                 <img src="/svg/iconUserProfil.svg" />
               </a>
             </Link>
-            <ul>
-              <li>
-                {username && (
-                  <DropdownMenu title={username}>
-                    <span onClick={disconnect}>Deconnexion</span>
-                  </DropdownMenu>
-                )}
-              </li>
-            </ul>
           </li>
           <li className="cart">
             <Link href="/panier">
@@ -110,7 +106,7 @@ const Header = () => {
         }
         .products:nth-child(1) li {
           position: relative;
-          font-weight: 600;
+          font-weight: 400;
           letter-spacing: 0.05rem;
         }
         .products:nth-child(1) li > ul:nth-child(1) {
