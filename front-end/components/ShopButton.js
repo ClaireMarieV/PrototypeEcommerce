@@ -12,11 +12,10 @@ const ShopButton = ({ product }) => {
         button {
           display: flex;
           justify-content: center;
-          border: 2px solid #40363e;
-          background: transparent;
+          background: black;
           font-weight: 600;
-          color: black;
-          margin: auto;
+          color: white;
+          width: 100%;
         }
       `}</style>
     </div>
