@@ -6,9 +6,10 @@ const Flex = ({ children }) => (
         display: flex;
         gap: 2rem;
         justify-self: center;
-        width: 60vw;
+        width: 85vw;
         height: 100%;
         margin: 4rem auto;
+        overflow: auto;
       }
       @media (max-width: 500px) {
         .container {
