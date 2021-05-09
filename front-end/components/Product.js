@@ -14,8 +14,8 @@ const Product = ({ product }) => {
           {product.images.length && (
             <Image
               src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + currentImage.url}
-              width={1700}
-              height={2550}
+              width={1400}
+              height={1900}
             />
           )}
         </div>
@@ -26,8 +26,8 @@ const Product = ({ product }) => {
                 setCurrentImage(image);
               }}
               src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + image.url}
-              width={450}
-              height={600}
+              width={300}
+              height={400}
             />
           ))}
         </div>
@@ -62,10 +62,6 @@ const Product = ({ product }) => {
         .info {
           display: flex;
           flex-direction: column;
-          align-self: flex-start;
-          position: -webkit-sticky;
-          position: sticky;
-          top: 0;
           gap: 2rem;
           width: 100%;
         }
