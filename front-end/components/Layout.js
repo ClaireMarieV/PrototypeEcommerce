@@ -107,13 +107,7 @@ const Layout = ({ children }) => (
           font-size: 1.2rem;
           margin-bottom: 0.5em;
         }
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-          font-family: komet, sans-serif;
-        }
+
         p {
           padding: 2em;
           text-align: justify;
