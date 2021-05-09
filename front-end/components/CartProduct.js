@@ -72,6 +72,14 @@ const CartProduct = ({ products }) => {
               height: 100%;
               object-fit: cover;
             }
+            .quantity {
+              display: flex;
+              justify-content: center;
+              border: 1px solid grey;
+              height: 1rem;
+              width: 1em;
+              padding: 1rem;
+            }
             .price {
               font-weight: 700;
             }

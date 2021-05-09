@@ -32,7 +32,9 @@ export const useStore = create(
         const productIndex = cart.products.findIndex(
           (product) => product.id === productId
         );
-        const filteredProducts = cart.products.splice(productIndex, 1);
+        const filteredProducts = cart.products.filter(
+          (_, index) => index !== productIndex
+        );
         set({
           cart: { ...get().cart, products: filteredProducts },
         });
