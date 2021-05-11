@@ -49,7 +49,7 @@ const Layout = ({ children }) => (
         }
         main {
           width: 90vw;
-          margin: 8rem auto 8rem auto;
+          margin: 5rem auto;
         }
         html,
         body {
@@ -67,7 +67,7 @@ const Layout = ({ children }) => (
           overflow-x: hidden;
           overflow-y: auto;
           perspective: 1px;
-          background-color: #f6f5f9;
+          background-color: #fbfbfb;
           font-size: 1rem;
         }
         ::-webkit-scrollbar {
@@ -134,17 +134,22 @@ const Layout = ({ children }) => (
         label {
           display: flex;
           flex-direction: column;
-          align-items: center;
         }
         input {
           border: none;
           border-bottom: 1.5px solid;
           margin-top: 0.5rem;
-          background-color: #f6f5f9;
+          padding: 0.2rem;
+          background-color: #f1f1f1;
         }
         input[type="email"],
         input[type="password"] {
           background: transparent;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
         }
       `}
     </style>
