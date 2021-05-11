@@ -48,6 +48,7 @@ const Filter = ({ categorySlug }) => {
           list-style: none;
           text-transform: capitalize;
           padding: 1rem;
+          justify-self: center;
         }
         ul > li a.focus {
           font-weight: 600;
