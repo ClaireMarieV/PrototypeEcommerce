@@ -1,16 +1,13 @@
-const TwoColumns = ({ children }) => (
+const HorizontalFocus = ({ children }) => (
   <div className="container-focus">
-    <img src="" />
+    {children}
     <style jsx>{`
-      .container {
+      .container-focus {
         display: grid;
-        grid-template-rows: 1fr;
-        gap: 2rem;
-        justify-self: center;
-        margin: 4rem auto;
+        grid-template-columns: repeat(12, 1fr);
       }
       @media (max-width: 500px) {
-        .container {
+        .container-focus {
           width: 100%;
         }
       }
@@ -18,4 +15,4 @@ const TwoColumns = ({ children }) => (
   </div>
 );
 
-export default TwoColumns;
+export default HorizontalFocus;
