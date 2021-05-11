@@ -34,27 +34,34 @@ const CartProduct = ({ products }) => {
               )}
             </a>
           </Link>
-          <div className="label">
-            <span>{product.label}</span>
-            <span>{product.prix}€</span>
-            <span onClick={() => removeProductFromCart(product.id)}>
-              Supprimer
-            </span>
-          </div>
+          <section>
+            <div className="label">
+              <span>{product.label}</span>
+              <span onClick={() => removeProductFromCart(product.id)}>
+                Supprimer
+              </span>
+            </div>
+            <div className="info-price">
+              <span>Ref.{product.ref}</span>
+              <span>{product.prix}€</span>
+              <span>{product.quantity}</span>
 
-          <div className="quantity">
-            <span>{product.quantity}</span>
-          </div>
-          <div className="price">
-            <span>{product.prix * product.quantity}</span>
-          </div>
+              <div className="price">
+                <span>{product.prix * product.quantity}</span>
+              </div>
+            </div>
+          </section>
           <style jsx>{`
             .one-product {
               display: grid;
-              grid-template-columns: auto auto auto auto;
-              align-self: center;
-              justify-items: center;
-              gap: 8rem;
+              grid-template-columns: auto 1fr;
+              gap: 2rem;
+            }
+            section {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
             }
             img {
               object-fit: contain;
@@ -62,8 +69,15 @@ const CartProduct = ({ products }) => {
 
             .label {
               display: flex;
-              flex-direction: column;
               gap: 0.5rem;
+              width: 100%;
+              justify-content: space-between;
+              border-bottom: 1px solid grey;
+              padding: 0.5rem;
+            }
+            .label span:nth-child(1) {
+              text-transform: uppercase;
+              font-weight: 600;
             }
             img {
               max-height: 20rem;
@@ -72,14 +86,19 @@ const CartProduct = ({ products }) => {
               height: 100%;
               object-fit: cover;
             }
-            .quantity {
+            .info-price {
               display: flex;
-              justify-content: center;
-              border: 1px solid grey;
-              height: 1rem;
-              width: 1em;
-              padding: 1rem;
+              display: flex;
+              justify-content: space-between;
             }
+            // .quantity {
+            //   display: flex;
+            //   justify-content: center;
+            //   border: 1px solid grey;
+            //   height: 1rem;
+            //   width: 1em;
+            //   padding: 1rem;
+            // }
             .price {
               font-weight: 700;
             }
