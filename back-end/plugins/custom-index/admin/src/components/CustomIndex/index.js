@@ -88,7 +88,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="claire-container">
       <button onClick={addRow}>Ajouter une rangée</button>
       <ul>
         {rows.map((row, rowIndex) => (
@@ -115,54 +115,91 @@ const App = () => {
                 4
               </button>
             </div>
-            <ul>
-              {range(row.columns).map((_, columnIndex) => (
-                <li>
-                  {row.elements.find(
-                    (element) => element.column === columnIndex
-                  ) && (
-                    <Element
-                      element={row.elements.find(
-                        (element) => element.column === columnIndex
-                      )}
-                      maxColumnCount={maxColumnCountForElement(
-                        columnIndex,
-                        row.columns,
-                        row.elements
-                      )}
-                      onColumnCountChange={(count) => {
-                        dispatch({
-                          type: "changeElementColumnCount",
-                          payload: {
-                            count: count,
-                            rowIndex: rowIndex,
-                            columnIndex: columnIndex,
-                          },
-                        });
-                      }}
-                    />
-                  )}
-                  {!columnOccupied(row.elements, columnIndex) && (
-                    <button
-                      onClick={() => {
-                        dispatch({
-                          type: "addElementToRow",
-                          payload: {
-                            rowIndex: rowIndex,
-                            columnIndex: columnIndex,
-                          },
-                        });
-                      }}
-                    >
-                      +
-                    </button>
-                  )}
-                </li>
-              ))}
+            <ul style={{ gridTemplateColumns: `repeat(${row.columns}, 1fr)` }}>
+              {range(row.columns)
+                .map((_, columnIndex) => {
+                  if (
+                    row.elements.find(
+                      (element) => element.column === columnIndex
+                    )
+                  ) {
+                    return (
+                      <Element
+                        element={row.elements.find(
+                          (element) => element.column === columnIndex
+                        )}
+                        maxColumnCount={maxColumnCountForElement(
+                          columnIndex,
+                          row.columns,
+                          row.elements
+                        )}
+                        onColumnCountChange={(count) => {
+                          dispatch({
+                            type: "changeElementColumnCount",
+                            payload: {
+                              count: count,
+                              rowIndex: rowIndex,
+                              columnIndex: columnIndex,
+                            },
+                          });
+                        }}
+                      />
+                    );
+                  }
+                  if (!columnOccupied(row.elements, columnIndex)) {
+                    return (
+                      <li>
+                        <button
+                          onClick={() => {
+                            dispatch({
+                              type: "addElementToRow",
+                              payload: {
+                                rowIndex: rowIndex,
+                                columnIndex: columnIndex,
+                              },
+                            });
+                          }}
+                        >
+                          +
+                        </button>
+                      </li>
+                    );
+                  }
+                })
+                .filter((node) => node)}
             </ul>
           </li>
         ))}
       </ul>
+      <style jsx>{`
+        .claire-container {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 3rem;
+        }
+        ul {
+          padding: 0;
+        }
+        ul > li > ul {
+          display: grid;
+          list-style: none;
+          justify-content: space-evenly;
+          flex-grow: 1;
+        }
+        ul > li > ul > li {
+          padding: 2rem;
+          border: 1px solid grey;
+          border-radius: 5px;
+        }
+        ul > li {
+          display: flex;
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      `}</style>
     </div>
   );
 };

@@ -7,7 +7,11 @@ const elementToComponent = (element) => {
   }
 };
 const Element = ({ element, maxColumnCount, onColumnCountChange }) => (
-  <div>
+  <li
+    style={{
+      gridColumn: `${element.column + 1} / span ${element.columnsCount}`,
+    }}
+  >
     <select>
       <option></option>
     </select>
@@ -21,6 +25,6 @@ const Element = ({ element, maxColumnCount, onColumnCountChange }) => (
       }}
     />
     {elementToComponent(element)}
-  </div>
+  </li>
 );
 export default Element;

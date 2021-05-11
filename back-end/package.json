@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "slugify": "^1.5.0",
     "strapi": "3.5.4",
     "strapi-admin": "3.5.4",
@@ -19,6 +20,7 @@
     "strapi-plugin-email": "3.5.4",
     "strapi-plugin-upload": "3.5.4",
     "strapi-plugin-users-permissions": "3.5.4",
+    "strapi-provider-email-mailtrap": "^3.5.0",
     "strapi-utils": "3.5.4"
   },
   "author": {
