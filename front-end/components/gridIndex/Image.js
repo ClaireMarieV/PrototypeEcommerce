@@ -13,7 +13,7 @@ const Image3 = ({ src }) => (
         width: 100%;
       }
       img {
-        object-fit: contain;
+        object-fit: contain !important;
       }
     `}</style>
   </div>
@@ -33,7 +33,7 @@ const Image4 = ({ src }) => (
         width: 100%;
       }
       img {
-        object-fit: contain;
+        object-fit: contain !important;
       }
     `}</style>
   </div>
@@ -53,7 +53,7 @@ const Image6 = ({ src }) => (
         width: 100%;
       }
       img {
-        object-fit: contain;
+        object-fit: contain !important;
       }
     `}</style>
   </div>
@@ -73,7 +73,7 @@ const Image9 = ({ src }) => (
         width: 100%;
       }
       img {
-        object-fit: contain;
+        object-fit: contain !important;
       }
     `}</style>
   </div>
@@ -94,7 +94,7 @@ const Image12 = ({ src }) => (
         width: 100%;
       }
       img {
-        object-fit: contain;
+        object-fit: contain !important;
       }
     `}</style>
   </div>

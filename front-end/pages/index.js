@@ -14,12 +14,14 @@ import {
   Image9,
   Image12,
 } from "../components/gridIndex/Image";
+import { Category3 } from "../components/gridIndex/Category";
 
 const IndexPage = () => (
   <Layout>
     <HorizontalFocus>
       <Text12 text="New collection" />
-      <Image9 src="/svg/bauhaus.svg" />
+      <Image12 src="/svg/horizontalBauhaus.svg" />
+      <Category3 category={{ name: "Robe" }} />
     </HorizontalFocus>
     <style jsx>{``}</style>
   </Layout>

@@ -3,7 +3,7 @@ const Text3 = ({ text }) => (
     <span>{text}</span>
     <button>Découvrir</button>
 
-    <style jsx global>{`
+    <style jsx>{`
       .container-text-3 {
         grid-column: 1 / 4;
         justify-self: center;
@@ -26,7 +26,7 @@ const Text4 = ({ text }) => (
   <div className="container-text-4">
     <span>{text}</span>
     <button>Découvrir</button>
-    <style jsx global>{`
+    <style jsx>{`
       .container-text-4 {
         grid-column: 1 / 5;
         justify-self: center;
@@ -50,7 +50,7 @@ const Text6 = ({ text }) => (
     <span>{text}</span>
     <button>Découvrir</button>
 
-    <style jsx global>{`
+    <style jsx>{`
       .container-text-6 {
         grid-column: 1 / 7;
         justify-self: center;
@@ -73,19 +73,19 @@ const Text9 = ({ text }) => (
   <div className="container-text-9">
     <span>{text}</span>
     <button>Découvrir</button>
-    <style jsx global>{`
+    <style jsx>{`
       .container-text-9 {
-        grid-column: auto / 10;
+        grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 2rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 2rem;
         border-bottom: 2px solid;
         width: 100%;
-        align-items: center;
       }
     `}</style>
   </div>
@@ -97,7 +97,7 @@ const Text12 = ({ text }) => (
     <span>{text}</span>
     <button>Découvrir</button>
 
-    <style jsx global>{`
+    <style jsx>{`
       .container-text-12 {
         grid-column: 1 / 13;
         justify-self: center;
@@ -106,10 +106,10 @@ const Text12 = ({ text }) => (
         padding: 2rem;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 2rem;
         border-bottom: 2px solid;
         width: 100%;
-        align-items: center;
       }
     `}</style>
   </div>
