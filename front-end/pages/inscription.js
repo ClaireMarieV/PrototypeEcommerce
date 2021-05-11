@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import TwoColumns from "../components/TwoColumns";
+import TwoColumnsAlign from "../components/TwoColumnsAlign";
 const InscriptionPage = () => {
   const [lastname, setLastname] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -36,77 +36,92 @@ const InscriptionPage = () => {
 
   return (
     <Layout>
-      <TwoColumns>
+      <TwoColumnsAlign>
+        <img src="/svg/bauhaus.svg" />
         <section>
           <h2>informations personnelles</h2>
           <section className="form">
-            <input
-              required
-              type="text"
-              placeholder="Nom"
-              value={lastname}
-              onChange={(event) => setLastname(event.target.value)}
-            />
-            <input
-              required
-              type="text"
-              placeholder="Prénom"
-              value={firstname}
-              onChange={(event) => setFirstname(event.target.value)}
-            />
-            <input
-              required
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(event) => setEmail(event.target.value)}
-            />
-            <input
-              required
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-            <input
-              required
-              type="text"
-              placeholder="Adresse"
-              value={adress}
-              onChange={(event) => setAdress(event.target.value)}
-            />
-            <input
-              required
-              type="text"
-              placeholder="Code postal"
-              value={postal}
-              onChange={(event) => setPostal(event.target.value)}
-            />
-            <input
-              required
-              type="text"
-              placeholder="Ville"
-              value={town}
-              onChange={(event) => setTown(event.target.value)}
-            />
-            <input
-              required
-              type="text"
-              placeholder="Téléphone"
-              value={number}
-              onChange={(event) => setNumber(event.target.value)}
-            />
+            <label>
+              Nom
+              <input
+                required
+                type="text"
+                value={lastname}
+                onChange={(event) => setLastname(event.target.value)}
+              />
+            </label>
+            <label>
+              Prénom
+              <input
+                required
+                type="text"
+                value={firstname}
+                onChange={(event) => setFirstname(event.target.value)}
+              />
+            </label>
+            <label>
+              Email
+              <input
+                required
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </label>
+            <label>
+              Password
+              <input
+                required
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </label>
+            <label>
+              Adresse
+              <input
+                required
+                type="text"
+                value={adress}
+                onChange={(event) => setAdress(event.target.value)}
+              />
+            </label>
+            <label>
+              Code postal
+              <input
+                required
+                type="text"
+                value={postal}
+                onChange={(event) => setPostal(event.target.value)}
+              />
+            </label>
+            <label>
+              Ville
+              <input
+                required
+                type="text"
+                value={town}
+                onChange={(event) => setTown(event.target.value)}
+              />
+            </label>
+            <label>
+              Numero de telephone
+              <input
+                required
+                type="text"
+                value={number}
+                onChange={(event) => setNumber(event.target.value)}
+              />
+            </label>
+            <div className="button">
+              <button onClick={register}>Bienvenue</button>
+            </div>
           </section>
-          <div className="button">
-            <button onClick={register}>Bienvenue</button>
-          </div>
         </section>
-        <img src="/svg/bauhaus.svg" />
-      </TwoColumns>
+      </TwoColumnsAlign>
       <style jsx>{`
         display: flex;
         flex-direction: column;
-        align-items: center;
         margin: 0.5rem;
 
         h2 {
