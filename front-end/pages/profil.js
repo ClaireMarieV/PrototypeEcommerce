@@ -32,55 +32,71 @@ const ProfilPage = () => {
     <Layout>
       <OneColumn>
         <h2>Bienvenue sur votre profil</h2>
-        <div className="form">
-          <input
-            type="text"
-            placeholder="Nom"
-            value={lastname}
-            onChange={(event) => setLastname(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Prénom"
-            value={firstname}
-            onChange={(event) => setFirstname(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Adresse"
-            value={address}
-            onChange={(event) => setAddress(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Ville"
-            value={town}
-            onChange={(event) => setTown(event.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Code postal"
-            value={postal}
-            onChange={(event) => setPostal(event.target.value)}
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Mot de passe"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-          <input
-            type="phone"
-            placeholder="Numéro de téléphone"
-            value={number}
-            onChange={(event) => setNumber(event.target.value)}
-          />
+        <section className="form">
+          <label>
+            Nom
+            <input
+              type="text"
+              value={lastname}
+              onChange={(event) => setLastname(event.target.value)}
+            />
+          </label>
+          <label>
+            Prénom
+            <input
+              type="text"
+              value={firstname}
+              onChange={(event) => setFirstname(event.target.value)}
+            />
+          </label>
+          <label>
+            Adresse
+            <input
+              type="text"
+              value={address}
+              onChange={(event) => setAddress(event.target.value)}
+            />
+          </label>
+          <label>
+            Ville
+            <input
+              type="text"
+              value={town}
+              onChange={(event) => setTown(event.target.value)}
+            />
+          </label>
+          <label>
+            Code postal
+            <input
+              type="text"
+              value={postal}
+              onChange={(event) => setPostal(event.target.value)}
+            />
+          </label>
+          <label>
+            Email
+            <input
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+          </label>
+          <label>
+            Mot de passe
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </label>
+          <label>
+            Numéro de telephone
+            <input
+              type="phone"
+              value={number}
+              onChange={(event) => setNumber(event.target.value)}
+            />
+          </label>
           <button
             onClick={() =>
               updateUser({
@@ -96,7 +112,7 @@ const ProfilPage = () => {
           >
             EDIT INFORMATIONS
           </button>
-        </div>
+        </section>
       </OneColumn>
       <style jsx>{`
         .form {
@@ -105,11 +121,6 @@ const ProfilPage = () => {
           grid-gap: 2rem;
           width: 60vw;
           margin: auto;
-        }
-        .div {
-          flex-direction: column;
-          display: flex;
-          width: 18rem;
         }
       `}</style>
     </Layout>
