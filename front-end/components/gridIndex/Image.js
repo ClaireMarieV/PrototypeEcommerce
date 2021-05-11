@@ -1,67 +1,86 @@
 import Image from "next/image";
 
-const Image3 = ({ image }) => (
+const Image3 = ({ src }) => (
   <div className="container-image-3">
-    <Image src="" width="1200" height="1800" />
+    <img src={src} width="500" height="500" />
     <style jsx global>{`
       .container-image-3 {
         grid-column: 1 / 4;
-        grid-row: 1 / 4;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 1rem;
+        width: 100%;
       }
     `}</style>
   </div>
 );
 export { Image3 };
 
-const Image4 = ({ text }) => (
+const Image4 = ({ src }) => (
   <div className="container-image-4">
-    <Image src="" width="1200" height="1800" />
+    <img src={src} width="500" height="500" />
     <style jsx global>{`
       .container-image-4 {
         grid-column: 1 / 5;
-        grid-row: 1 / 6;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 1rem;
+        width: 100%;
       }
     `}</style>
   </div>
 );
 export { Image4 };
 
-const Image6 = ({ text }) => (
+const Image6 = ({ src }) => (
   <div className="container-image-6">
-    <Image src="" width="1200" height="1800" />
+    <img src={src} width="500" height="500" />
     <style jsx global>{`
       .container-image-6 {
         grid-column: 1 / 7;
-        grid-row: 1 / 6;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 1rem;
+        width: 100%;
       }
     `}</style>
   </div>
 );
 export { Image6 };
 
-const Image12 = ({ text }) => (
-  <div className="container-image-12">
-    <Image src="" width="1200" height="1800" />
+const Image9 = ({ src }) => (
+  <div className="container-image-6">
+    <img src={src} width="500" height="500" />
     <style jsx global>{`
-      .container-image-12 {
-        grid-column: 1 / 13;
-        grid-row: 1 / 6;
+      .container-image-6 {
+        grid-column: 1 /10;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 1rem;
+        width: 100%;
+      }
+    `}</style>
+  </div>
+);
+export { Image9 };
+
+const Image12 = ({ src }) => (
+  <div className="container-image-12">
+    <img src={src} width="500" height="500" />
+    <style jsx global>{`
+      .container-image-12 {
+        grid-column: 1 / 13;
+        grid-row: 2 / 3;
+
+        justify-self: center;
+        margin: 2rem auto;
+        font-size: 2rem;
+        padding: 1rem;
+        width: 100%;
       }
     `}</style>
   </div>

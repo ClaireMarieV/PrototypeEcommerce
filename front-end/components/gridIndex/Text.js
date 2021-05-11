@@ -6,7 +6,6 @@ const Text3 = ({ text }) => (
     <style jsx global>{`
       .container-text-3 {
         grid-column: 1 / 4;
-        grid-row: auto / 4;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -54,7 +53,6 @@ const Text6 = ({ text }) => (
     <style jsx global>{`
       .container-text-6 {
         grid-column: 1 / 7;
-        grid-row: auto / 6;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -77,7 +75,7 @@ const Text9 = ({ text }) => (
     <button>Découvrir</button>
     <style jsx global>{`
       .container-text-9 {
-        grid-column: 1 / 10;
+        grid-column: auto / 10;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -102,7 +100,6 @@ const Text12 = ({ text }) => (
     <style jsx global>{`
       .container-text-12 {
         grid-column: 1 / 13;
-        grid-row: auto / 6;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
