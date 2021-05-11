@@ -12,6 +12,9 @@ const Image3 = ({ src }) => (
         padding: 1rem;
         width: 100%;
       }
+      img {
+        object-fit: contain;
+      }
     `}</style>
   </div>
 );
@@ -28,6 +31,9 @@ const Image4 = ({ src }) => (
         font-size: 2rem;
         padding: 1rem;
         width: 100%;
+      }
+      img {
+        object-fit: contain;
       }
     `}</style>
   </div>
@@ -46,22 +52,28 @@ const Image6 = ({ src }) => (
         padding: 1rem;
         width: 100%;
       }
+      img {
+        object-fit: contain;
+      }
     `}</style>
   </div>
 );
 export { Image6 };
 
 const Image9 = ({ src }) => (
-  <div className="container-image-6">
-    <img src={src} width="500" height="500" />
+  <div className="container-image-9">
+    <img src={src} width="800" height="500" />
     <style jsx global>{`
-      .container-image-6 {
+      .container-image-9 {
         grid-column: 1 /10;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 1rem;
         width: 100%;
+      }
+      img {
+        object-fit: contain;
       }
     `}</style>
   </div>
@@ -70,17 +82,19 @@ export { Image9 };
 
 const Image12 = ({ src }) => (
   <div className="container-image-12">
-    <img src={src} width="500" height="500" />
+    <img src={src} width="1400" height="500" />
     <style jsx global>{`
       .container-image-12 {
         grid-column: 1 / 13;
         grid-row: 2 / 3;
-
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 1rem;
         width: 100%;
+      }
+      img {
+        object-fit: contain;
       }
     `}</style>
   </div>
