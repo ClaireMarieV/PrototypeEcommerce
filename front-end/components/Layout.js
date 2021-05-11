@@ -140,7 +140,7 @@ const Layout = ({ children }) => (
           border-bottom: 1.5px solid;
           margin-top: 0.5rem;
           padding: 0.2rem;
-          background-color: #f1f1f1;
+          background-color: #fbfbfb;
         }
         input[type="email"],
         input[type="password"] {
