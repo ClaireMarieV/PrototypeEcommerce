@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 const Product3 = ({ product }) => (
   <section className="container-product-3">
     <span>{product.name}</span>
