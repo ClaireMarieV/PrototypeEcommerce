@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-const Category3 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Product3 = ({ product }) => (
+  <section className="container-product-3">
+    <span>{product.name}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
+      .container-product-3 {
         grid-column: 1 / 4;
         justify-self: center;
         margin: 2rem auto;
@@ -22,14 +22,14 @@ const Category3 = ({ category }) => (
   </section>
 );
 
-export { Category3 };
+export { Product3 };
 
-const Category4 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Product4 = ({ product }) => (
+  <section className="container-product-4">
+    <span>{product.name}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
+      .container-product-4 {
         grid-column: 1 / 5;
         justify-self: center;
         margin: 2rem auto;
@@ -46,14 +46,14 @@ const Category4 = ({ category }) => (
   </section>
 );
 
-export { Category4 };
+export { Product4 };
 
-const Category6 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Product6 = ({ product }) => (
+  <section className="container-product-6">
+    <span>{product.name}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
+      .container-product-6 {
         grid-column: 1 / 7;
         justify-self: center;
         margin: 2rem auto;
@@ -69,14 +69,14 @@ const Category6 = ({ category }) => (
     `}</style>
   </section>
 );
-export { Category6 };
+export { Product6 };
 
-const Category9 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Product9 = ({ product }) => (
+  <section className="container-product-9">
+    <span>{product.name}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
+      .container-product-9 {
         grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
@@ -92,14 +92,14 @@ const Category9 = ({ category }) => (
     `}</style>
   </section>
 );
-export { Category9 };
+export { Product9 };
 
-const Category12 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Product12 = ({ product }) => (
+  <section className="container-product-12">
+    <span>{product.name}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
+      .container-product-12 {
         grid-column: 1 / 13;
         justify-self: center;
         margin: 2rem auto;
@@ -116,4 +116,4 @@ const Category12 = ({ category }) => (
   </section>
 );
 
-export { Category12 };
+export { Product12 };

@@ -21,6 +21,13 @@ import {
   Category9,
   Category12,
 } from "../components/gridIndex/Category";
+import {
+  Product3,
+  Product4,
+  Product6,
+  Product9,
+  Product12,
+} from "../components/gridIndex/Product";
 
 const IndexPage = () => (
   <Layout>
@@ -28,6 +35,7 @@ const IndexPage = () => (
       <Text12 text="New collection" />
       <Image12 src="/svg/horizontalBauhaus.svg" />
       <Category3 category={{ name: "Robe" }} />
+      <Product6 product={{ name: "Dr.Martens" }} />
     </HorizontalFocus>
     <style jsx>{``}</style>
   </Layout>
