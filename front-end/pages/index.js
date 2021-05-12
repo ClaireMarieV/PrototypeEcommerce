@@ -14,7 +14,13 @@ import {
   Image9,
   Image12,
 } from "../components/gridIndex/Image";
-import { Category3 } from "../components/gridIndex/Category";
+import {
+  Category3,
+  Category4,
+  Category6,
+  Category9,
+  Category12,
+} from "../components/gridIndex/Category";
 
 const IndexPage = () => (
   <Layout>
