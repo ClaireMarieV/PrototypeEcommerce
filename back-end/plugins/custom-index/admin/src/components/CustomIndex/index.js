@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import Element from "../Element";
 
 function range(count) {
@@ -9,14 +9,14 @@ function range(count) {
   return array;
 }
 
-const maxColumnCountForElement = (elementIndex, columnCount, elements) => {
+const maxColumnSpanForElement = (elementIndex, columnSpan, elements) => {
   const nextElementIndex = elements.reduce((acc, element) => {
     if (element.column > elementIndex && element.column < acc) {
       return element.column;
     } else {
       return acc;
     }
-  }, columnCount);
+  }, columnSpan);
 
   return nextElementIndex - elementIndex;
 };
@@ -26,18 +26,20 @@ const columnOccupied = (elements, columnIndex) =>
     (acc, element) =>
       acc ||
       (element.column <= columnIndex &&
-        element.column + element.columnsCount > columnIndex),
+        element.column + element.columnSpan > columnIndex),
     false
   );
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "init":
+      return action.payload;
     case "addRow":
-      return state.concat({ columns: 3, elements: [] });
+      return state.concat({ columnCount: 3, elements: [] });
     case "changeColumnCount":
       return state.map((row, rowIndex) => {
         if (rowIndex === action.payload.rowIndex) {
-          return { ...row, columns: action.payload.count };
+          return { ...row, columnCount: action.payload.count };
         } else {
           return row;
         }
@@ -50,22 +52,39 @@ const reducer = (state, action) => {
             elements: row.elements.concat({
               type: "text",
               column: action.payload.columnIndex,
-              columnsCount: 1,
-              payload: "",
+              columnSpan: 1,
+              text: "",
             }),
           };
         } else {
           return row;
         }
       });
-    case "changeElementColumnCount":
+    case "changeElementColumnSpan":
       return state.map((row, rowIndex) => {
         if (rowIndex === action.payload.rowIndex) {
           return {
             ...row,
             elements: row.elements.map((element, elementIndex) => {
               if (elementIndex === action.payload.columnIndex) {
-                return { ...element, columnsCount: action.payload.count };
+                return { ...element, columnSpan: action.payload.count };
+              } else {
+                return element;
+              }
+            }),
+          };
+        } else {
+          return row;
+        }
+      });
+    case "changeElementType":
+      return state.map((row, rowIndex) => {
+        if (rowIndex === action.payload.rowIndex) {
+          return {
+            ...row,
+            elements: row.elements.map((element, elementIndex) => {
+              if (elementIndex === action.payload.columnIndex) {
+                return { ...element, type: action.payload.type };
               } else {
                 return element;
               }
@@ -82,41 +101,67 @@ const reducer = (state, action) => {
 
 const App = () => {
   const [rows, dispatch] = useReducer(reducer, []);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(
+    () =>
+      fetch("http://localhost:1337/custom-index/")
+        .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
+        .then((rows) => {
+          dispatch({ type: "init", payload: rows });
+          setLoading(false);
+        }),
+    []
+  );
 
   const addRow = () => {
     dispatch({ type: "addRow" });
   };
 
+  const saveStructure = () => {
+    fetch("http://localhost:1337/custom-index/", {
+      method: "POST",
+      body: JSON.stringify(rows),
+    });
+  };
+
   return (
     <div className="claire-container">
       <button onClick={addRow}>Ajouter une rangée</button>
+      <button onClick={saveStructure}>Sauvegarder</button>
+
       <ul>
         {rows.map((row, rowIndex) => (
           <li>
-            <div>
-              <button
-                onClick={() => {
-                  dispatch({
-                    type: "changeColumnCount",
-                    payload: { count: 3, rowIndex: rowIndex },
-                  });
-                }}
-              >
-                3
-              </button>
-              <button
-                onClick={() => {
-                  dispatch({
-                    type: "changeColumnCount",
-                    payload: { count: 4, rowIndex: rowIndex },
-                  });
-                }}
-              >
-                4
-              </button>
+            <div className="numbers">
+              <h3>nombre de colonnes</h3>
+              <div>
+                <button
+                  onClick={() => {
+                    dispatch({
+                      type: "changeColumnCount",
+                      payload: { count: 3, rowIndex: rowIndex },
+                    });
+                  }}
+                >
+                  3
+                </button>
+                <button
+                  onClick={() => {
+                    dispatch({
+                      type: "changeColumnCount",
+                      payload: { count: 4, rowIndex: rowIndex },
+                    });
+                  }}
+                >
+                  4
+                </button>
+              </div>
             </div>
-            <ul style={{ gridTemplateColumns: `repeat(${row.columns}, 1fr)` }}>
-              {range(row.columns)
+            <ul
+              style={{ gridTemplateColumns: `repeat(${row.columnCount}, 1fr)` }}
+            >
+              {range(row.columnCount)
                 .map((_, columnIndex) => {
                   if (
                     row.elements.find(
@@ -125,17 +170,27 @@ const App = () => {
                   ) {
                     return (
                       <Element
+                        onTypeChange={(type) => {
+                          dispatch({
+                            type: "changeElementType",
+                            payload: {
+                              type: type,
+                              rowIndex: rowIndex,
+                              columnIndex: columnIndex,
+                            },
+                          });
+                        }}
                         element={row.elements.find(
                           (element) => element.column === columnIndex
                         )}
-                        maxColumnCount={maxColumnCountForElement(
+                        maxColumnSpan={maxColumnSpanForElement(
                           columnIndex,
                           row.columns,
                           row.elements
                         )}
-                        onColumnCountChange={(count) => {
+                        onColumnSpanChange={(count) => {
                           dispatch({
-                            type: "changeElementColumnCount",
+                            type: "changeElementColumnSpan",
                             payload: {
                               count: count,
                               rowIndex: rowIndex,
@@ -175,7 +230,14 @@ const App = () => {
         .claire-container {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 3rem;
+          margin: 3rem auto 3rem auto;
+          padding: 2rem;
+          gap: 2rem;
+        }
+        .numbers {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
         ul {
           padding: 0;
@@ -190,9 +252,12 @@ const App = () => {
           padding: 2rem;
           border: 1px solid grey;
           border-radius: 5px;
+          display: flex;
+          flex-direction: column;
         }
         ul > li {
           display: flex;
+          gap: 2rem;
         }
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {

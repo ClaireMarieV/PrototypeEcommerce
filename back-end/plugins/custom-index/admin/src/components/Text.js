@@ -1,3 +1,9 @@
 import React from "react";
-const Text = ({ element }) => <div>{element.column}</div>;
+
+const Text = ({ element }) => (
+  <label>
+    Texte :
+    <input type="text" />
+  </label>
+);
 export default Text;
