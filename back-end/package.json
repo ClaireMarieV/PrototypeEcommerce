@@ -10,7 +10,6 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "slugify": "^1.5.0",
     "strapi": "3.5.4",
     "strapi-admin": "3.5.4",
