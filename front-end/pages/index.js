@@ -67,18 +67,48 @@ const IndexPage = () => {
                 `${element.type}${row.columnCount}${element.columnSpan}`
               ) {
                 case "text31":
-                  return <Text4 text={element.text} />;
+                  return (
+                    <Text4
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
                 case "text32":
-                  return <Text8 text={element.text} />;
+                  return (
+                    <Text8
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
                 case "text33":
                 case "text44":
-                  return <Text12 text={element.text} />;
+                  return (
+                    <Text12
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
                 case "text41":
-                  return <Text3 text={element.text} />;
+                  return (
+                    <Text3
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
                 case "text42":
-                  return <Text6 text={element.text} />;
+                  return (
+                    <Text6
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
                 case "text43":
-                  return <Text9 text={element.text} />;
+                  return (
+                    <Text9
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
               }
             })
           )}

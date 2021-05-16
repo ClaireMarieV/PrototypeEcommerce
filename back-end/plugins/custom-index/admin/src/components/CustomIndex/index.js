@@ -65,8 +65,8 @@ const reducer = (state, action) => {
         if (rowIndex === action.payload.rowIndex) {
           return {
             ...row,
-            elements: row.elements.map((element, elementIndex) => {
-              if (elementIndex === action.payload.columnIndex) {
+            elements: row.elements.map((element) => {
+              if (element.column === action.payload.columnIndex) {
                 return { ...element, columnSpan: action.payload.count };
               } else {
                 return element;
@@ -82,8 +82,8 @@ const reducer = (state, action) => {
         if (rowIndex === action.payload.rowIndex) {
           return {
             ...row,
-            elements: row.elements.map((element, elementIndex) => {
-              if (elementIndex === action.payload.columnIndex) {
+            elements: row.elements.map((element) => {
+              if (element.column === action.payload.columnIndex) {
                 return { ...element, type: action.payload.type };
               } else {
                 return element;
@@ -99,8 +99,8 @@ const reducer = (state, action) => {
         if (rowIndex === action.payload.rowIndex) {
           return {
             ...row,
-            elements: row.elements.map((element, elementIndex) => {
-              if (elementIndex === action.payload.columnIndex) {
+            elements: row.elements.map((element) => {
+              if (element.column === action.payload.columnIndex) {
                 return { ...element, text: action.payload.text };
               } else {
                 return element;
