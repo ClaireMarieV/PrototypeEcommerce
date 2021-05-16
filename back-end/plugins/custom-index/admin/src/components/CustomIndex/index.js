@@ -94,6 +94,23 @@ const reducer = (state, action) => {
           return row;
         }
       });
+    case "changeElementText":
+      return state.map((row, rowIndex) => {
+        if (rowIndex === action.payload.rowIndex) {
+          return {
+            ...row,
+            elements: row.elements.map((element, elementIndex) => {
+              if (elementIndex === action.payload.columnIndex) {
+                return { ...element, text: action.payload.text };
+              } else {
+                return element;
+              }
+            }),
+          };
+        } else {
+          return row;
+        }
+      });
     default:
       return state;
   }
@@ -198,6 +215,16 @@ const App = () => {
                             },
                           });
                         }}
+                        setElementText={(newText) =>
+                          dispatch({
+                            type: "changeElementText",
+                            payload: {
+                              text: newText,
+                              rowIndex: rowIndex,
+                              columnIndex: columnIndex,
+                            },
+                          })
+                        }
                       />
                     );
                   }

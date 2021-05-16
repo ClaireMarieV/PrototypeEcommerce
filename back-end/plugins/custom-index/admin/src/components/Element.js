@@ -2,10 +2,10 @@ import React from "react";
 import Text from "./Text";
 import Image from "./Image";
 
-const elementToComponent = (element) => {
+const elementToComponent = (element, { setElementText }) => {
   switch (element.type) {
     case "text":
-      return <Text element={element} />;
+      return <Text element={element} setElementText={setElementText} />;
     case "image":
       return <Image element={element} />;
   }
@@ -16,6 +16,7 @@ const Element = ({
   maxColumnSpan,
   onColumnSpanChange,
   onTypeChange,
+  setElementText,
 }) => (
   <li
     style={{
@@ -45,7 +46,7 @@ const Element = ({
         }}
       />
     </label>
-    {elementToComponent(element)}
+    {elementToComponent(element, { setElementText })}
     <style jsx>{`
       label {
         gap: 1rem;
