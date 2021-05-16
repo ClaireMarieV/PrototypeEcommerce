@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import sub from "date-fns/sub";
 import ProductList from "../components/ProductList";
 import Loading from "../components/Loading";
+import OneColumn from "../components/OneColumn";
 
 const NewProductsPage = () => {
   const [products, setProducts] = useState([]);
@@ -34,11 +35,14 @@ const NewProductsPage = () => {
       {error && <Error />}
       {loading && <Loading />}
       {!loading && !error && (
-        <ProductList
-          products={products.filter(
-            (product) => new Date(product.published_at) > oneMonthAgo
-          )}
-        />
+        <OneColumn>
+          <h2>New products</h2>
+          <ProductList
+            products={products.filter(
+              (product) => new Date(product.published_at) > oneMonthAgo
+            )}
+          />
+        </OneColumn>
       )}
     </Layout>
   );
