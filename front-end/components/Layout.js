@@ -48,7 +48,8 @@ const Layout = ({ children }) => (
           height: 100%;
         }
         main {
-          margin: 0 auto;
+          width: 90vw;
+          margin: 6rem auto;
         }
         html,
         body {
@@ -120,6 +121,7 @@ const Layout = ({ children }) => (
         img {
           object-fit: cover;
           overflow: hidden;
+          width: 100%;
         }
         button {
           border: none;
