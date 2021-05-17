@@ -2,15 +2,8 @@
   "kind": "collectionType",
   "collectionName": "index_elements",
   "info": {
-    "name": "index-element"
-  },
-  "pluginOptions": {
-    "content-manager": {
-      "visible": false
-    },
-    "content-type-builder": {
-      "visible": false
-    }
+    "name": "index-element",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false,
@@ -43,9 +36,12 @@
       "required": false
     },
     "index_row": {
-      "via": "index_elements",
+      "plugin": "custom-index",
       "model": "index-row",
-      "plugin": "custom-index"
+      "via": "index_elements"
+    },
+    "category": {
+      "model": "categorie"
     }
   }
 }

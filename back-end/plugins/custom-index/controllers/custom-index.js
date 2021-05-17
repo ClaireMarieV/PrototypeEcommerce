@@ -15,7 +15,20 @@ module.exports = {
 
   index: async (ctx) => {
     // Add your own logic here.
-    const rowEntities = await strapi.query("index-row", "custom-index").find();
+    const rowEntities = await strapi
+      .query("index-row", "custom-index")
+      .find({}, [
+        {
+          path: "index_elements",
+          populate: [
+            {
+              path: "category",
+              populate: [{ path: "produits" }],
+            },
+          ],
+        },
+      ]);
+
     return rowEntities
       .map((rowEntity) =>
         sanitizeEntity(rowEntity, {

@@ -213,8 +213,12 @@ const App = () => {
 
   return (
     <div className="claire-container">
-      <button onClick={addRow}>Ajouter une rangée</button>
-      <button onClick={saveStructure}>Sauvegarder</button>
+      <button className="button-claire" onClick={addRow}>
+        Ajouter une rangée
+      </button>
+      <button className="button-claire" onClick={saveStructure}>
+        Sauvegarder
+      </button>
 
       <ul>
         {rows.map((row, rowIndex) => (
@@ -298,7 +302,7 @@ const App = () => {
                           dispatch({
                             type: "changeElementImage",
                             payload: {
-                              text: newImage,
+                              image: newImage,
                               rowIndex: rowIndex,
                               columnIndex: columnIndex,
                             },
@@ -308,7 +312,7 @@ const App = () => {
                           dispatch({
                             type: "changeElementCategory",
                             payload: {
-                              text: newCategory,
+                              category: newCategory,
                               rowIndex: rowIndex,
                               columnIndex: columnIndex,
                             },
@@ -347,6 +351,7 @@ const App = () => {
         .claire-container {
           display: grid;
           grid-template-columns: 1fr;
+          justify-items: center;
           margin: 3rem auto 3rem auto;
           padding: 2rem;
           gap: 2rem;
@@ -356,8 +361,16 @@ const App = () => {
           flex-direction: column;
           align-items: center;
         }
+        .numbers > div {
+          display: flex;
+          gap: 2rem;
+        }
         ul {
           padding: 0;
+          gap: 2rem;
+        }
+        ul > li {
+          margin: 0.5rem;
         }
         ul > li > ul {
           display: grid;
@@ -367,10 +380,11 @@ const App = () => {
         }
         ul > li > ul > li {
           padding: 2rem;
-          border: 1px solid grey;
+          border: 1px solid #e4e4e4;
           border-radius: 5px;
           display: flex;
           flex-direction: column;
+          gap: 2rem;
         }
         ul > li {
           display: flex;
@@ -380,6 +394,20 @@ const App = () => {
         input[type="number"]::-webkit-outer-spin-button {
           -webkit-appearance: none;
           margin: 0;
+        }
+        .button-claire {
+          width: fit-content;
+          padding: 1rem;
+          background: #ced9e6;
+          border-radius: 30px;
+          box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25),
+            -2px -2px 3px 0 rgba(206, 217, 230, 0);
+          align-self: center;
+        }
+
+        .button-claire:hover {
+          box-shadow: 2px 2px 4px 0 rgba(206, 217, 230, 0.25) inset,
+            -2px -2px 3px 0 rgba(0, 0, 0, 0.15) inset;
         }
       `}</style>
     </div>

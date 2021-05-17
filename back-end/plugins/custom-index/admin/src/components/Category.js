@@ -4,9 +4,17 @@ const Category = ({ element, setElementCategory, categories }) => {
   return (
     <label>
       Categorie :
-      <select onChange={(event) => setElementCategory(event.target.value)}>
+      <select
+        value={
+          element.category ? element.category._id || element.category : null
+        }
+        onChange={(event) => setElementCategory(event.target.value)}
+      >
+        <option>Choisissez la catégorie</option>
         {categories.map((category) => (
-          <option key={category.key}>{category.label}</option>
+          <option value={category._id} key={category.key}>
+            {category.label}
+          </option>
         ))}
       </select>
     </label>
