@@ -111,6 +111,40 @@ const reducer = (state, action) => {
           return row;
         }
       });
+    case "changeElementImage":
+      return state.map((row, rowIndex) => {
+        if (rowIndex === action.payload.rowIndex) {
+          return {
+            ...row,
+            elements: row.elements.map((element) => {
+              if (element.column === action.payload.columnIndex) {
+                return { ...element, image: action.payload.image };
+              } else {
+                return element;
+              }
+            }),
+          };
+        } else {
+          return row;
+        }
+      });
+    case "changeElementCategory":
+      return state.map((row, rowIndex) => {
+        if (rowIndex === action.payload.rowIndex) {
+          return {
+            ...row,
+            elements: row.elements.map((element) => {
+              if (element.column === action.payload.columnIndex) {
+                return { ...element, category: action.payload.category };
+              } else {
+                return element;
+              }
+            }),
+          };
+        } else {
+          return row;
+        }
+      });
     default:
       return state;
   }
@@ -119,6 +153,11 @@ const reducer = (state, action) => {
 const App = () => {
   const [rows, dispatch] = useReducer(reducer, []);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [imagesLoading, setImagesLoading] = useState(true);
+  const [imagesError, setImagesError] = useState(false);
+  const [images, setImages] = useState(null);
+  const [categories, setCategories] = useState([]);
 
   useEffect(
     () =>
@@ -130,6 +169,36 @@ const App = () => {
         }),
     []
   );
+  useEffect(
+    () =>
+      fetch("http://localhost:1337/upload/files")
+        .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
+        .then((rows) => {
+          setImages({});
+          setImagesLoading(false);
+        })
+        .catch((error) => {
+          setError(error);
+          setImagesError(true);
+          setLoading(false);
+        }),
+    []
+  );
+
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    fetch("http://localhost:1337/categories/")
+      .then((response) => response.json())
+      .then((categories) => {
+        setCategories(categories);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
 
   const addRow = () => {
     dispatch({ type: "addRow" });
@@ -225,6 +294,27 @@ const App = () => {
                             },
                           })
                         }
+                        setElementImage={(newImage) =>
+                          dispatch({
+                            type: "changeElementImage",
+                            payload: {
+                              text: newImage,
+                              rowIndex: rowIndex,
+                              columnIndex: columnIndex,
+                            },
+                          })
+                        }
+                        setElementCategory={(newCategory) =>
+                          dispatch({
+                            type: "changeElementCategory",
+                            payload: {
+                              text: newCategory,
+                              rowIndex: rowIndex,
+                              columnIndex: columnIndex,
+                            },
+                          })
+                        }
+                        categories={categories}
                       />
                     );
                   }

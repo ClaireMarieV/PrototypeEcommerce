@@ -1,22 +1,38 @@
 import React from "react";
 import Text from "./Text";
 import Image from "./Image";
+import Category from "./Category";
 
-const elementToComponent = (element, { setElementText }) => {
+const elementToComponent = (
+  element,
+  { setElementText, setElementImage, setElementCategory },
+  { categories }
+) => {
   switch (element.type) {
     case "text":
       return <Text element={element} setElementText={setElementText} />;
     case "image":
-      return <Image element={element} />;
+      return <Image element={element} setElementImage={setElementImage} />;
+    case "category":
+      return (
+        <Category
+          element={element}
+          setElementCategory={setElementCategory}
+          categories={categories}
+        />
+      );
   }
 };
 
 const Element = ({
   element,
   maxColumnSpan,
+  categories,
   onColumnSpanChange,
   onTypeChange,
   setElementText,
+  setElementImage,
+  setElementCategory,
 }) => (
   <li
     style={{
@@ -46,7 +62,15 @@ const Element = ({
         }}
       />
     </label>
-    {elementToComponent(element, { setElementText })}
+    {elementToComponent(
+      element,
+      {
+        setElementText,
+        setElementImage,
+        setElementCategory,
+      },
+      { categories }
+    )}
     <style jsx>{`
       label {
         gap: 1rem;
