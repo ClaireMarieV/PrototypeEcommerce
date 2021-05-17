@@ -1,12 +1,18 @@
 import Link from "next/link";
 
-const Category3 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Category3 = ({ element, gridMultiplier }) => (
+  <section
+    className="container-category-3"
+    style={{
+      gridColumn: `${element.column * gridMultiplier + 1} / span ${
+        element.columnSpan * gridMultiplier
+      }`,
+    }}
+  >
+    <span>{element.category.label}</span>
     <button>Découvrir</button>
     <style jsx>{`
       .container-category-3 {
-        grid-column: 1 / 4;
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -14,7 +20,6 @@ const Category3 = ({ category }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }
@@ -24,13 +29,19 @@ const Category3 = ({ category }) => (
 
 export { Category3 };
 
-const Category4 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Category4 = ({ element, gridMultiplier }) => (
+  <section
+    className="container-category-4"
+    style={{
+      gridColumn: `${element.column * gridMultiplier + 1} / span ${
+        element.columnSpan * gridMultiplier
+      }`,
+    }}
+  >
+    <span>{element.category.label}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
-        grid-column: 1 / 5;
+      .container-category-4 {
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -38,7 +49,6 @@ const Category4 = ({ category }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }
@@ -48,13 +58,19 @@ const Category4 = ({ category }) => (
 
 export { Category4 };
 
-const Category6 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Category6 = ({ element, gridMultiplier }) => (
+  <section
+    className="container-category-6"
+    style={{
+      gridColumn: `${element.column * gridMultiplier + 1} / span ${
+        element.columnSpan * gridMultiplier
+      }`,
+    }}
+  >
+    <span>{element.category.label}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
-        grid-column: 1 / 7;
+      .container-category-6 {
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -62,7 +78,6 @@ const Category6 = ({ category }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }
@@ -71,13 +86,19 @@ const Category6 = ({ category }) => (
 );
 export { Category6 };
 
-const Category9 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Category8 = ({ element, gridMultiplier }) => (
+  <section
+    className="container-category-8"
+    style={{
+      gridColumn: `${element.column * gridMultiplier + 1} / span ${
+        element.columnSpan * gridMultiplier
+      }`,
+    }}
+  >
+    <span>{element.category.label}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
-        grid-column: 1 / 10;
+      .container-category-8 {
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -85,7 +106,34 @@ const Category9 = ({ category }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
+        width: 100%;
+        align-items: center;
+      }
+    `}</style>
+  </section>
+);
+export { Category8 };
+
+const Category9 = ({ element, gridMultiplier }) => (
+  <section
+    className="container-category-9"
+    style={{
+      gridColumn: `${element.column * gridMultiplier + 1} / span ${
+        element.columnSpan * gridMultiplier
+      }`,
+    }}
+  >
+    <span>{element.category.label}</span>
+    <button>Découvrir</button>
+    <style jsx>{`
+      .container-category-9 {
+        justify-self: center;
+        margin: 2rem auto;
+        font-size: 2rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         width: 100%;
         align-items: center;
       }
@@ -94,13 +142,19 @@ const Category9 = ({ category }) => (
 );
 export { Category9 };
 
-const Category12 = ({ category }) => (
-  <section className="container-category-3">
-    <span>{category.name}</span>
+const Category12 = ({ element, gridMultiplier }) => (
+  <section
+    className="container-category-12"
+    style={{
+      gridColumn: `${element.column * gridMultiplier + 1} / span ${
+        element.columnSpan * gridMultiplier
+      }`,
+    }}
+  >
+    <span>{element.category.label}</span>
     <button>Découvrir</button>
     <style jsx>{`
-      .container-category-3 {
-        grid-column: 1 / 13;
+      .container-category-12 {
         justify-self: center;
         margin: 2rem auto;
         font-size: 2rem;
@@ -108,7 +162,6 @@ const Category12 = ({ category }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }

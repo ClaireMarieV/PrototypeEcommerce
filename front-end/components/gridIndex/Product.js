@@ -12,7 +12,6 @@ const Product3 = ({ product }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }
@@ -36,7 +35,6 @@ const Product4 = ({ product }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }
@@ -60,7 +58,6 @@ const Product6 = ({ product }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }
@@ -83,7 +80,6 @@ const Product9 = ({ product }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }
@@ -106,7 +102,6 @@ const Product12 = ({ product }) => (
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        border-bottom: 2px solid;
         width: 100%;
         align-items: center;
       }

@@ -60,6 +60,26 @@ const Image6 = ({ src }) => (
 );
 export { Image6 };
 
+const Image8 = ({ src }) => (
+  <div className="container-image-8">
+    <img src={src} width="500" height="500" />
+    <style jsx global>{`
+      .container-image-8 {
+        grid-column: 1 / 7;
+        justify-self: center;
+        margin: 2rem auto;
+        font-size: 2rem;
+        padding: 1rem;
+        width: 100%;
+      }
+      img {
+        object-fit: contain !important;
+      }
+    `}</style>
+  </div>
+);
+export { Image8 };
+
 const Image9 = ({ src }) => (
   <div className="container-image-9">
     <img src={src} width="800" height="500" />

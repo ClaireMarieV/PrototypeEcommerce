@@ -21,6 +21,7 @@ const Filter = ({ categorySlug }) => {
         setLoading(false);
       });
   }, []);
+
   return (
     <ul>
       <li>
