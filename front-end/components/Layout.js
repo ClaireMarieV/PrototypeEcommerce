@@ -48,7 +48,7 @@ const Layout = ({ children }) => (
           height: 100%;
         }
         main {
-          width: 90vw;
+          width: 75vw;
           margin: 6rem auto;
         }
         html,
