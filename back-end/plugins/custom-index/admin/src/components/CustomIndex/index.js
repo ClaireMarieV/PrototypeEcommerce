@@ -380,15 +380,14 @@ const App = () => {
         .numbers h3 {
           font-weight: 400;
         }
-        .buttons > button:active:focus {
-          font-weight: 600;
-          color: ;
-        }
-        .list-rows {
+
+        .list-rows > button {
           margin: 2rem 0;
           font-weight: 600;
           font-size: 1.6rem;
+          padding: 0;
         }
+
         .list-rows > ul {
           padding: 0;
           gap: 3rem;
