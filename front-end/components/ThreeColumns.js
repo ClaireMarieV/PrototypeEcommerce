@@ -4,17 +4,16 @@ const Container = ({ children }) => (
     <style jsx>{`
       .container {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         justify-items: center;
         gap: 2rem;
-        height: 100%;
       }
-      @media (max-width: 1100px) {
+      @media (max-width: 1300px) {
         .container {
           grid-template-columns: repeat(2, 1fr);
         }
       }
-      @media (max-width: 500px) {
+      @media (max-width: 900px) {
         .container {
           grid-template-columns: 1fr;
         }
