@@ -57,11 +57,11 @@ const ProductsPage = () => {
       {loading && <Loading />}
       {!loading && !error && (
         <TwoColumns>
-          <Filter />
           <OneColumn>
             <ProductList products={produits} />
             <button onClick={loadProducts}>Load More</button>
           </OneColumn>
+          <Filter />
         </TwoColumns>
       )}
 
