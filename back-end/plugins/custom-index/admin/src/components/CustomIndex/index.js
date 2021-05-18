@@ -221,139 +221,144 @@ const App = () => {
       <button className="button-claire" onClick={addRow}>
         Ajouter une rangée
       </button>
-      <button onClick={removeRow}>Supprimer une rangée</button>
-
       <button className="button-claire" onClick={saveStructure}>
         Sauvegarder
       </button>
 
-      <ul>
-        {rows.map((row, rowIndex) => (
-          <li>
-            <div className="numbers">
-              <h3>nombre de colonnes</h3>
-              <div className="buttons">
-                <button
-                  onClick={() => {
-                    dispatch({
-                      type: "changeColumnCount",
-                      payload: { count: 3, rowIndex: rowIndex },
-                    });
-                  }}
-                >
-                  3
-                </button>
-                <button
-                  onClick={() => {
-                    dispatch({
-                      type: "changeColumnCount",
-                      payload: { count: 4, rowIndex: rowIndex },
-                    });
-                  }}
-                >
-                  4
-                </button>
+      <div className="list-rows">
+        <button className="button" onClick={removeRow}>
+          Supprimer une rangée
+        </button>
+        <ul>
+          {rows.map((row, rowIndex) => (
+            <li>
+              <div className="numbers">
+                <h3>nombre de colonnes</h3>
+                <div className="buttons">
+                  <button
+                    onClick={() => {
+                      dispatch({
+                        type: "changeColumnCount",
+                        payload: { count: 3, rowIndex: rowIndex },
+                      });
+                    }}
+                  >
+                    3
+                  </button>
+                  <button
+                    onClick={() => {
+                      dispatch({
+                        type: "changeColumnCount",
+                        payload: { count: 4, rowIndex: rowIndex },
+                      });
+                    }}
+                  >
+                    4
+                  </button>
+                </div>
               </div>
-            </div>
-            <ul
-              style={{ gridTemplateColumns: `repeat(${row.columnCount}, 1fr)` }}
-            >
-              {range(row.columnCount)
-                .map((_, columnIndex) => {
-                  if (
-                    row.elements.find(
-                      (element) => element.column === columnIndex
-                    )
-                  ) {
-                    return (
-                      <Element
-                        onTypeChange={(type) => {
-                          dispatch({
-                            type: "changeElementType",
-                            payload: {
-                              type: type,
-                              rowIndex: rowIndex,
-                              columnIndex: columnIndex,
-                            },
-                          });
-                        }}
-                        element={row.elements.find(
-                          (element) => element.column === columnIndex
-                        )}
-                        maxColumnSpan={maxColumnSpanForElement(
-                          columnIndex,
-                          row.columns,
-                          row.elements
-                        )}
-                        onColumnSpanChange={(count) => {
-                          dispatch({
-                            type: "changeElementColumnSpan",
-                            payload: {
-                              count: count,
-                              rowIndex: rowIndex,
-                              columnIndex: columnIndex,
-                            },
-                          });
-                        }}
-                        setElementText={(newText) =>
-                          dispatch({
-                            type: "changeElementText",
-                            payload: {
-                              text: newText,
-                              rowIndex: rowIndex,
-                              columnIndex: columnIndex,
-                            },
-                          })
-                        }
-                        setElementImage={(newImage) =>
-                          dispatch({
-                            type: "changeElementImage",
-                            payload: {
-                              image: newImage,
-                              rowIndex: rowIndex,
-                              columnIndex: columnIndex,
-                            },
-                          })
-                        }
-                        setElementCategory={(newCategory) =>
-                          dispatch({
-                            type: "changeElementCategory",
-                            payload: {
-                              category: newCategory,
-                              rowIndex: rowIndex,
-                              columnIndex: columnIndex,
-                            },
-                          })
-                        }
-                        categories={categories}
-                      />
-                    );
-                  }
-                  if (!columnOccupied(row.elements, columnIndex)) {
-                    return (
-                      <li>
-                        <button
-                          onClick={() => {
+              <ul
+                style={{
+                  gridTemplateColumns: `repeat(${row.columnCount}, 1fr)`,
+                }}
+              >
+                {range(row.columnCount)
+                  .map((_, columnIndex) => {
+                    if (
+                      row.elements.find(
+                        (element) => element.column === columnIndex
+                      )
+                    ) {
+                      return (
+                        <Element
+                          onTypeChange={(type) => {
                             dispatch({
-                              type: "addElementToRow",
+                              type: "changeElementType",
                               payload: {
+                                type: type,
                                 rowIndex: rowIndex,
                                 columnIndex: columnIndex,
                               },
                             });
                           }}
-                        >
-                          +
-                        </button>
-                      </li>
-                    );
-                  }
-                })
-                .filter((node) => node)}
-            </ul>
-          </li>
-        ))}
-      </ul>
+                          element={row.elements.find(
+                            (element) => element.column === columnIndex
+                          )}
+                          maxColumnSpan={maxColumnSpanForElement(
+                            columnIndex,
+                            row.columnCount,
+                            row.elements
+                          )}
+                          onColumnSpanChange={(count) => {
+                            dispatch({
+                              type: "changeElementColumnSpan",
+                              payload: {
+                                count: count,
+                                rowIndex: rowIndex,
+                                columnIndex: columnIndex,
+                              },
+                            });
+                          }}
+                          setElementText={(newText) =>
+                            dispatch({
+                              type: "changeElementText",
+                              payload: {
+                                text: newText,
+                                rowIndex: rowIndex,
+                                columnIndex: columnIndex,
+                              },
+                            })
+                          }
+                          setElementImage={(newImage) =>
+                            dispatch({
+                              type: "changeElementImage",
+                              payload: {
+                                image: newImage,
+                                rowIndex: rowIndex,
+                                columnIndex: columnIndex,
+                              },
+                            })
+                          }
+                          setElementCategory={(newCategory) =>
+                            dispatch({
+                              type: "changeElementCategory",
+                              payload: {
+                                category: newCategory,
+                                rowIndex: rowIndex,
+                                columnIndex: columnIndex,
+                              },
+                            })
+                          }
+                          categories={categories}
+                        />
+                      );
+                    }
+                    if (!columnOccupied(row.elements, columnIndex)) {
+                      return (
+                        <li>
+                          <button
+                            onClick={() => {
+                              dispatch({
+                                type: "addElementToRow",
+                                payload: {
+                                  rowIndex: rowIndex,
+                                  columnIndex: columnIndex,
+                                },
+                              });
+                            }}
+                          >
+                            +
+                          </button>
+                        </li>
+                      );
+                    }
+                  })
+                  .filter((node) => node)}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
       <style jsx>{`
         .claire-container {
           display: grid;
@@ -379,36 +384,48 @@ const App = () => {
           font-weight: 600;
           color: ;
         }
-        ul {
+        .list-rows {
+          margin: 2rem 0;
+          font-weight: 600;
+          font-size: 1.6rem;
+        }
+        .list-rows > ul {
           padding: 0;
-          gap: 2rem;
+          gap: 3rem;
+          display: flex;
+          flex-direction: column;
         }
-        ul > li {
-          margin: 0.5rem;
+        .list-rows > ul > li {
+          gap: 3rem;
         }
-        ul > li > ul {
+        .list-rows > ul > li > ul {
           display: grid;
           list-style: none;
           justify-content: space-evenly;
           flex-grow: 1;
+          gap: 1rem;
         }
-        ul > li > ul > li {
+        .list-rows > ul > li > ul > li {
           padding: 2rem;
           border: 1px solid #e4e4e4;
           border-radius: 5px;
           display: flex;
           flex-direction: column;
-          gap: 2rem;
+          gap: 3rem;
         }
-        ul > li {
+        .list-rows > ul > li {
           display: flex;
           gap: 2rem;
+        }
+        .list-rows > ul > li > button {
+          font-weight: 600;
         }
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
           -webkit-appearance: none;
           margin: 0;
         }
+
         .button-claire {
           width: fit-content;
           padding: 1rem;
@@ -418,9 +435,10 @@ const App = () => {
           font-weight: 600;
         }
 
+        .button:hover,
         .button-claire:hover {
-          box-shadow: 2px 2px 4px 0 rgba(206, 217, 230, 0.25) inset,
-            -2px -2px 3px 0 rgba(0, 0, 0, 0.15) inset;
+          background: black;
+          color: white;
         }
       `}</style>
     </div>
