@@ -32,7 +32,7 @@ const Product = ({ product }) => {
           ))}
         </div>
       </div>
-      <div className="info">
+      <div className="info-product">
         <div className="label">
           <h1>{product.label}</h1>
           <div className="price">
@@ -59,7 +59,7 @@ const Product = ({ product }) => {
           gap: 1rem;
         }
 
-        .info {
+        .info-product {
           display: flex;
           flex-direction: column;
           gap: 2rem;
