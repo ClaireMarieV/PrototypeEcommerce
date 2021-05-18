@@ -33,23 +33,27 @@ const Element = ({
   setElementText,
   setElementImage,
   setElementCategory,
+  removeElement,
 }) => (
   <li
     style={{
       gridColumn: `${element.column + 1} / span ${element.columnSpan}`,
     }}
   >
-    <label>
-      Type :
-      <select
-        onChange={(event) => onTypeChange(event.target.value)}
-        value={element.type}
-      >
-        <option value="text">Texte</option>
-        <option value="image">Image</option>
-        <option value="category">Categorie</option>
-      </select>
-    </label>
+    <div className="select-remove">
+      <label>
+        Type :
+        <select
+          onChange={(event) => onTypeChange(event.target.value)}
+          value={element.type}
+        >
+          <option value="text">Texte</option>
+          <option value="image">Image</option>
+          <option value="category">Categorie</option>
+        </select>
+      </label>
+      <button onClick={removeElement}>x</button>
+    </div>
     <label>
       Taille :
       <input
@@ -81,6 +85,10 @@ const Element = ({
         border: 1px solid grey;
         border-radius: 5px;
         padding: 0.5rem;
+      }
+      .select-remove {
+        display: flex;
+        justify-content: space-between;
       }
     `}</style>
   </li>

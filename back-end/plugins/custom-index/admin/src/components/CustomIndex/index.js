@@ -147,6 +147,23 @@ const reducer = (state, action) => {
           return row;
         }
       });
+    case "removeElement":
+      return state.map((row, rowIndex) => {
+        if (rowIndex === action.payload.rowIndex) {
+          return {
+            ...row,
+            elements: row.elements.filter((element) => {
+              if (element.column != action.payload.columnIndex) {
+                return true;
+              } else {
+                return false;
+              }
+            }),
+          };
+        } else {
+          return row;
+        }
+      });
     default:
       return state;
   }
@@ -330,6 +347,15 @@ const App = () => {
                             })
                           }
                           categories={categories}
+                          removeElement={() =>
+                            dispatch({
+                              type: "removeElement",
+                              payload: {
+                                rowIndex: rowIndex,
+                                columnIndex: columnIndex,
+                              },
+                            })
+                          }
                         />
                       );
                     }
