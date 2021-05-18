@@ -113,17 +113,14 @@ const InscriptionPage = () => {
                 onChange={(event) => setNumber(event.target.value)}
               />
             </label>
-            <div className="button">
-              <button onClick={register}>Bienvenue</button>
-            </div>
           </section>
+          <button onClick={register}>Bienvenue</button>
         </section>
       </TwoColumnsAlign>
       <style jsx>{`
         display: flex;
         flex-direction: column;
-        margin: 0.5rem;
-
+        margin: 0.5rem 0;
         h2 {
           text-transform: uppercase;
           justify-content: flex-end;
@@ -141,6 +138,10 @@ const InscriptionPage = () => {
           display: flex;
           flex-direction: column;
           margin: 0.5rem;
+        }
+        section > button {
+          width: fit-content;
+          align-self: flex-end;
         }
         h2 {
           width: fit-content;
