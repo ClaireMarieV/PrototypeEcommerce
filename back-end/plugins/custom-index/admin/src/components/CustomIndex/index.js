@@ -36,6 +36,8 @@ const reducer = (state, action) => {
       return action.payload;
     case "addRow":
       return state.concat({ columnCount: 3, elements: [] });
+    case "removeRow":
+      return state.slice(0, -1);
     case "changeColumnCount":
       return state.map((row, rowIndex) => {
         if (rowIndex === action.payload.rowIndex) {
@@ -203,6 +205,9 @@ const App = () => {
   const addRow = () => {
     dispatch({ type: "addRow" });
   };
+  const removeRow = () => {
+    dispatch({ type: "removeRow" });
+  };
 
   const saveStructure = () => {
     fetch("http://localhost:1337/custom-index/", {
@@ -216,6 +221,8 @@ const App = () => {
       <button className="button-claire" onClick={addRow}>
         Ajouter une rangée
       </button>
+      <button onClick={removeRow}>Supprimer une rangée</button>
+
       <button className="button-claire" onClick={saveStructure}>
         Sauvegarder
       </button>
@@ -225,7 +232,7 @@ const App = () => {
           <li>
             <div className="numbers">
               <h3>nombre de colonnes</h3>
-              <div>
+              <div className="buttons">
                 <button
                   onClick={() => {
                     dispatch({
@@ -361,9 +368,16 @@ const App = () => {
           flex-direction: column;
           align-items: center;
         }
-        .numbers > div {
+        .numbers > .buttons {
           display: flex;
           gap: 2rem;
+        }
+        .numbers h3 {
+          font-weight: 400;
+        }
+        .buttons > button:active:focus {
+          font-weight: 600;
+          color: ;
         }
         ul {
           padding: 0;
@@ -398,11 +412,10 @@ const App = () => {
         .button-claire {
           width: fit-content;
           padding: 1rem;
-          background: #ced9e6;
-          border-radius: 30px;
-          box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25),
-            -2px -2px 3px 0 rgba(206, 217, 230, 0);
+          border-radius: 50px;
           align-self: center;
+          border: 1px solid lightgrey;
+          font-weight: 600;
         }
 
         .button-claire:hover {
