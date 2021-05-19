@@ -2,11 +2,13 @@ import React from "react";
 import Text from "./Text";
 import Image from "./Image";
 import Category from "./Category";
+import Product from "./Product";
 
 const elementToComponent = (
   element,
-  { setElementText, setElementImage, setElementCategory },
-  { categories }
+  { setElementText, setElementImage, setElementCategory, setElementProduct },
+  { categories },
+  { products }
 ) => {
   switch (element.type) {
     case "text":
@@ -21,6 +23,15 @@ const elementToComponent = (
           categories={categories}
         />
       );
+    case "product":
+      return (
+        <Product
+          element={element}
+          setElementProduct={setElementProduct}
+          products={products}
+          categories={categories}
+        />
+      );
   }
 };
 
@@ -28,11 +39,13 @@ const Element = ({
   element,
   maxColumnSpan,
   categories,
+  products,
   onColumnSpanChange,
   onTypeChange,
   setElementText,
   setElementImage,
   setElementCategory,
+  setElementProduct,
   removeElement,
 }) => (
   <li
@@ -44,12 +57,14 @@ const Element = ({
       <label>
         Type :
         <select
+          className="select-claire"
           onChange={(event) => onTypeChange(event.target.value)}
           value={element.type}
         >
           <option value="text">Texte</option>
           <option value="image">Image</option>
           <option value="category">Categorie</option>
+          <option value="product">Produit</option>
         </select>
       </label>
       <button onClick={removeElement}>x</button>
@@ -72,8 +87,10 @@ const Element = ({
         setElementText,
         setElementImage,
         setElementCategory,
+        setElementProduct,
       },
-      { categories }
+      { categories },
+      { products }
     )}
     <style jsx>{`
       label {
@@ -89,6 +106,12 @@ const Element = ({
       .select-remove {
         display: flex;
         justify-content: space-between;
+      }
+      .select-claire {
+        padding: 1rem;
+      }
+      .select-claire > option {
+        margin: 1rem;
       }
     `}</style>
   </li>

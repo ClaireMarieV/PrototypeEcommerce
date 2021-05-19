@@ -147,6 +147,23 @@ const reducer = (state, action) => {
           return row;
         }
       });
+    case "changeElementProduct":
+      return state.map((row, rowIndex) => {
+        if (rowIndex === action.payload.rowIndex) {
+          return {
+            ...row,
+            elements: row.elements.map((element) => {
+              if (element.column === action.payload.columnIndex) {
+                return { ...element, product: action.payload.product };
+              } else {
+                return element;
+              }
+            }),
+          };
+        } else {
+          return row;
+        }
+      });
     case "removeElement":
       return state.map((row, rowIndex) => {
         if (rowIndex === action.payload.rowIndex) {
@@ -177,6 +194,7 @@ const App = () => {
   const [imagesError, setImagesError] = useState(false);
   const [images, setImages] = useState(null);
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(
     () =>
@@ -205,12 +223,23 @@ const App = () => {
   );
 
   useEffect(() => {
-    setLoading(true);
-    setError(null);
     fetch("http://localhost:1337/categories/")
       .then((response) => response.json())
       .then((categories) => {
         setCategories(categories);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:1337/produits/")
+      .then((response) => response.json())
+      .then((products) => {
+        setProducts(products);
         setLoading(false);
       })
       .catch((error) => {
@@ -346,7 +375,18 @@ const App = () => {
                               },
                             })
                           }
+                          setElementProduct={(newProduct) =>
+                            dispatch({
+                              type: "changeElementProduct",
+                              payload: {
+                                category: newProduct,
+                                rowIndex: rowIndex,
+                                columnIndex: columnIndex,
+                              },
+                            })
+                          }
                           categories={categories}
+                          products={products}
                           removeElement={() =>
                             dispatch({
                               type: "removeElement",
@@ -450,20 +490,22 @@ const App = () => {
           -webkit-appearance: none;
           margin: 0;
         }
-
+        .button {
+          color: #242424;
+        }
         .button-claire {
           width: fit-content;
           padding: 1rem;
           border-radius: 50px;
           align-self: center;
-          border: 1px solid lightgrey;
+          border: 2px solid #e4e4e4;
           font-weight: 600;
         }
 
-        .button:hover,
         .button-claire:hover {
-          background: black;
-          color: white;
+          background: #292b2c;
+          color: #e4e4e4;
+          border: 2px solid transparent;
         }
       `}</style>
     </div>
