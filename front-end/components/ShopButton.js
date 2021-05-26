@@ -9,13 +9,9 @@ const ShopButton = ({ product }) => {
         Ajouter au panier
       </button>
       <style jsx>{`
-        button {
+        .shop-button {
           display: flex;
-          justify-content: center;
-          background: black;
-          font-weight: 600;
-          color: white;
-          width: 100%;
+          justify-content: flex-start;
         }
       `}</style>
     </div>

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Link from "next/link";
 import OneColumn from "../components/OneColumn";
 import { useStore } from "../lib/store";
@@ -15,6 +17,8 @@ const CartProduct = ({ products }) => {
     p.quantity++;
     return acc;
   }, []);
+  const setItemCount = useStore((state) => state.setItemCount);
+
   return (
     <OneColumn>
       <h2>Panier ({products.length})</h2>
@@ -44,7 +48,19 @@ const CartProduct = ({ products }) => {
             <div className="info-price">
               <span>Ref.{product.ref}</span>
               <span>{product.prix}€</span>
-              <span>{product.quantity}</span>
+              <div className="quantity">
+                <span
+                  onClick={() => setItemCount(product, product.quantity - 1)}
+                >
+                  -
+                </span>
+                <span>{product.quantity}</span>
+                <span
+                  onClick={() => setItemCount(product, product.quantity + 1)}
+                >
+                  +
+                </span>
+              </div>
 
               <div className="price">
                 <span>{product.prix * product.quantity}</span>
@@ -91,14 +107,10 @@ const CartProduct = ({ products }) => {
               display: flex;
               justify-content: space-between;
             }
-            // .quantity {
-            //   display: flex;
-            //   justify-content: center;
-            //   border: 1px solid grey;
-            //   height: 1rem;
-            //   width: 1em;
-            //   padding: 1rem;
-            // }
+            .quantity {
+              display: flex;
+              gap: 2rem;
+            }
             .price {
               font-weight: 700;
             }

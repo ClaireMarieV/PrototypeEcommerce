@@ -20,7 +20,7 @@ const CartPage = () => {
       <style jsx>{`
         .checkout {
           margin: 3rem auto;
-          width: 30%;
+          width: fit-content;
           display: flex;
           flex-direction: column;
           gap: 1rem;

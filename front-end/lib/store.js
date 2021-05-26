@@ -39,6 +39,29 @@ export const useStore = create(
           cart: { ...get().cart, products: filteredProducts },
         });
       },
+      addItem: (product) => {
+        set({
+          cart: { ...get().cart, products: [...get().cart.products, product] },
+        });
+      },
+      setItemCount: (productToAdd, productQuantity) => {
+        const cart = get().cart;
+        let quantity = 0;
+        let filteredProducts = [];
+
+        cart.products.map((product) => {
+          if (product.id === productToAdd.id && quantity < productQuantity) {
+            filteredProducts.push(product);
+            quantity++;
+          } else if (product.id !== productToAdd.id) {
+            filteredProducts.push(product);
+          }
+        });
+        for (let i = quantity; i < productQuantity; i++) {
+          filteredProducts.push(productToAdd);
+        }
+        set({ cart: { ...cart, products: filteredProducts } });
+      },
     }),
     { name: "store" }
   )
