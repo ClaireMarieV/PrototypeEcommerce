@@ -125,7 +125,8 @@ const Layout = ({ children }) => (
         }
         button {
           border: none;
-          padding: 1rem;
+          padding: 1rem 3rem;
+          width: fit-content;
           background: #1c1b1b;
           color: white;
           text-transform: uppercase;
