@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useReducer } from "react";
 import Element from "../Element";
+import Alert from "../Alert";
 
 function range(count) {
   let array = [];
   for (let i = 0; i < count; i++) {
     array.push(i);
   }
+
   return array;
 }
 
@@ -36,6 +38,7 @@ const reducer = (state, action) => {
       return action.payload;
     case "addRow":
       return state.concat({ columnCount: 3, elements: [] });
+
     case "removeRow":
       return state.slice(0, -1);
     case "changeColumnCount":
@@ -267,6 +270,7 @@ const App = () => {
       <button className="button-claire" onClick={addRow}>
         Ajouter une rangée
       </button>
+      {rows.length > 3 && <Alert />}
       <button className="button-claire" onClick={saveStructure}>
         Sauvegarder
       </button>
