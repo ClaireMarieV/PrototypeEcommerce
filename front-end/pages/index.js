@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import HorizontalFocus from "../components/HorizontalFocus";
+import TwelveColumns from "../components/TwelveColumns";
 import {
   Text3,
   Text4,
@@ -74,7 +74,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <HorizontalFocus>
+      <TwelveColumns>
         {structure &&
           structure.flatMap((row) =>
             row.elements.map((element) => {
@@ -234,7 +234,7 @@ const IndexPage = () => {
               }
             })
           )}
-      </HorizontalFocus>
+      </TwelveColumns>
       <style jsx>{``}</style>
     </Layout>
   );
