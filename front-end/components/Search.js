@@ -13,13 +13,11 @@ const Search = (product) => {
 
   return (
     <div className="search">
-      <Image
+      <img
         src="/svg/iconSearch.svg"
         onClick={() => {
           setVisible(true);
         }}
-        width={30}
-        height={30}
       />
       <input
         className={"input-search " + (visible ? "visible" : "hidden")}
@@ -37,7 +35,8 @@ const Search = (product) => {
 
       <style jsx>{`
         .search {
-          display: inline-flex;
+          display: flex;
+          align-self: center;
         }
         .search img {
           width: 2rem;

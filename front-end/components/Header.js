@@ -43,22 +43,21 @@ const Header = () => {
             <h1>HABAAH</h1>
           </a>
         </Link>
-        <ul className="products">
-          <li>
-            <Link href="/produits">
-              <a>PRODUITS</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/nouveaux-produits">
-              <a>NEW IN</a>
-            </Link>
-          </li>
-          <li>
-            <Search />
-          </li>
-        </ul>
-
+        <div className="listing-products">
+          <ul className="products">
+            <li>
+              <Link href="/produits">
+                <a>PRODUITS</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/nouveaux-produits">
+                <a>NEW IN</a>
+              </Link>
+            </li>
+          </ul>
+          <Search />
+        </div>
         <ul>
           <li>
             {username && (
@@ -104,17 +103,21 @@ const Header = () => {
           justify-self: center;
           gap: 2rem;
         }
-        .products:nth-child(1) li {
+        .listing-products {
+          display: inline-flex;
+          gap: 2rem;
+        }
+        .listing-products > .products:nth-child(1) li {
           position: relative;
           font-weight: 400;
           letter-spacing: 0.05rem;
         }
-        .products:nth-child(1) li > ul:nth-child(1) {
+        .listing-products > .products:nth-child(1) li > ul:nth-child(1) {
           margin: 2rem;
           position: absolute;
           align-items: baseline;
         }
-        .products:nth-child(1) li > ul:nth-child(1) li {
+        .listing-products > .products:nth-child(1) li > ul:nth-child(1) li {
           visibility: hidden;
         }
 
@@ -155,6 +158,9 @@ const Header = () => {
             margin: 2rem 0 2rem;
             display: inline-flex;
             padding: 0;
+          }
+          .listing-products {
+            display: block;
           }
         }
       `}</style>
