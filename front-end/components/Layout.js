@@ -98,7 +98,11 @@ const Layout = ({ children }) => (
           letter-spacing: 1rem;
           margin: 0;
         }
-
+        @media (max-width: 600px) {
+          h1 {
+            font-size: 1.5rem;
+          }
+        }
         h2 {
           font-weight: 500;
         }
