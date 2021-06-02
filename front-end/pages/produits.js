@@ -7,7 +7,7 @@ import Loading from "../components/Loading";
 import Filter from "../components/Filter";
 import Link from "next/link";
 import OneColumn from "../components/OneColumn";
-import TwoColumns from "../components/TwoColumns";
+import GridRow from "../components/GridRow";
 
 const ProductsPage = () => {
   const router = useRouter();
@@ -56,13 +56,13 @@ const ProductsPage = () => {
       {error && <Error />}
       {loading && <Loading />}
       {!loading && !error && (
-        <TwoColumns>
+        <GridRow>
+          <Filter />
           <OneColumn>
             <ProductList products={produits} />
             <button onClick={loadProducts}>Load More</button>
           </OneColumn>
-          <Filter />
-        </TwoColumns>
+        </GridRow>
       )}
 
       <style jsx>{`

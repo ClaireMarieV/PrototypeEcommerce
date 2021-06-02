@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Layout from "../../components/Layout";
 import ProductList from "../../components/ProductList";
 import Filter from "../../components/Filter";
-import TwoColumns from "../../components/TwoColumns";
+import GridRow from "../../components/GridRow";
 import OneColumn from "../../components/OneColumn";
 
 const Category = () => {
@@ -51,13 +51,14 @@ const Category = () => {
     <Layout>
       {category && (
         <>
-          <TwoColumns>
+          <GridRow>
+            <Filter categorySlug={slug} />
+
             <OneColumn>
               <ProductList products={category.produits} />
               <button onClick={loadProducts}>Load More</button>
             </OneColumn>
-            <Filter categorySlug={slug} />
-          </TwoColumns>
+          </GridRow>
         </>
       )}
       <style jsx>{`

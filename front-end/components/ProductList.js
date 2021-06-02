@@ -28,7 +28,6 @@ const ProductList = ({ products }) => (
       a {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         align-items: center;
       }
       .info {

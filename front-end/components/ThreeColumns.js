@@ -15,6 +15,11 @@ const Container = ({ children }) => (
       }
       @media (max-width: 900px) {
         .container {
+          grid-template-columns: auto auto;
+        }
+      }
+      @media (max-width: 460px) {
+        .container {
           grid-template-columns: 1fr;
         }
       }

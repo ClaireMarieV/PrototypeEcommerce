@@ -51,6 +51,11 @@ const Layout = ({ children }) => (
           width: 75vw;
           margin: 6rem auto;
         }
+        @media (max-width: 600px) {
+          main {
+            width: 90vw;
+          }
+        }
         html,
         body {
           margin: 0;
