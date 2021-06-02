@@ -23,49 +23,47 @@ const Filter = ({ categorySlug }) => {
   }, []);
 
   return (
-    <>
-      <span>Filtre</span>
-      <ul>
-        {categories.map((category) => (
-          <li key={category.key}>
-            <Link href={"/categorie/" + category.slug}>
-              <a className={category.slug === categorySlug ? "focus" : ""}>
-                {category.label}
-              </a>
-            </Link>
-          </li>
-        ))}
-        <li>
-          <Link href="/produits">
-            <a className={categorySlug ? "" : "focus"}>Tout voir</a>
+    <ul>
+      {categories.map((category) => (
+        <li key={category.key}>
+          <Link href={"/categorie/" + category.slug}>
+            <a className={category.slug === categorySlug ? "focus" : ""}>
+              {category.label}
+            </a>
           </Link>
         </li>
-        <style jsx>{`
+      ))}
+      <li>
+        <Link href="/produits">
+          <a className={categorySlug ? "" : "focus"}>Tout voir</a>
+        </Link>
+      </li>
+      <style jsx>{`
+        ul {
+          display: flex;
+          gap: 2rem;
+          list-style: none;
+          text-transform: capitalize;
+          padding: 1rem;
+        }
+        ul > li {
+          flex: auto;
+        }
+        ul > li > span {
+          font-size: 1.3rem;
+        }
+        ul > li a.focus {
+          font-weight: 600;
+        }
+        @media (max-width: 600px) {
           ul {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            text-transform: capitalize;
-            padding: 1rem;
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-items: baseline;
           }
-          ul > li {
-            flex: auto;
-          }
-          ul > li > span {
-            font-size: 1.3rem;
-          }
-          ul > li a.focus {
-            font-weight: 600;
-          }
-          @media (max-width: 600px) {
-            ul {
-              display: grid;
-              grid-template-columns: auto auto;
-            }
-          }
-        `}</style>
-      </ul>
-    </>
+        }
+      `}</style>
+    </ul>
   );
 };
 
