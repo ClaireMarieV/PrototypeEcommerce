@@ -14,6 +14,7 @@ const Flex = ({ children }) => (
       @media (max-width: 500px) {
         .container {
           width: 100%;
+          display: inherit;
         }
       }
     `}</style>

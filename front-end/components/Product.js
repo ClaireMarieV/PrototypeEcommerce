@@ -77,6 +77,12 @@ const Product = ({ product }) => {
           text-transform: uppercase;
           letter-spacing: inherit;
         }
+        @media (max-width: 550px) {
+          .images {
+            gap: 1rem;
+            flex-direction: column;
+          }
+        }
       `}</style>
     </Flex>
   );
