@@ -11,7 +11,7 @@ const Flex = ({ children }) => (
         margin: 4rem auto;
         overflow: auto;
       }
-      @media (max-width: 500px) {
+      @media (max-width: 800px) {
         .container {
           width: 100%;
           display: inherit;

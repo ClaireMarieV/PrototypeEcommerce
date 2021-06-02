@@ -9,6 +9,11 @@ const TwoColumns = ({ children }) => (
         grid-gap: 2rem;
         height: 100%;
       }
+      @media (max-width: 900px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+      }
     `}</style>
   </div>
 );

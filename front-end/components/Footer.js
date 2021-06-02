@@ -11,31 +11,27 @@ const Footer = () => (
       </Link>
     </div>
     <div>
-      <ul className="ul">
+      <ul>
         <li>
-          <ul>
-            <li>
-              <Link href="/about">
-                <a>
-                  <span>about us</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <a>
-                  <span>contact</span>
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/aide">
-                <a>
-                  <span>aide</span>
-                </a>
-              </Link>
-            </li>
-          </ul>
+          <Link href="/about">
+            <a>
+              <span>about us</span>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact">
+            <a>
+              <span>contact</span>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/aide">
+            <a>
+              <span>aide</span>
+            </a>
+          </Link>
         </li>
       </ul>
     </div>
@@ -49,12 +45,9 @@ const Footer = () => (
         margin-top: 2rem 0 0 0;
         padding: 1.5rem;
       }
-      .ul {
-        list-style: none;
-        gap: 2rem;
-      }
-      .ul > li > ul {
+      ul {
         display: flex;
+        gap: 1rem;
         list-style: none;
       }
       li {
@@ -85,7 +78,7 @@ const Footer = () => (
         nav > .title {
           padding-left: 1.5rem;
         }
-        nav > .ul > ul {
+        nav > ul {
           margin: 2rem 0 2rem;
           display: inline-flex;
           padding: 0;
