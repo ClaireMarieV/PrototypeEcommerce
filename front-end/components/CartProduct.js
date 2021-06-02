@@ -24,54 +24,54 @@ const CartProduct = ({ products }) => {
       <h2>Panier ({products.length})</h2>
       {aggregatedProducts.map((product) => (
         <div className="one-product">
-          <Link key={product.id} href={"/produit/" + product.slug}>
-            <a>
-              {product.images.length && (
-                <Image
-                  src={
-                    process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                    product.images[0].url
-                  }
-                  width={250}
-                  height={350}
-                />
-              )}
-            </a>
-          </Link>
-          <section>
-            <div className="label">
-              <span>{product.label}</span>
-              <span onClick={() => removeProductFromCart(product.id)}>
-                Supprimer
-              </span>
-            </div>
-            <div className="info-price">
-              <span>Ref.{product.ref}</span>
-              <span>{product.prix}€</span>
-              <div className="quantity">
-                <span
-                  onClick={() => setItemCount(product, product.quantity - 1)}
-                >
-                  -
-                </span>
-                <span>{product.quantity}</span>
-                <span
-                  onClick={() => setItemCount(product, product.quantity + 1)}
-                >
-                  +
-                </span>
+          <div className="label">
+            <span>{product.label}</span>
+            <span onClick={() => removeProductFromCart(product.id)}>
+              Supprimer
+            </span>
+          </div>
+          <div className="product-ref">
+            <Link key={product.id} href={"/produit/" + product.slug}>
+              <a>
+                {product.images.length && (
+                  <Image
+                    src={
+                      process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
+                      product.images[0].url
+                    }
+                    width={250}
+                    height={350}
+                  />
+                )}
+              </a>
+            </Link>
+            <section>
+              <div className="info-price">
+                <span>Ref.{product.ref}</span>
+                <span>{product.prix}€</span>
+                <div className="quantity">
+                  <span
+                    onClick={() => setItemCount(product, product.quantity - 1)}
+                  >
+                    -
+                  </span>
+                  <span>{product.quantity}</span>
+                  <span
+                    onClick={() => setItemCount(product, product.quantity + 1)}
+                  >
+                    +
+                  </span>
+                </div>
+                <div className="price">
+                  <span>{product.prix * product.quantity}</span>
+                </div>
               </div>
-
-              <div className="price">
-                <span>{product.prix * product.quantity}</span>
-              </div>
-            </div>
-          </section>
+            </section>
+          </div>
           <style jsx>{`
             .one-product {
               display: grid;
-              grid-template-columns: auto 1fr;
-              gap: 2rem;
+              gap: 1rem;
             }
             section {
               width: 100%;
@@ -82,7 +82,10 @@ const CartProduct = ({ products }) => {
             img {
               object-fit: contain;
             }
-
+            .product-ref {
+              display: flex;
+              gap: 1rem;
+            }
             .label {
               display: flex;
               gap: 0.5rem;
@@ -104,7 +107,6 @@ const CartProduct = ({ products }) => {
             }
             .info-price {
               display: flex;
-              display: flex;
               justify-content: space-between;
             }
             .quantity {
@@ -118,6 +120,10 @@ const CartProduct = ({ products }) => {
             @media (max-width: 500px) {
               .one-product {
                 grid-template-columns: auto;
+              }
+              .info-price {
+                flex-direction: column;
+                gap: 1rem;
               }
             }
           `}</style>
