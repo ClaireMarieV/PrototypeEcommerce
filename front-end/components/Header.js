@@ -87,7 +87,7 @@ const Header = () => {
       <style jsx>{`
         nav {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(3, auto);
           justify-items: center;
           justify-content: space-around;
           gap: 2rem;

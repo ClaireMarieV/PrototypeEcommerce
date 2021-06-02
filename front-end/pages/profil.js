@@ -122,6 +122,11 @@ const ProfilPage = () => {
           width: 60vw;
           margin: auto;
         }
+        @media (max-width: 900px) {
+          .form {
+            grid-template-columns: 1fr;
+          }
+        }
       `}</style>
     </Layout>
   );
