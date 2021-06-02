@@ -65,7 +65,6 @@ const Text6 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.text}</span>
-    <button>Découvrir</button>
 
     <style jsx>{`
       .container-text-6 {
@@ -123,7 +122,6 @@ const Text9 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.text}</span>
-    <button>Découvrir</button>
     <style jsx>{`
       .container-text-9 {
         justify-self: center;
@@ -152,7 +150,6 @@ const Text12 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.text}</span>
-    <button>Découvrir</button>
 
     <style jsx>{`
       .container-text-12 {
