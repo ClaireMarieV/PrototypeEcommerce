@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
-import TwoColumnsAlign from "../components/TwoColumnsAlign";
+import OneColumn from "../components/OneColumn";
 const InscriptionPage = () => {
   const [lastname, setLastname] = useState("");
   const [firstname, setFirstname] = useState("");
@@ -36,8 +36,7 @@ const InscriptionPage = () => {
 
   return (
     <Layout>
-      <TwoColumnsAlign>
-        <img src="/svg/bauhaus.svg" />
+      <OneColumn>
         <section>
           <h2>informations personnelles</h2>
           <section className="form">
@@ -116,7 +115,7 @@ const InscriptionPage = () => {
           </section>
           <button onClick={register}>Bienvenue</button>
         </section>
-      </TwoColumnsAlign>
+      </OneColumn>
       <style jsx>{`
         display: flex;
         flex-direction: column;
