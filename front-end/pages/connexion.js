@@ -66,7 +66,7 @@ const ConnectPage = () => {
           <div className="register">
             <h2>INSCRIVEZ-VOUS</h2>
             <span>
-              Rejoignez HABAAH et bénéficiez d'une experience simplifié!
+              Rejoignez HABAAH et bénéficiez d'une experience simplifiée!
             </span>
             <Link href="/inscription">
               <a>
