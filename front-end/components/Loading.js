@@ -18,7 +18,7 @@ const Loading = () => (
         left: 0px;
         margin: auto;
         border: 4px solid transparent;
-        border-top-color: #9fb3d3;
+        border-top-color: #e4d9ff;
         border-radius: 64px;
         animation: spin 1s ease infinite;
       }
