@@ -199,31 +199,27 @@ const App = () => {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
 
-  useEffect(
-    () =>
-      fetch("http://localhost:1337/custom-index/")
-        .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
-        .then((rows) => {
-          dispatch({ type: "init", payload: rows });
-          setLoading(false);
-        }),
-    []
-  );
-  useEffect(
-    () =>
-      fetch("http://localhost:1337/upload/files")
-        .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
-        .then((rows) => {
-          setImages({});
-          setImagesLoading(false);
-        })
-        .catch((error) => {
-          setError(error);
-          setImagesError(true);
-          setLoading(false);
-        }),
-    []
-  );
+  useEffect(() => {
+    fetch("http://localhost:1337/custom-index/")
+      .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
+      .then((rows) => {
+        dispatch({ type: "init", payload: rows });
+        setLoading(false);
+      });
+  }, []);
+  useEffect(() => {
+    fetch("http://localhost:1337/upload/files")
+      .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
+      .then((rows) => {
+        setImages({});
+        setImagesLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setImagesError(true);
+        setLoading(false);
+      });
+  }, []);
 
   useEffect(() => {
     fetch("http://localhost:1337/categories/")
@@ -308,6 +304,7 @@ const App = () => {
                 </div>
               </div>
               <ul
+                className="ul-elements-claire"
                 style={{
                   gridTemplateColumns: `repeat(${row.columnCount}, 1fr)`,
                 }}
@@ -429,7 +426,7 @@ const App = () => {
           ))}
         </ul>
       </div>
-      <style jsx>{`
+      <style jsx global>{`
         .claire-container {
           display: grid;
           grid-template-columns: 1fr;
@@ -466,11 +463,11 @@ const App = () => {
         }
         .list-rows > ul > li {
           gap: 3rem;
+          list-style: none;
         }
         .list-rows > ul > li > ul {
           display: grid;
           list-style: none;
-          justify-content: space-evenly;
           flex-grow: 1;
           gap: 1rem;
         }
@@ -510,6 +507,12 @@ const App = () => {
           background: #292b2c;
           color: #e4e4e4;
           border: 2px solid transparent;
+        }
+        @media (max-width: 1250px) {
+          .list-rows > ul > li > ul {
+            display: flex;
+            flex-direction: column;
+          }
         }
       `}</style>
     </div>

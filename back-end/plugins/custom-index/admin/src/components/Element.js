@@ -49,6 +49,7 @@ const Element = ({
   removeElement,
 }) => (
   <li
+    className="li-elements-claire"
     style={{
       gridColumn: `${element.column + 1} / span ${element.columnSpan}`,
     }}
