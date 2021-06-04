@@ -263,18 +263,19 @@ const App = () => {
 
   return (
     <div className="claire-container">
-      <button className="button-claire" onClick={addRow}>
-        Ajouter une rangée
-      </button>
-      {rows.length > 3 && <Alert />}
-      <button className="button-claire" onClick={saveStructure}>
-        Sauvegarder
-      </button>
-
-      <div className="list-rows">
-        <button className="button" onClick={removeRow}>
-          Supprimer une rangée
+      <div className="buttons-claire">
+        <button className="button-claire" onClick={addRow}>
+          Ajouter une rangée
         </button>
+        {rows.length > 3 && <Alert />}
+        <button className="button-claire" onClick={removeRow}>
+          Supprimer la derniere rangée
+        </button>
+        <button className="button-claire" onClick={saveStructure}>
+          Sauvegarder
+        </button>
+      </div>
+      <div className="list-rows">
         <ul>
           {rows.map((row, rowIndex) => (
             <li>
@@ -282,6 +283,7 @@ const App = () => {
                 <h3>nombre de colonnes</h3>
                 <div className="buttons">
                   <button
+                    className="numbers-button-claire"
                     onClick={() => {
                       dispatch({
                         type: "changeColumnCount",
@@ -292,6 +294,7 @@ const App = () => {
                     3
                   </button>
                   <button
+                    className="numbers-button-claire"
                     onClick={() => {
                       dispatch({
                         type: "changeColumnCount",
@@ -430,10 +433,37 @@ const App = () => {
         .claire-container {
           display: grid;
           grid-template-columns: 1fr;
+          grid-template-rows: auto auto;
           justify-items: center;
           margin: 3rem auto 3rem auto;
           padding: 2rem;
           gap: 2rem;
+          height: 100vh;
+          background: #e7effa;
+        }
+        .buttons-claire {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4rem;
+          margin: auto;
+        }
+        .button {
+          color: #242424;
+        }
+        .button-claire {
+          width: fit-content;
+          padding: 1rem;
+          border-radius: 50px;
+          align-self: center;
+          background: #e7effa;
+          font-weight: 600;
+          box-shadow: -10px -10px 30px #f5f9fd, 10px 10px 30px #aeaec040;
+        }
+        .button-claire:active {
+          background: #e7effa;
+          box-shadow: inset 0.2rem 0.2rem 0.5rem #aeaec040,
+            inset -0.2rem -0.2rem 0.5rem #f5f9fd;
         }
         .numbers {
           display: flex;
@@ -444,6 +474,19 @@ const App = () => {
           display: flex;
           gap: 2rem;
         }
+        .numbers-button-claire {
+          width: fit-content;
+          padding: 1rem;
+          align-self: center;
+          background: #e7effa;
+          font-weight: 600;
+          box-shadow: -7px -7px 20px #f5f9fd, 7px 7px 20px #aeaec040;
+        }
+        .numbers-button-claire:active {
+          background: #e7effa;
+          box-shadow: inset 0.1rem 0.1rem 0.2rem #aeaec040,
+            inset -0.1rem -0.1rem 0.2rem #f5f9fd;
+        }
         .numbers h3 {
           font-weight: 400;
         }
@@ -452,7 +495,7 @@ const App = () => {
           margin: 2rem 0;
           font-weight: 600;
           font-size: 1.6rem;
-          padding: 0;
+          padding: 1rem;
         }
 
         .list-rows > ul {
@@ -473,7 +516,7 @@ const App = () => {
         }
         .list-rows > ul > li > ul > li {
           padding: 2rem;
-          border: 1px solid #e4e4e4;
+          box-shadow: -5px -5px 15px #f5f9fd, 5px 5px 15px #aeaec040;
           border-radius: 5px;
           display: flex;
           flex-direction: column;
@@ -491,24 +534,11 @@ const App = () => {
           -webkit-appearance: none;
           margin: 0;
         }
-        .button {
-          color: #242424;
-        }
-        .button-claire {
-          width: fit-content;
-          padding: 1rem;
-          border-radius: 50px;
-          align-self: center;
-          border: 2px solid #e4e4e4;
-          font-weight: 600;
-        }
 
-        .button-claire:hover {
-          background: #292b2c;
-          color: #e4e4e4;
-          border: 2px solid transparent;
-        }
         @media (max-width: 1250px) {
+          .claire-container {
+            height: 100%;
+          }
           .list-rows > ul > li > ul {
             display: flex;
             flex-direction: column;

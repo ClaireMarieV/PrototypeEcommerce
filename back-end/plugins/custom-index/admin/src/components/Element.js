@@ -48,51 +48,53 @@ const Element = ({
   setElementProduct,
   removeElement,
 }) => (
-  <li
-    className="li-elements-claire"
-    style={{
-      gridColumn: `${element.column + 1} / span ${element.columnSpan}`,
-    }}
-  >
-    <div className="select-remove">
+  <>
+    <li
+      className="li-elements-claire"
+      style={{
+        gridColumn: `${element.column + 1} / span ${element.columnSpan}`,
+      }}
+    >
+      <div className="select-remove">
+        <label>
+          Type :
+          <select
+            className="select-claire"
+            onChange={(event) => onTypeChange(event.target.value)}
+            value={element.type}
+          >
+            <option value="text">Texte</option>
+            <option value="image">Image</option>
+            <option value="category">Categorie</option>
+            <option value="product">Produit</option>
+          </select>
+        </label>
+        <button onClick={removeElement}>x</button>
+      </div>
       <label>
-        Type :
-        <select
-          className="select-claire"
-          onChange={(event) => onTypeChange(event.target.value)}
-          value={element.type}
-        >
-          <option value="text">Texte</option>
-          <option value="image">Image</option>
-          <option value="category">Categorie</option>
-          <option value="product">Produit</option>
-        </select>
+        Taille :
+        <input
+          type="number"
+          min="1"
+          max={maxColumnSpan}
+          value={element.columnSpan}
+          onChange={(event) => {
+            onColumnSpanChange(parseInt(event.target.value));
+          }}
+        />
       </label>
-      <button onClick={removeElement}>x</button>
-    </div>
-    <label>
-      Taille :
-      <input
-        type="number"
-        min="1"
-        max={maxColumnSpan}
-        value={element.columnSpan}
-        onChange={(event) => {
-          onColumnSpanChange(parseInt(event.target.value));
-        }}
-      />
-    </label>
-    {elementToComponent(
-      element,
-      {
-        setElementText,
-        setElementImage,
-        setElementCategory,
-        setElementProduct,
-      },
-      { categories },
-      { products }
-    )}
+      {elementToComponent(
+        element,
+        {
+          setElementText,
+          setElementImage,
+          setElementCategory,
+          setElementProduct,
+        },
+        { categories },
+        { products }
+      )}
+    </li>
     <style jsx>{`
       label {
         gap: 1rem;
@@ -100,8 +102,11 @@ const Element = ({
         align-items: center;
       }
       input {
-        border: 1px solid grey;
-        border-radius: 5px;
+        box-shadow: inset 0.2rem 0.2rem 0.5rem #aeaec040,
+          inset -0.2rem -0.2rem 0.5rem #f5f9fd;
+        border: none;
+        background: #e7effa;
+        border-radius: 0.3rem;
         padding: 0.5rem;
       }
       .select-remove {
@@ -110,11 +115,13 @@ const Element = ({
       }
       .select-claire {
         padding: 1rem;
+        background: #e7effa;
+        border: none;
       }
       .select-claire > option {
         margin: 1rem;
       }
     `}</style>
-  </li>
+  </>
 );
 export default Element;
