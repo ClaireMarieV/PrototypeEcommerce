@@ -76,6 +76,10 @@
     },
     "firstname": {
       "type": "string"
+    },
+    "orders": {
+      "via": "users_permissions_user",
+      "collection": "order"
     }
   }
 }

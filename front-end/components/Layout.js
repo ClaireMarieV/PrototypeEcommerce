@@ -105,6 +105,7 @@ const Layout = ({ children }) => (
         }
         h2 {
           font-weight: 500;
+          margin: 0;
         }
         h3 {
           margin: 0;

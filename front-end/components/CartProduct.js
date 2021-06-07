@@ -73,6 +73,9 @@ const CartProduct = ({ products }) => {
               display: grid;
               gap: 1rem;
             }
+            h2 {
+              margin: 0;
+            }
             section {
               width: 100%;
               display: flex;

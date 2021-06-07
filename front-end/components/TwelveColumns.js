@@ -1,13 +1,13 @@
 const HorizontalFocus = ({ children }) => (
-  <div className="container-focus">
+  <div className="container-twelve-columns">
     {children}
     <style jsx>{`
-      .container-focus {
+      .container-twelve-columns {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
       }
       @media (max-width: 500px) {
-        .container-focus {
+        .container-twelve-columns {
           width: 100%;
         }
       }

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "index_rows",
+  "info": {
+    "name": "index-row"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true,
+    "increments": true,
+    "comment": ""
+  },
+  "attributes": {
+    "columnCount": {
+      "type": "integer"
+    },
+    "index_elements": {
+      "via": "index_row",
+      "plugin": "custom-index",
+      "collection": "index-element"
+    }
+  }
+}

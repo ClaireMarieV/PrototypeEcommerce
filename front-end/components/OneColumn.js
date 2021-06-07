@@ -10,11 +10,6 @@ const OneColumn = ({ children }) => (
         height: 100%;
         margin: auto;
       }
-      // @media (max-width: 500px) {
-      //   .container {
-      //     width: 100%;
-      //   }
-      // }
     `}</style>
   </div>
 );

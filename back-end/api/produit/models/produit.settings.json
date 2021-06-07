@@ -43,6 +43,10 @@
     },
     "description": {
       "type": "text"
+    },
+    "order": {
+      "via": "produits",
+      "model": "order"
     }
   }
 }

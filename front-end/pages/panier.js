@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import CartProduct from "../components/CartProduct";
 import OneColumn from "../components/OneColumn";
@@ -14,7 +15,11 @@ const CartPage = () => {
       <CartProduct products={products} />
       <div className="checkout">
         <span>Total : {total}</span>
-        <button>checkout</button>
+        <Link href="/livraison">
+          <a>
+            <button>Traiter la commande</button>
+          </a>
+        </Link>
       </div>
 
       <style jsx>{`

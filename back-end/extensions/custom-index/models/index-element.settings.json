@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "index_elements",
+  "info": {
+    "name": "index-element",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true,
+    "increments": true,
+    "comment": ""
+  },
+  "attributes": {
+    "columnSpan": {
+      "type": "integer",
+      "required": true
+    },
+    "column": {
+      "type": "integer",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "image",
+        "product",
+        "category"
+      ],
+      "required": true
+    },
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "index_row": {
+      "plugin": "custom-index",
+      "model": "index-row",
+      "via": "index_elements"
+    },
+    "category": {
+      "model": "categorie"
+    }
+  }
+}

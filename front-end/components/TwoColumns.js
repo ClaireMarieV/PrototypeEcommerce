@@ -8,6 +8,7 @@ const TwoColumns = ({ children }) => (
         justify-self: center;
         grid-gap: 2rem;
         height: 100%;
+        width: 100%;
       }
       @media (max-width: 900px) {
         .container {

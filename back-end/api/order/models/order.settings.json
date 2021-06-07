@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Orders",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "numero": {
+      "type": "text"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "orders"
+    },
+    "produits": {
+      "collection": "produit",
+      "via": "order"
+    },
+    "clickAndCollect": {
+      "type": "boolean"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "postal": {
+      "type": "string"
+    },
+    "town": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    }
+  }
+}
