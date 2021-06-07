@@ -433,18 +433,18 @@ const App = () => {
         .claire-container {
           display: grid;
           grid-template-columns: 1fr;
-          grid-template-rows: auto auto;
-          justify-items: center;
-          margin: 3rem auto 3rem auto;
-          padding: 2rem;
+          grid-template-rows: auto;
+          padding: 4rem;
           gap: 2rem;
           height: 100vh;
           background: #e7effa;
         }
+        .h1-claire {
+          font-weight: 600;
+        }
         .buttons-claire {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 4rem;
           margin: auto;
         }
@@ -469,6 +469,7 @@ const App = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
+          gap: 1rem;
         }
         .numbers > .buttons {
           display: flex;
@@ -500,7 +501,7 @@ const App = () => {
 
         .list-rows > ul {
           padding: 0;
-          gap: 3rem;
+          gap: 4rem;
           display: flex;
           flex-direction: column;
         }
@@ -512,7 +513,7 @@ const App = () => {
           display: grid;
           list-style: none;
           flex-grow: 1;
-          gap: 1rem;
+          gap: 2rem;
         }
         .list-rows > ul > li > ul > li {
           padding: 2rem;
@@ -521,6 +522,7 @@ const App = () => {
           display: flex;
           flex-direction: column;
           gap: 3rem;
+          align-self: center;
         }
         .list-rows > ul > li {
           display: flex;
