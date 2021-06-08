@@ -17,7 +17,7 @@ const ResumePage = () => {
     setLoading(true);
     setError(null);
     fetch("/api/orders", {
-      method: "post",
+      method: "POST",
     })
       .then((response) => response.json())
       .then(({ jwt }) => {
@@ -49,7 +49,7 @@ const ResumePage = () => {
             <span>Frais de port:</span>
             <span className="total">TOTAL: {total}</span>
           </div>
-          <Link href="/index">
+          <Link href="/">
             <a>
               <button onClick={order}>Paiement</button>
             </a>

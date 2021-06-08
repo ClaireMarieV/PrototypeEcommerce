@@ -8,6 +8,8 @@ export default (req, res) => {
     postal: body.postal,
     town: body.town,
     number: body.number,
+    price: body.price,
+    products: body.products,
   };
   if (req.method === "POST") {
     return fetch(`${process.env.BACKOFFICE_HOST}/orders`, {

@@ -17,7 +17,7 @@ const ConnectPage = () => {
     setLoading(true);
     setError(null);
     fetch("/api/login", {
-      method: "post",
+      method: "POST",
       body: JSON.stringify({ email, password }),
     })
       .then((response) => response.json())

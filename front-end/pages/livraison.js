@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Layout from "../components/Layout";
 import OneColumn from "../components/OneColumn";
@@ -7,42 +7,48 @@ import DeliveryType from "../components/DeliveryType";
 import CartProduct from "../components/CartProduct";
 import { useStore } from "../lib/store";
 
-const InfoUserPage = () => {
+const DeliveryPage = () => {
   const [lastname, setLastname] = useState("");
   const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [postal, setPostal] = useState("");
   const [town, setTown] = useState("");
   const [number, setNumber] = useState("");
-
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const register = () => {
+  const products = useStore((state) => (state.cart ? state.cart.products : []));
+  const total =
+    Math.round(products.reduce((acc, product) => product.prix + acc, 0) * 100) /
+    100;
+
+  const order = () => {
     setLoading(true);
     setError(null);
-    fetch("/api/register", {
-      method: "post",
-      body: JSON.stringify({ lastname, firstname, email, password }),
+    fetch("/api/orders", {
+      method: "POST",
+      body: JSON.stringify({
+        lastname,
+        firstname,
+        email,
+        address,
+        postal,
+        town,
+        number,
+      }),
     })
       .then((response) => response.json())
       .then(({ jwt }) => {
         Cookies.set("token", jwt);
       })
-      .then(() => {
-        window.location = "/";
-      })
+
       .catch((error) => {
         setError(error);
         setLoading(false);
       });
   };
-  const products = useStore((state) => (state.cart ? state.cart.products : []));
-  const total =
-    Math.round(products.reduce((acc, product) => product.prix + acc, 0) * 100) /
-    100;
+
   return (
     <Layout>
       <h2>Livraison</h2>
@@ -72,8 +78,8 @@ const InfoUserPage = () => {
               <input
                 required
                 type="text"
-                value={adress}
-                onChange={(event) => setAdress(event.target.value)}
+                value={address}
+                onChange={(event) => setAddress(event.target.value)}
               />
             </label>
             <label>
@@ -92,6 +98,15 @@ const InfoUserPage = () => {
                 type="text"
                 value={town}
                 onChange={(event) => setTown(event.target.value)}
+              />
+            </label>
+            <label>
+              Email
+              <input
+                required
+                type="text"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
               />
             </label>
             <label>
@@ -116,7 +131,7 @@ const InfoUserPage = () => {
             </div>
             <Link href="/paiement">
               <a>
-                <button>Paiement</button>
+                <button onClick={order}>Paiement</button>
               </a>
             </Link>
           </section>
@@ -162,4 +177,4 @@ const InfoUserPage = () => {
     </Layout>
   );
 };
-export default InfoUserPage;
+export default DeliveryPage;

@@ -6,7 +6,7 @@ const InscriptionPage = () => {
   const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [postal, setPostal] = useState("");
   const [town, setTown] = useState("");
   const [number, setNumber] = useState("");
@@ -19,7 +19,16 @@ const InscriptionPage = () => {
     setError(null);
     fetch("/api/register", {
       method: "post",
-      body: JSON.stringify({ lastname, firstname, email, password }),
+      body: JSON.stringify({
+        lastname,
+        firstname,
+        email,
+        password,
+        postal,
+        address,
+        town,
+        number,
+      }),
     })
       .then((response) => response.json())
       .then(({ jwt }) => {
@@ -81,8 +90,8 @@ const InscriptionPage = () => {
               <input
                 required
                 type="text"
-                value={adress}
-                onChange={(event) => setAdress(event.target.value)}
+                value={address}
+                onChange={(event) => setAddress(event.target.value)}
               />
             </label>
             <label>
