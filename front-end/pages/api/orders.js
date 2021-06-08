@@ -1,8 +1,22 @@
 export default (req, res) => {
+  const body = JSON.parse(req.body);
+  const customers = {
+    lastname: body.lastname,
+    firstname: body.firstname,
+    email: body.email,
+    address: body.address,
+    postal: body.postal,
+    town: body.town,
+    number: body.number,
+  };
   if (req.method === "POST") {
     return fetch(`${process.env.BACKOFFICE_HOST}/orders`, {
-      headers: { Authorization: `Bearer ${req.cookies.token}` },
-      method: "post",
+      method: "POST",
+      body: JSON.stringify(customers),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${req.cookies.token}`,
+      },
     })
       .then((res) => res.json())
       .then((response) => res.end(JSON.stringify(response)))

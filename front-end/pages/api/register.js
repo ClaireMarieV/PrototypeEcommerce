@@ -1,20 +1,24 @@
 export default (req, res) => {
   const body = JSON.parse(req.body);
   const customers = {
-    username: body.firstname + " " + body.lastname,
+    firstname: body.firstname,
+    lastname: body.lastname,
     email: body.email,
     password: body.password,
+    postal: body.postal,
+    address: body.address,
+    town: body.town,
+    number: body.number,
   };
 
-  const request = {
-    method: "POST",
-    body: JSON.stringify(customers),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   if (customers) {
-    return fetch(`${process.env.BACKOFFICE_HOST}/auth/local/register`, request)
+    return fetch(`${process.env.BACKOFFICE_HOST}/auth/local/register`, {
+      method: "POST",
+      body: JSON.stringify(customers),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((response) => res.end(JSON.stringify(response)))
       .catch((error) => {

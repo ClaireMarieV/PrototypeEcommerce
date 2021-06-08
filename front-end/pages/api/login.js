@@ -5,15 +5,14 @@ export default (req, res) => {
     password: body.password,
   };
 
-  const request = {
-    method: "POST",
-    body: JSON.stringify(customers),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
   if (customers) {
-    return fetch(`${process.env.BACKOFFICE_HOST}/auth/local`, request)
+    return fetch(`${process.env.BACKOFFICE_HOST}/auth/local`, {
+      method: "POST",
+      body: JSON.stringify(customers),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) =>
         res
           .json()
