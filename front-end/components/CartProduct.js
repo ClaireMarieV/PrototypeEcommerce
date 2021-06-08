@@ -95,7 +95,7 @@ const CartProduct = ({ products }) => {
               width: 100%;
               justify-content: space-between;
               border-bottom: 1px solid grey;
-              padding: 0.5rem;
+              padding-bottom: 0.5rem;
             }
             .label span:nth-child(1) {
               text-transform: uppercase;
@@ -111,6 +111,7 @@ const CartProduct = ({ products }) => {
             .info-price {
               display: flex;
               justify-content: space-between;
+              gap: 1rem;
             }
             .quantity {
               display: flex;
