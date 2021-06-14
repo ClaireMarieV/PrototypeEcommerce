@@ -10,7 +10,6 @@ const Category3 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.category.label}</span>
-    <button>Découvrir</button>
     <style jsx>{`
       .container-category-3 {
         justify-self: center;
@@ -22,6 +21,9 @@ const Category3 = ({ element, gridMultiplier }) => (
         gap: 2rem;
         width: 100%;
         align-items: center;
+      }
+      .container-category > span {
+        text-transform: uppercase;
       }
     `}</style>
   </section>
@@ -39,7 +41,6 @@ const Category4 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.category.label}</span>
-    <button>Découvrir</button>
     <style jsx>{`
       .container-category-4 {
         justify-self: center;
@@ -51,6 +52,9 @@ const Category4 = ({ element, gridMultiplier }) => (
         gap: 2rem;
         width: 100%;
         align-items: center;
+      }
+      .container-category-4 > span {
+        text-transform: uppercase;
       }
     `}</style>
   </section>
@@ -68,7 +72,6 @@ const Category6 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.category.label}</span>
-    <button>Découvrir</button>
     <style jsx>{`
       .container-category-6 {
         justify-self: center;
@@ -80,6 +83,9 @@ const Category6 = ({ element, gridMultiplier }) => (
         gap: 2rem;
         width: 100%;
         align-items: center;
+      }
+      .container-category-6 > span {
+        text-transform: uppercase;
       }
     `}</style>
   </section>
@@ -96,7 +102,6 @@ const Category8 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.category.label}</span>
-    <button>Découvrir</button>
     <style jsx>{`
       .container-category-8 {
         justify-self: center;
@@ -108,6 +113,9 @@ const Category8 = ({ element, gridMultiplier }) => (
         gap: 2rem;
         width: 100%;
         align-items: center;
+      }
+      .container-category-8 > span {
+        text-transform: uppercase;
       }
     `}</style>
   </section>
@@ -124,7 +132,6 @@ const Category9 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.category.label}</span>
-    <button>Découvrir</button>
     <style jsx>{`
       .container-category-9 {
         justify-self: center;
@@ -136,6 +143,9 @@ const Category9 = ({ element, gridMultiplier }) => (
         gap: 2rem;
         width: 100%;
         align-items: center;
+      }
+      .container-category-9 > span {
+        text-transform: uppercase;
       }
     `}</style>
   </section>
@@ -152,7 +162,6 @@ const Category12 = ({ element, gridMultiplier }) => (
     }}
   >
     <span>{element.category.label}</span>
-    <button>Découvrir</button>
     <style jsx>{`
       .container-category-12 {
         justify-self: center;
@@ -164,6 +173,9 @@ const Category12 = ({ element, gridMultiplier }) => (
         gap: 2rem;
         width: 100%;
         align-items: center;
+      }
+      .container-category-12 > span {
+        text-transform: uppercase;
       }
     `}</style>
   </section>
