@@ -437,14 +437,14 @@ const App = () => {
           padding: 4rem;
           gap: 2rem;
           height: 100vh;
-          background: #e7effa;
+          background: #e4ebf5;
         }
         .h1-claire {
           font-weight: 600;
         }
         .buttons-claire {
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          justify-items: center;
           gap: 4rem;
           margin: auto;
         }
@@ -456,14 +456,14 @@ const App = () => {
           padding: 1rem;
           border-radius: 50px;
           align-self: center;
-          background: #e7effa;
+          background: #e7edf6;
           font-weight: 600;
-          box-shadow: -10px -10px 30px #f5f9fd, 10px 10px 30px #aeaec040;
+          box-shadow: -5px -5px 15px #ecf2fb, 5px 5px 15px #aeaec040;
         }
         .button-claire:active {
-          background: #e7effa;
+          background: #e7edf6;
           box-shadow: inset 0.2rem 0.2rem 0.5rem #aeaec040,
-            inset -0.2rem -0.2rem 0.5rem #f5f9fd;
+            inset -0.2rem -0.2rem 0.5rem #ecf2fb;
         }
         .numbers {
           display: flex;
@@ -479,14 +479,14 @@ const App = () => {
           width: fit-content;
           padding: 1rem;
           align-self: center;
-          background: #e7effa;
+          background: #e7edf6;
           font-weight: 600;
-          box-shadow: -7px -7px 20px #f5f9fd, 7px 7px 20px #aeaec040;
+          box-shadow: -7px -7px 20px #ecf2fb, 7px 7px 20px #aeaec040;
         }
         .numbers-button-claire:active {
           background: #e7effa;
           box-shadow: inset 0.1rem 0.1rem 0.2rem #aeaec040,
-            inset -0.1rem -0.1rem 0.2rem #f5f9fd;
+            inset -0.1rem -0.1rem 0.2rem #ecf2fb;
         }
         .numbers h3 {
           font-weight: 400;
@@ -513,11 +513,11 @@ const App = () => {
           display: grid;
           list-style: none;
           flex-grow: 1;
-          gap: 2rem;
+          gap: 4rem;
         }
         .list-rows > ul > li > ul > li {
           padding: 2rem;
-          box-shadow: -5px -5px 15px #f5f9fd, 5px 5px 15px #aeaec040;
+          box-shadow: -5px -5px 15px #ecf2fb, 5px 5px 15px #aeaec040;
           border-radius: 5px;
           display: flex;
           flex-direction: column;
@@ -531,13 +531,14 @@ const App = () => {
         .list-rows > ul > li > button {
           font-weight: 600;
         }
+
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
           -webkit-appearance: none;
           margin: 0;
         }
 
-        @media (max-width: 1250px) {
+        @media (max-width: 1350px) {
           .claire-container {
             height: 100%;
           }

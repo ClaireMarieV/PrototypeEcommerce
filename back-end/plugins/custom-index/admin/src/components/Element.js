@@ -72,7 +72,7 @@ const Element = ({
         <button onClick={removeElement}>x</button>
       </div>
       <label>
-        Taille :
+        Nombre de colonnes :
         <input
           type="number"
           min="1"
@@ -102,10 +102,10 @@ const Element = ({
         align-items: center;
       }
       input {
-        box-shadow: inset 0.2rem 0.2rem 0.5rem #aeaec040,
-          inset -0.2rem -0.2rem 0.5rem #f5f9fd;
+        box-shadow: inset 0.1rem 0.1rem 0.3rem #aeaec040,
+          inset -0.1rem -0.1rem 0.3rem #ecf2fb;
         border: none;
-        background: #e7effa;
+        background: #e6ecf5;
         border-radius: 0.3rem;
         padding: 0.5rem;
       }
@@ -113,9 +113,10 @@ const Element = ({
         display: flex;
         justify-content: space-between;
       }
+
       .select-claire {
         padding: 1rem;
-        background: #e7effa;
+        background: #e4ebf5;
         border: none;
       }
       .select-claire > option {
