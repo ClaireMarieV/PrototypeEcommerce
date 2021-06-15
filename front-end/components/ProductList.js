@@ -19,8 +19,8 @@ const ProductList = ({ products }) => {
                   process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
                   product.images[0].url
                 }
-                width={450}
-                height={550}
+                width={650}
+                height={1050}
               />
             )}
             <div className="info">
