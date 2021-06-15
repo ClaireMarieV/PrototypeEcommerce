@@ -4,9 +4,10 @@ const Container = ({ children }) => (
     <style jsx>{`
       .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         justify-items: center;
-        gap: 2rem;
+        column-gap: 2rem;
+        row-gap: 3rem;
       }
       @media (max-width: 1300px) {
         .container {
