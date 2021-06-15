@@ -5,7 +5,7 @@ import Cookies from "js-cookie";
 import Connexion from "../components/Connexion";
 import Error from "../components/Error";
 import Loading from "../components/Loading";
-import TwoColumns from "../components/TwoColumns";
+import OneColumn from "../components/OneColumn";
 
 const ConnectPage = () => {
   const [email, setEmail] = useState("");
@@ -38,7 +38,7 @@ const ConnectPage = () => {
       {error && <Error />}
       {loading && <Loading />}
       {!loading && !error && (
-        <TwoColumns>
+        <OneColumn>
           <div className="connect">
             <h2>CONNECTEZ-VOUS</h2>
             <label htmlFor="email">
@@ -88,7 +88,7 @@ const ConnectPage = () => {
               }
             `}</style>
           </div>
-        </TwoColumns>
+        </OneColumn>
       )}
     </Layout>
   );
