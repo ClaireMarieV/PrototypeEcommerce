@@ -50,17 +50,8 @@ const CartProduct = ({ products }) => {
                 <span>Ref.{product.ref}</span>
                 <span>{product.prix}€</span>
                 <div className="quantity">
-                  <span
-                    onClick={() => setItemCount(product, product.quantity - 1)}
-                  >
-                    -
-                  </span>
+                  <span>Qté</span>
                   <span>{product.quantity}</span>
-                  <span
-                    onClick={() => setItemCount(product, product.quantity + 1)}
-                  >
-                    +
-                  </span>
                 </div>
                 <div className="price">
                   <span>{product.prix * product.quantity}</span>
@@ -94,8 +85,6 @@ const CartProduct = ({ products }) => {
               gap: 0.5rem;
               width: 100%;
               justify-content: space-between;
-              border-bottom: 1px solid grey;
-              padding-bottom: 0.5rem;
             }
             .label span:nth-child(1) {
               text-transform: uppercase;
@@ -115,7 +104,7 @@ const CartProduct = ({ products }) => {
             }
             .quantity {
               display: flex;
-              gap: 2rem;
+              gap: 1rem;
             }
             .price {
               font-weight: 700;
