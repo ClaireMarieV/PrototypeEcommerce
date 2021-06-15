@@ -5,7 +5,7 @@ const OneColumn = ({ children }) => (
       .container {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 5rem;
         justify-self: center;
         height: 100%;
         margin: auto;
