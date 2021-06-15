@@ -64,7 +64,7 @@ const Layout = ({ children }) => (
           color: #1c1b1b;
         }
         body {
-          font-family: arboria, sans-serif;
+          font-family: p22-underground, sans-serif;
           font-weight: 400;
           font-style: normal;
           letter-spacing: 0.05rem;
@@ -97,6 +97,9 @@ const Layout = ({ children }) => (
           font-size: 3rem;
           letter-spacing: 1rem;
           margin: 0;
+          font-family: p22-underground, sans-serif;
+          font-weight: 600;
+          font-style: normal;
         }
         @media (max-width: 600px) {
           h1 {
