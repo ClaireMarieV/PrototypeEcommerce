@@ -30,6 +30,7 @@ import {
   Product3,
   Product4,
   Product6,
+  Product8,
   Product9,
   Product12,
 } from "../components/gridIndex/Product";
@@ -41,6 +42,7 @@ const IndexPage = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -70,7 +72,22 @@ const IndexPage = () => {
           setLoading(false);
         });
     }
-  }, []);
+  }, [slug]);
+
+  useEffect(() => {
+    if (slug) {
+      fetch("/api/produits/")
+        .then((response) => response.json())
+        .then((product) => {
+          setProduct(product);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setError(error);
+          setLoading(false);
+        });
+    }
+  }, [slug]);
 
   return (
     <Layout>
@@ -227,6 +244,56 @@ const IndexPage = () => {
                 case "category44":
                   return (
                     <Category4
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
+                case "product31":
+                  return (
+                    <Product8
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
+                case "product32":
+                  return (
+                    <Product8
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
+                case "product33":
+                case "product44":
+                  return (
+                    <Product12
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
+                case "product41":
+                  return (
+                    <Product3
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
+                case "product42":
+                  return (
+                    <Product6
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
+                case "product43":
+                  return (
+                    <Product9
+                      element={element}
+                      gridMultiplier={12 / row.columnCount}
+                    />
+                  );
+                case "product44":
+                  return (
+                    <Product4
                       element={element}
                       gridMultiplier={12 / row.columnCount}
                     />
