@@ -5,6 +5,7 @@ const Text3 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.text}</span>
@@ -13,8 +14,8 @@ const Text3 = ({ element, gridMultiplier }) => (
       .container-text-3 {
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -34,6 +35,7 @@ const Text4 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.text}</span>
@@ -41,8 +43,8 @@ const Text4 = ({ element, gridMultiplier }) => (
       .container-text-4 {
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -62,6 +64,7 @@ const Text6 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.text}</span>
@@ -70,8 +73,8 @@ const Text6 = ({ element, gridMultiplier }) => (
       .container-text-6 {
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -91,6 +94,7 @@ const Text8 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.text}</span>
@@ -98,8 +102,8 @@ const Text8 = ({ element, gridMultiplier }) => (
       .container-text-8 {
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -119,6 +123,7 @@ const Text9 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.text}</span>
@@ -126,8 +131,8 @@ const Text9 = ({ element, gridMultiplier }) => (
       .container-text-9 {
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -147,6 +152,7 @@ const Text12 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.text}</span>
@@ -155,8 +161,8 @@ const Text12 = ({ element, gridMultiplier }) => (
       .container-text-12 {
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
-        padding: 2rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;

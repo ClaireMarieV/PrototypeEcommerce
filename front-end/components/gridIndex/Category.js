@@ -10,23 +10,41 @@ const Category3 = ({ element, gridMultiplier }) => (
       margin: "auto",
     }}
   >
-    <span>{element.category.label}</span>
     <Link
       key={element.category.id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
-        <button>Decouvrir</button>
+        <div>
+          <span>categorie</span>
+          <h5>{element.category.label}</h5>
+        </div>
       </a>
     </Link>
     <style jsx>{`
-      .container-category-3 {
-        justify-self: center;
-        margin: 2rem auto;
-        font-size: 2rem;
-        padding: 2rem;
+      section > div {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+      }
+      div > span {
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      div > h5 {
+        text-transform: uppercase;
+        margin: 0;
+        font-weigh: 600;
+      }
+      .container-category-3 {
+        display: flex;
+        margin: 2rem auto;
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        padding: 2rem;
         gap: 2rem;
         width: 100%;
         align-items: center;
@@ -53,23 +71,41 @@ const Category4 = ({ element, gridMultiplier }) => (
       margin: "auto",
     }}
   >
-    <span>{element.category.label}</span>
     <Link
       key={element.category.id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
-        <button>Decouvrir</button>
+        <div>
+          <span>categorie</span>
+          <h5>{element.category.label}</h5>
+        </div>
       </a>
     </Link>
     <style jsx>{`
-      .container-category-4 {
-        justify-self: center;
-        margin: 2rem auto;
-        font-size: 2rem;
-        padding: 2rem;
+      section > div {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+      }
+      div > span {
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      div > h5 {
+        text-transform: uppercase;
+        margin: 0;
+        font-weigh: 600;
+      }
+      .container-category-4 {
+        display: flex;
+        margin: 2rem auto;
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        padding: 2rem;
         gap: 2rem;
         width: 100%;
         align-items: center;
@@ -96,23 +132,41 @@ const Category6 = ({ element, gridMultiplier }) => (
       margin: "auto",
     }}
   >
-    <span>{element.category.label}</span>
     <Link
       key={element.category.id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
-        <button>Decouvrir</button>
+        <div>
+          <span>categorie</span>
+          <h5>{element.category.label}</h5>
+        </div>
       </a>
     </Link>
     <style jsx>{`
-      .container-category-6 {
-        justify-self: center;
-        margin: 2rem auto;
-        font-size: 2rem;
-        padding: 2rem;
+      section > div {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+      }
+      div > span {
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      div > h5 {
+        text-transform: uppercase;
+        margin: 0;
+        font-weigh: 600;
+      }
+      .container-category-6 {
+        display: flex;
+        margin: 2rem auto;
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        padding: 2rem;
         gap: 2rem;
         width: 100%;
         align-items: center;
@@ -138,23 +192,42 @@ const Category8 = ({ element, gridMultiplier }) => (
       margin: "auto",
     }}
   >
-    <span>{element.category.label}</span>
     <Link
       key={element.category.id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
-        <button>Decouvrir</button>
+        <div>
+          <span>categorie</span>
+          <h5>{element.category.label}</h5>
+        </div>
       </a>
     </Link>
     <style jsx>{`
-      .container-category-8 {
-        justify-self: center;
-        margin: 2rem auto;
-        font-size: 2rem;
-        padding: 2rem;
+      section > div {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+      }
+      div > span {
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      div > h5 {
+        text-transform: uppercase;
+        margin: 0;
+        font-weigh: 600;
+      }
+
+      .container-category-8 {
+        display: flex;
+        margin: 2rem auto;
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        padding: 2rem;
         gap: 2rem;
         width: 100%;
         align-items: center;
@@ -180,23 +253,40 @@ const Category9 = ({ element, gridMultiplier }) => (
       margin: "auto",
     }}
   >
-    <span>{element.category.label}</span>
     <Link
       key={element.category.id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
-        <button>Decouvrir</button>
+        <div>
+          <span>categorie</span>
+          <h5>{element.category.label}</h5>
+        </div>
       </a>
     </Link>
     <style jsx>{`
+      section > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      div > span {
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      div > h5 {
+        text-transform: uppercase;
+        margin: 0;
+        font-weigh: 600;
+      }
       .container-category-9 {
-        justify-self: center;
+        display: flex;
         margin: 2rem auto;
         font-size: 2rem;
         padding: 2rem;
-        display: flex;
-        flex-direction: column;
         gap: 2rem;
         width: 100%;
         align-items: center;
@@ -222,23 +312,41 @@ const Category12 = ({ element, gridMultiplier }) => (
       margin: "auto",
     }}
   >
-    <span>{element.category.label}</span>
     <Link
       key={element.category.id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
-        <button>Decouvrir</button>
+        <div>
+          <span>categorie</span>
+          <h5>{element.category.label}</h5>
+        </div>
       </a>
     </Link>
     <style jsx>{`
-      .container-category-12 {
-        justify-self: center;
-        margin: 2rem auto;
-        font-size: 2rem;
-        padding: 2rem;
+      section > div {
         display: flex;
         flex-direction: column;
+        gap: 1rem;
+      }
+      div > span {
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.5rem;
+      }
+      div > h5 {
+        text-transform: uppercase;
+        margin: 0;
+        font-weigh: 600;
+      }
+      .container-category-12 {
+        display: flex;
+        margin: 2rem auto;
+        letter-spacing: 0.2rem;
+        font-size: 2rem;
+        padding: 2rem;
         gap: 2rem;
         width: 100%;
         align-items: center;
