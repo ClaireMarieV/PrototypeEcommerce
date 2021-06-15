@@ -48,8 +48,8 @@ const Layout = ({ children }) => (
           height: 100%;
         }
         main {
-          width: 80vw;
-          margin: 6rem auto;
+          width: 90vw;
+          margin: 6rem auto 6rem auto;
         }
         @media (max-width: 600px) {
           main {
@@ -85,9 +85,7 @@ const Layout = ({ children }) => (
         ::-webkit-scrollbar-thumb {
           background: rgba(79, 71, 78, 0.8);
         }
-        header {
-          margin-top: 1rem;
-        }
+
         a {
           letter-spacing: 0.25em;
           text-decoration: none;
@@ -95,7 +93,6 @@ const Layout = ({ children }) => (
         }
         h1 {
           font-size: 3rem;
-          letter-spacing: 1rem;
           margin: 0;
           font-family: p22-underground, sans-serif;
           font-weight: 600;
