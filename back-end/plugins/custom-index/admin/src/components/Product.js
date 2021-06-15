@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
-const Product = ({
-  element,
-  setElementProduct,
-  products,
-  setElementCategory,
-  categories,
-}) => {
+const Product = ({ element, setElementProduct, products, categories }) => {
   const [selectedCategory, setSelectedCategory] = useState([]);
   return (
     <>
@@ -30,9 +24,9 @@ const Product = ({
           value={
             element.product ? element.product._id || element.product : null
           }
-          onChange={(event) => setElementCategory(event.target.value)}
+          onChange={(event) => setElementProduct(event.target.value)}
         >
-          <option>Choisissez un produit </option>
+          <option>Choisissez un produit</option>
 
           {products
             .filter((product) => product.categorie._id === selectedCategory)

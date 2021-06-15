@@ -383,7 +383,7 @@ const App = () => {
                             dispatch({
                               type: "changeElementProduct",
                               payload: {
-                                category: newProduct,
+                                product: newProduct,
                                 rowIndex: rowIndex,
                                 columnIndex: columnIndex,
                               },

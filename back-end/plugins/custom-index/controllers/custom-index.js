@@ -25,6 +25,7 @@ module.exports = {
               path: "category",
               populate: [{ path: "produits" }],
             },
+            { path: "product" },
           ],
         },
       ]);
@@ -60,6 +61,7 @@ module.exports = {
 
           const elementEntities = await Promise.all(
             row.elements.map(async (element) => {
+              console.log({ ...element, index_row: rowEntity.id });
               const elementEntity = await strapi
                 .query("index-element", "custom-index")
                 .create({ ...element, index_row: rowEntity.id });
@@ -70,9 +72,12 @@ module.exports = {
             })
           );
 
-          return sanitizeEntity(rowEntity, {
-            model: strapi.plugins["custom-index"].models["index-row"],
-          });
+          return {
+            ...sanitizeEntity(rowEntity, {
+              model: strapi.plugins["custom-index"].models["index-row"],
+            }),
+            index_elements: elementEntities,
+          };
         })
       );
     }
