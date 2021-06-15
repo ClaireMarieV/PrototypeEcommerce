@@ -36,7 +36,6 @@ const NewProductsPage = () => {
       {loading && <Loading />}
       {!loading && !error && (
         <OneColumn>
-          <h2>New products</h2>
           <ProductList
             products={products.filter(
               (product) => new Date(product.published_at) > oneMonthAgo
