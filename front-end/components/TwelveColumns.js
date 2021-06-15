@@ -5,7 +5,8 @@ const HorizontalFocus = ({ children }) => (
       .container-twelve-columns {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        gap: 3rem;
+        column-gap: 3rem;
+        row-gap: 10rem;
       }
       @media (max-width: 500px) {
         .container-twelve-columns {
