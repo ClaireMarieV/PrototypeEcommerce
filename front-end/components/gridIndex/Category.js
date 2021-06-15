@@ -7,9 +7,18 @@ const Category3 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.category.label}</span>
+    <Link
+      key={element.category.id}
+      href={"/categorie/" + element.category.slug}
+    >
+      <a>
+        <button>Decouvrir</button>
+      </a>
+    </Link>
     <style jsx>{`
       .container-category-3 {
         justify-self: center;
@@ -24,6 +33,9 @@ const Category3 = ({ element, gridMultiplier }) => (
       }
       .container-category > span {
         text-transform: uppercase;
+        font-family: p22-underground, sans-serif;
+        font-weight: 600;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -38,9 +50,18 @@ const Category4 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.category.label}</span>
+    <Link
+      key={element.category.id}
+      href={"/categorie/" + element.category.slug}
+    >
+      <a>
+        <button>Decouvrir</button>
+      </a>
+    </Link>
     <style jsx>{`
       .container-category-4 {
         justify-self: center;
@@ -55,6 +76,9 @@ const Category4 = ({ element, gridMultiplier }) => (
       }
       .container-category-4 > span {
         text-transform: uppercase;
+        font-family: p22-underground, sans-serif;
+        font-weight: 600;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -69,9 +93,18 @@ const Category6 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.category.label}</span>
+    <Link
+      key={element.category.id}
+      href={"/categorie/" + element.category.slug}
+    >
+      <a>
+        <button>Decouvrir</button>
+      </a>
+    </Link>
     <style jsx>{`
       .container-category-6 {
         justify-self: center;
@@ -86,6 +119,9 @@ const Category6 = ({ element, gridMultiplier }) => (
       }
       .container-category-6 > span {
         text-transform: uppercase;
+        font-family: p22-underground, sans-serif;
+        font-weight: 600;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -99,9 +135,18 @@ const Category8 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.category.label}</span>
+    <Link
+      key={element.category.id}
+      href={"/categorie/" + element.category.slug}
+    >
+      <a>
+        <button>Decouvrir</button>
+      </a>
+    </Link>
     <style jsx>{`
       .container-category-8 {
         justify-self: center;
@@ -116,6 +161,9 @@ const Category8 = ({ element, gridMultiplier }) => (
       }
       .container-category-8 > span {
         text-transform: uppercase;
+        font-family: p22-underground, sans-serif;
+        font-weight: 600;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -129,9 +177,18 @@ const Category9 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.category.label}</span>
+    <Link
+      key={element.category.id}
+      href={"/categorie/" + element.category.slug}
+    >
+      <a>
+        <button>Decouvrir</button>
+      </a>
+    </Link>
     <style jsx>{`
       .container-category-9 {
         justify-self: center;
@@ -146,6 +203,9 @@ const Category9 = ({ element, gridMultiplier }) => (
       }
       .container-category-9 > span {
         text-transform: uppercase;
+        font-family: p22-underground, sans-serif;
+        font-weight: 600;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -159,9 +219,18 @@ const Category12 = ({ element, gridMultiplier }) => (
       gridColumn: `${element.column * gridMultiplier + 1} / span ${
         element.columnSpan * gridMultiplier
       }`,
+      margin: "auto",
     }}
   >
     <span>{element.category.label}</span>
+    <Link
+      key={element.category.id}
+      href={"/categorie/" + element.category.slug}
+    >
+      <a>
+        <button>Decouvrir</button>
+      </a>
+    </Link>
     <style jsx>{`
       .container-category-12 {
         justify-self: center;
@@ -176,6 +245,9 @@ const Category12 = ({ element, gridMultiplier }) => (
       }
       .container-category-12 > span {
         text-transform: uppercase;
+        font-family: p22-underground, sans-serif;
+        font-weight: 600;
+        font-style: normal;
       }
     `}</style>
   </section>
