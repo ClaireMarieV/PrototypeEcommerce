@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThreeColumns from "../components/ThreeColumns";
+import FourColumns from "../components/FourColumns";
 import ShopButton from "../components/ShopButton";
 import Image from "next/image";
 import sub from "date-fns/sub";
@@ -9,7 +9,7 @@ const ProductList = ({ products }) => {
     months: 1,
   });
   return (
-    <ThreeColumns>
+    <FourColumns>
       {products.map((product) => (
         <Link key={product.id} href={"/produit/" + product.slug}>
           <a>
@@ -59,7 +59,7 @@ const ProductList = ({ products }) => {
           text-transform: uppercase;
         }
       `}</style>
-    </ThreeColumns>
+    </FourColumns>
   );
 };
 export default ProductList;
