@@ -25,7 +25,7 @@ module.exports = {
               path: "category",
               populate: [{ path: "produits" }],
             },
-            { path: "product" },
+            { path: "product", populate: [{ path: "categorie" }] },
           ],
         },
       ]);

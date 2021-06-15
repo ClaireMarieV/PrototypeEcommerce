@@ -11,7 +11,7 @@ const Product3 = ({ element, gridMultiplier }) => (
     }}
   >
     <div>
-      <h5>{element.category.label}</h5>
+      <h5>{element.product.categorie.label}</h5>
       <span>{element.product.label}</span>
     </div>
     <Link key={element.product.id} href={"/produit/" + element.product.slug}>
@@ -24,19 +24,22 @@ const Product3 = ({ element, gridMultiplier }) => (
         grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
         padding-top: 2rem;
         display: flex;
         gap: 2rem;
         width: 100%;
-        align-items: center;
+        align-items: flex-end;
       }
       .container-product-3 > div {
         text-transform: uppercase;
-        font-size: 2.5rem;
         font-family: p22-underground, sans-serif;
         font-weight: 600;
         font-style: normal;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
       }
 
       h5 {
@@ -60,7 +63,7 @@ const Product4 = ({ element, gridMultiplier }) => (
     }}
   >
     <div>
-      <h5>{element.category.label}</h5>
+      <h5>{element.product.categorie.label}</h5>
       <span>{element.product.label}</span>
     </div>
     <Link key={element.product.id} href={"/produit/" + element.product.slug}>
@@ -73,24 +76,32 @@ const Product4 = ({ element, gridMultiplier }) => (
         grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
         padding-top: 2rem;
         display: flex;
         gap: 2rem;
         width: 100%;
-        align-items: center;
+        align-items: flex-end;
       }
       .container-product-4 > div {
         text-transform: uppercase;
-        font-size: 2.5rem;
         font-family: p22-underground, sans-serif;
         font-weight: 600;
         font-style: normal;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
       }
 
       h5 {
         margin: 0;
         font-weight: 400;
+        text-transform: lowercase;
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -109,7 +120,7 @@ const Product6 = ({ element, gridMultiplier }) => (
     }}
   >
     <div>
-      <h5>{element.category.label}</h5>
+      <h5>{element.product.categorie.label}</h5>
       <span>{element.product.label}</span>
     </div>
     <Link key={element.product.id} href={"/produit/" + element.product.slug}>
@@ -122,24 +133,32 @@ const Product6 = ({ element, gridMultiplier }) => (
         grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
         padding-top: 2rem;
         display: flex;
         gap: 2rem;
         width: 100%;
-        align-items: center;
+        align-items: flex-end;
       }
       .container-product-6 > div {
         text-transform: uppercase;
-        font-size: 2.5rem;
         font-family: p22-underground, sans-serif;
         font-weight: 600;
         font-style: normal;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
       }
 
       h5 {
         margin: 0;
         font-weight: 400;
+        text-transform: lowercase;
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -157,7 +176,7 @@ const Product8 = ({ element, gridMultiplier }) => (
     }}
   >
     <div>
-      <h5>{element.category.label}</h5>
+      <h5>{element.product.categorie.label}</h5>
       <span>{element.product.label}</span>
     </div>
     <Link key={element.product.id} href={"/produit/" + element.product.slug}>
@@ -170,24 +189,32 @@ const Product8 = ({ element, gridMultiplier }) => (
         grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
         padding-top: 2rem;
         display: flex;
         gap: 2rem;
         width: 100%;
-        align-items: center;
+        align-items: flex-end;
       }
       .container-product-8 > div {
         text-transform: uppercase;
-        font-size: 2.5rem;
         font-family: p22-underground, sans-serif;
         font-weight: 600;
         font-style: normal;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
       }
 
       h5 {
         margin: 0;
         font-weight: 400;
+        text-transform: lowercase;
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -205,7 +232,7 @@ const Product9 = ({ element, gridMultiplier }) => (
     }}
   >
     <div>
-      <h5>{element.category.label}</h5>
+      <h5>{element.product.categorie.label}</h5>
       <span>{element.product.label}</span>
     </div>
     <Link key={element.product.id} href={"/produit/" + element.product.slug}>
@@ -218,24 +245,32 @@ const Product9 = ({ element, gridMultiplier }) => (
         grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
         padding-top: 2rem;
         display: flex;
         gap: 2rem;
         width: 100%;
-        align-items: center;
+        align-items: flex-end;
       }
       .container-product-9 > div {
         text-transform: uppercase;
-        font-size: 2.5rem;
         font-family: p22-underground, sans-serif;
         font-weight: 600;
         font-style: normal;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
       }
 
       h5 {
         margin: 0;
         font-weight: 400;
+        text-transform: lowercase;
+        font-family: felt-tip-senior, serif;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-style: normal;
       }
     `}</style>
   </section>
@@ -253,7 +288,7 @@ const Product12 = ({ element, gridMultiplier }) => (
     }}
   >
     <div>
-      <h5>{element.category.label}</h5>
+      <h5>{element.product.categorie.label}</h5>
       <span>{element.product.label}</span>
     </div>
     <Link key={element.product.id} href={"/produit/" + element.product.slug}>
@@ -266,16 +301,16 @@ const Product12 = ({ element, gridMultiplier }) => (
         grid-column: 1 / 10;
         justify-self: center;
         margin: 2rem auto;
+        letter-spacing: 0.2rem;
         font-size: 2rem;
         padding-top: 2rem;
         display: flex;
         gap: 2rem;
         width: 100%;
-        align-items: center;
+        align-items: flex-end;
       }
       .container-product-12 > div {
         text-transform: uppercase;
-        font-size: 2.5rem;
         font-family: p22-underground, sans-serif;
         font-weight: 600;
         font-style: normal;
