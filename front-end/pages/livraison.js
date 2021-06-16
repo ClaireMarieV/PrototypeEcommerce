@@ -42,7 +42,6 @@ const DeliveryPage = () => {
       .then(({ jwt }) => {
         Cookies.set("token", jwt);
       })
-
       .catch((error) => {
         setError(error);
         setLoading(false);
@@ -55,6 +54,15 @@ const DeliveryPage = () => {
       <TwoColumns>
         <section>
           <section className="form">
+            <label>
+              Email
+              <input
+                required
+                type="text"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </label>
             <label>
               Nom
               <input
@@ -100,24 +108,6 @@ const DeliveryPage = () => {
                 onChange={(event) => setTown(event.target.value)}
               />
             </label>
-            <label>
-              Email
-              <input
-                required
-                type="text"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-            </label>
-            <label>
-              Numero de telephone
-              <input
-                required
-                type="text"
-                value={number}
-                onChange={(event) => setNumber(event.target.value)}
-              />
-            </label>
           </section>
         </section>
         <OneColumn>
@@ -146,7 +136,7 @@ const DeliveryPage = () => {
           justify-content: flex-end;
         }
         section {
-          gap: 2rem;
+          gap: 1rem;
         }
         .form {
           display: grid;
