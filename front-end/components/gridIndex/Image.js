@@ -1,8 +1,12 @@
 import Image from "next/image";
 
-const Image3 = ({ src }) => (
+const Image3 = ({ element }) => (
   <div className="container-image-3">
-    <img src={src} width="500" height="500" />
+    <img
+      src={`http://localhost:1337${element.image.formats.large.url}`}
+      width="500"
+      height="500"
+    />
     <style jsx global>{`
       .container-image-3 {
         grid-column: 1 / 4;
@@ -20,9 +24,13 @@ const Image3 = ({ src }) => (
 );
 export { Image3 };
 
-const Image4 = ({ src }) => (
+const Image4 = ({ element }) => (
   <div className="container-image-4">
-    <img src={src} width="500" height="500" />
+    <img
+      src={`http://localhost:1337${element.image.formats.large.url}`}
+      width="500"
+      height="500"
+    />
     <style jsx global>{`
       .container-image-4 {
         grid-column: 1 / 5;
@@ -40,9 +48,13 @@ const Image4 = ({ src }) => (
 );
 export { Image4 };
 
-const Image6 = ({ src }) => (
+const Image6 = ({ element }) => (
   <div className="container-image-6">
-    <img src={src} width="500" height="500" />
+    <img
+      src={`http://localhost:1337${element.image.formats.large.url}`}
+      width="500"
+      height="500"
+    />
     <style jsx global>{`
       .container-image-6 {
         grid-column: 1 / 7;
@@ -60,9 +72,13 @@ const Image6 = ({ src }) => (
 );
 export { Image6 };
 
-const Image8 = ({ src }) => (
+const Image8 = ({ element }) => (
   <div className="container-image-8">
-    <img src={src} width="500" height="500" />
+    <img
+      src={`http://localhost:1337${element.image.formats.large.url}`}
+      width="500"
+      height="500"
+    />
     <style jsx global>{`
       .container-image-8 {
         grid-column: 1 / 7;
@@ -80,9 +96,13 @@ const Image8 = ({ src }) => (
 );
 export { Image8 };
 
-const Image9 = ({ src }) => (
+const Image9 = ({ element }) => (
   <div className="container-image-9">
-    <img src={src} width="800" height="500" />
+    <img
+      src={`http://localhost:1337${element.image.formats.large.url}`}
+      width="800"
+      height="500"
+    />
     <style jsx global>{`
       .container-image-9 {
         grid-column: 1 /10;
@@ -100,9 +120,13 @@ const Image9 = ({ src }) => (
 );
 export { Image9 };
 
-const Image12 = ({ src }) => (
+const Image12 = ({ element }) => (
   <div className="container-image-12">
-    <img src={src} width="1400" height="500" />
+    <img
+      src={`http://localhost:1337${element.image.formats.large.url}`}
+      width="1400"
+      height="500"
+    />
     <style jsx global>{`
       .container-image-12 {
         grid-column: 1 / 13;

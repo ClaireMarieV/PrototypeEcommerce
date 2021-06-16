@@ -1,39 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Image = () => {
+const Image = ({ element, setElementImage }) => {
+  const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const input = document.getElementById("file");
+  const upload = (e) => {
+    const formData = new FormData();
 
-  const upload = (event) => {
-    event.preventDefault();
-    const data = new FormData();
-    data.append("images", event.target.files[0]);
-    fetch("/upload", {
+    Array.from(images).map((image) => formData.append("files", image));
+
+    setLoading(true);
+    setError(null);
+    fetch("http://localhost:1337/upload", {
       method: "POST",
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-      body: data,
+      body: formData,
     })
-      .then(() => {
+      .then((response) => response.json())
+      .then((files) => {
+        setElementImage(files[0]._id);
         setLoading(false);
       })
-      .then((success) => console.log(success))
       .catch((error) => {
         setError(error);
         setLoading(false);
       });
   };
+
   return (
-    <>
+    <div>
       <label>
         Image :
-        <input id="file" type="file" />
-        <button type="submit" onClick={upload}>
-          Submit
-        </button>
+        <input
+          id="file"
+          type="file"
+          onChange={(event) => setImages(event.target.files)}
+        />
+        <button onClick={upload}>Submit</button>
       </label>
       <style jsx>
         {`
@@ -43,7 +46,7 @@ const Image = () => {
           }
         `}
       </style>
-    </>
+    </div>
   );
 };
 

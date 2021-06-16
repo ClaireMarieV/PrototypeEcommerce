@@ -436,7 +436,7 @@ const App = () => {
           grid-template-rows: auto;
           padding: 4rem;
           gap: 2rem;
-          height: 100vh;
+          height: auto;
           background: #e4ebf5;
         }
         .h1-claire {
