@@ -43,7 +43,7 @@ const Filter = ({ categorySlug }) => {
           display: flex;
           gap: 2rem;
           list-style: none;
-          text-transform: capitalize;
+          text-transform: uppercase;
           padding: 1rem;
         }
         ul > li {
