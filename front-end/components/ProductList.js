@@ -44,8 +44,11 @@ const ProductList = ({ products }) => {
           display: flex;
           flex-direction: column;
           padding: 1rem 0 1rem 0;
-          gap: 1rem;
           align-items: center;
+          gap: 1rem;
+        }
+        .info > span:last-child {
+          font-weight: 600;
         }
         img {
           width: 100%;
