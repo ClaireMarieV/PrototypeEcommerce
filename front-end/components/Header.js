@@ -5,7 +5,7 @@ import DropdownMenu from "../components/DropdownMenu";
 import { useStore } from "../lib/store";
 import Cookie from "js-cookie";
 
-const Header = () => {
+const Header = ({ currentPage }) => {
   const products = useStore((state) => (state.cart ? state.cart.products : []));
   const setUser = useStore((state) => state.setUser);
   const [categories, setCategories] = useState([]);
@@ -47,12 +47,16 @@ const Header = () => {
           <ul className="products">
             <li>
               <Link href="/produits">
-                <a>PRODUITS</a>
+                <a className={currentPage === "all-products" ? "focus" : ""}>
+                  PRODUITS
+                </a>
               </Link>
             </li>
             <li>
               <Link href="/nouveaux-produits">
-                <a>NEW IN</a>
+                <a className={currentPage === "new-products" ? "focus" : ""}>
+                  NEW IN
+                </a>
               </Link>
             </li>
           </ul>
@@ -103,6 +107,10 @@ const Header = () => {
           justify-self: center;
           gap: 2rem;
         }
+        ul > li > a.focus {
+          font-weight: 600;
+        }
+
         .listing-products {
           display: inline-flex;
           gap: 2rem;

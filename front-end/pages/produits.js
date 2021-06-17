@@ -52,7 +52,7 @@ const ProductsPage = () => {
   }, [slug]);
 
   return (
-    <Layout>
+    <Layout currentPage="all-products">
       {error && <Error />}
       {loading && <Loading />}
       {!loading && !error && (

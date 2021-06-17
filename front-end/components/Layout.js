@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./header";
 import Head from "next/head";
 import Footer from "./Footer";
-const Layout = ({ children }) => (
+const Layout = ({ children, currentPage }) => (
   <div className="layout">
     <Head>
       <link
@@ -31,7 +31,7 @@ const Layout = ({ children }) => (
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
     </Head>
-    <Header />
+    <Header currentPage={currentPage} />
     <link rel="stylesheet" href="https://use.typekit.net/ljf5get.css" />
     <div
       style={{
@@ -48,7 +48,7 @@ const Layout = ({ children }) => (
           height: 100%;
         }
         main {
-          width: 90vw;
+          width: 80vw;
           margin: 6rem auto 6rem auto;
         }
         @media (max-width: 600px) {
@@ -87,7 +87,6 @@ const Layout = ({ children }) => (
         }
 
         a {
-          letter-spacing: 0.25em;
           text-decoration: none;
           color: #1c1b1b;
         }
@@ -105,17 +104,26 @@ const Layout = ({ children }) => (
         }
         h2 {
           font-weight: 500;
+          font-family: p22-underground, sans-serif;
           margin: 0;
         }
         h3 {
           margin: 0;
+          font-family: p22-underground, sans-serif;
+          font-weight: 600;
+          font-style: normal;
         }
         h4 {
           margin: 0.5em;
-          font-family: astoria-sans-condensed, sans-serif;
+          font-family: p22-underground, sans-serif;
           font-weight: 100;
           font-size: 1.2rem;
           margin-bottom: 0.5em;
+        }
+        h5 {
+          font-family: p22-underground, sans-serif;
+          font-weight: 600;
+          font-style: normal;
         }
 
         p {
@@ -134,11 +142,11 @@ const Layout = ({ children }) => (
           width: 100%;
         }
         button {
-          border: none;
+          border: 2px solid #141414;
           padding: 1rem 3rem;
           width: fit-content;
-          background: #1c1b1b;
-          color: white;
+          background: transparent;
+          color: #141414;
           text-transform: uppercase;
           font-weight: 600;
           letter-spacing: 0.05rem;
@@ -151,8 +159,11 @@ const Layout = ({ children }) => (
           border: none;
           border-bottom: 1.5px solid;
           margin-top: 0.5rem;
-          padding: 0.2rem;
+          padding: 1rem;
           background-color: #fbfbfb;
+          font-size: 1rem;
+          color: #141414;
+          letter-spacing: 0.1rem;
         }
         input[type="email"],
         input[type="password"] {

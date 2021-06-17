@@ -20,7 +20,6 @@ const NewProductsPage = () => {
     fetch("/api/produits?skip=0")
       .then((response) => response.json())
       .then((products) => {
-        console.log(products);
         setProducts(products);
         setLoading(false);
       })
@@ -31,7 +30,7 @@ const NewProductsPage = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout currentPage="new-products">
       {error && <Error />}
       {loading && <Loading />}
       {!loading && !error && (
