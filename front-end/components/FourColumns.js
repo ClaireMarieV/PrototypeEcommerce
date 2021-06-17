@@ -7,7 +7,7 @@ const Container = ({ children }) => (
         grid-template-columns: repeat(4, 1fr);
         justify-items: center;
         column-gap: 2rem;
-        row-gap: 3rem;
+        row-gap: 4rem;
       }
       @media (max-width: 1300px) {
         .container {
