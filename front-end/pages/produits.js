@@ -60,7 +60,7 @@ const ProductsPage = () => {
           <Filter />
           <OneColumn>
             <ProductList products={produits} />
-            {produits.length > 9 && (
+            {produits.length > 11 && (
               <button onClick={loadProducts}>Load More</button>
             )}
           </OneColumn>

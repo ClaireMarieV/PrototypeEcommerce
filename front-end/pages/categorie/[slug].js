@@ -56,7 +56,9 @@ const Category = () => {
 
             <OneColumn>
               <ProductList products={category.produits} />
-              <button onClick={loadProducts}>Load More</button>
+              {produits.length > 11 && (
+                <button onClick={loadProducts}>Load More</button>
+              )}
             </OneColumn>
           </GridRow>
         </>
