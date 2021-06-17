@@ -3,10 +3,7 @@ export default async (req, res) => {
   // res.end();
   if (req.method === "GET") {
     return fetch(
-      process.env.BACKOFFICE_HOST +
-        "/produits?_start=" +
-        req.query.skip +
-        "&_limit=10"
+      process.env.BACKOFFICE_HOST + "/produits?_start=" + req.query.skip
     )
       .then((response) => response.json())
       .then((produit) => {
