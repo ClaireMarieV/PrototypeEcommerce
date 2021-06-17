@@ -11,6 +11,7 @@ const Footer = () => (
       </Link>
     </div>
     <div>
+      <span>Aide</span>
       <ul>
         <li>
           <Link href="/about">
@@ -35,10 +36,29 @@ const Footer = () => (
         </li>
       </ul>
     </div>
+    <div>
+      <span>Nous suivre</span>
+      <ul>
+        <li>
+          <Link href="/about">
+            <a>
+              <span>Facebook</span>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact">
+            <a>
+              <span>Instagram</span>
+            </a>
+          </Link>
+        </li>
+      </ul>
+    </div>
     <style jsx>{`
       footer {
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
         justify-items: center;
         align-items: center;
         text-decoration: none;
@@ -46,18 +66,16 @@ const Footer = () => (
         padding: 1.5rem;
       }
       ul {
-        display: flex;
         gap: 1rem;
         list-style: none;
       }
-      li {
-        padding-right: 1rem;
-      }
-      span {
+
+      div > span {
         padding: 0;
+        font-weight: 600;
       }
       img {
-        width: 2rem;
+        width: 1.5rem;
       }
       .logo img {
         width: 100%;
