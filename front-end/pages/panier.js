@@ -12,9 +12,9 @@ const CartPage = () => {
     100;
   return (
     <Layout>
-      <h2>Resumé de la commande ({products.length})</h2>
       <OneColumn>
-        {products > 0 && (
+        <h2>Resumé de la commande ({products.length})</h2>
+        {products.length >= 1 && (
           <>
             <CartProduct products={products} />
             <div className="checkout">
@@ -27,12 +27,12 @@ const CartPage = () => {
             </div>
           </>
         )}
-        {products.length === 0 && (
-          <div className="empty">
-            <span>Votre panier est vide.</span>
-          </div>
-        )}
       </OneColumn>
+      {products.length === 0 && (
+        <div className="empty">
+          <span>Votre panier est vide.</span>
+        </div>
+      )}
       <style jsx>{`
         .checkout {
           margin: 3rem auto;
