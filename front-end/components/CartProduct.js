@@ -20,8 +20,7 @@ const CartProduct = ({ products }) => {
   const setItemCount = useStore((state) => state.setItemCount);
 
   return (
-    <OneColumn>
-      <h2>Panier ({products.length})</h2>
+    <>
       {aggregatedProducts.map((product) => (
         <div className="one-product">
           <div className="label">
@@ -122,7 +121,7 @@ const CartProduct = ({ products }) => {
           `}</style>
         </div>
       ))}
-    </OneColumn>
+    </>
   );
 };
 

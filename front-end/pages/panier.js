@@ -12,16 +12,27 @@ const CartPage = () => {
     100;
   return (
     <Layout>
-      <CartProduct products={products} />
-      <div className="checkout">
-        <span>Total : {total}</span>
-        <Link href="/livraison">
-          <a>
-            <button>Traiter la commande</button>
-          </a>
-        </Link>
-      </div>
-
+      <h2>Resumé de la commande ({products.length})</h2>
+      <OneColumn>
+        {products > 0 && (
+          <>
+            <CartProduct products={products} />
+            <div className="checkout">
+              <span>Total : {total}</span>
+              <Link href="/livraison">
+                <a>
+                  <button>Traiter la commande</button>
+                </a>
+              </Link>
+            </div>
+          </>
+        )}
+        {products.length === 0 && (
+          <div className="empty">
+            <span>Votre panier est vide.</span>
+          </div>
+        )}
+      </OneColumn>
       <style jsx>{`
         .checkout {
           margin: 3rem auto;
@@ -32,6 +43,17 @@ const CartPage = () => {
         }
         .checkout span {
           font-weight: 500;
+        }
+        .empty {
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          margin: auto;
+          padding: 5rem;
+        }
+        .empty > span {
+          font-weight: 600;
+          font-size: 1.5rem;
         }
       `}</style>
     </Layout>
