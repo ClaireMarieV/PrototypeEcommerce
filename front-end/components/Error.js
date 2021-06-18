@@ -1,9 +1,23 @@
+import Link from "next/link";
+
 const Error = () => (
   <div className="container-error">
     <h1>error</h1>
-    <section>
-      <span>Oh non une erreur est survenue!</span>
-    </section>
+    <span>
+      Oh non une erreur est survenue! Il doit manquer quelque chose...
+    </span>
+    <div className="help">
+      <Link href="/">
+        <a>
+          <button>Homepage</button>
+        </a>
+      </Link>
+      <Link href="/contact">
+        <a>
+          <button>Contact</button>
+        </a>
+      </Link>
+    </div>
     <style jsx>{`
       .container-error {
         display: flex;
@@ -25,14 +39,16 @@ const Error = () => (
         text-transform: uppercase;
         font-size: 5rem;
       }
-      secton {
-        display: flex;
-        flex-direction: column;
-        font-size: 2rem;
-      }
+
       img {
         max-width: 50rem;
         width: 100%;
+      }
+      .help {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        gap: 2rem;
       }
       @media (max-width: 500px) {
         .container {
