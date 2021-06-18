@@ -278,7 +278,7 @@ const App = () => {
       <div className="list-rows">
         <ul>
           {rows.map((row, rowIndex) => (
-            <li>
+            <li key={key}>
               <div className="numbers">
                 <h3>nombre de colonnes</h3>
                 <div className="buttons">
@@ -405,7 +405,7 @@ const App = () => {
                     }
                     if (!columnOccupied(row.elements, columnIndex)) {
                       return (
-                        <li>
+                        <li key={key}>
                           <button
                             onClick={() => {
                               dispatch({
