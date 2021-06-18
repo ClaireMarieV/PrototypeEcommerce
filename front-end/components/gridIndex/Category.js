@@ -11,7 +11,7 @@ const Category3 = ({ element, gridMultiplier }) => (
     }}
   >
     <Link
-      key={element.category.id}
+      key={element.category._id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
@@ -72,7 +72,7 @@ const Category4 = ({ element, gridMultiplier }) => (
     }}
   >
     <Link
-      key={element.category.id}
+      key={element.category._id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
@@ -133,7 +133,7 @@ const Category6 = ({ element, gridMultiplier }) => (
     }}
   >
     <Link
-      key={element.category.id}
+      key={element.category._id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
@@ -193,7 +193,7 @@ const Category8 = ({ element, gridMultiplier }) => (
     }}
   >
     <Link
-      key={element.category.id}
+      key={element.category._id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
@@ -254,7 +254,7 @@ const Category9 = ({ element, gridMultiplier }) => (
     }}
   >
     <Link
-      key={element.category.id}
+      key={element.category._id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
@@ -313,7 +313,7 @@ const Category12 = ({ element, gridMultiplier }) => (
     }}
   >
     <Link
-      key={element.category.id}
+      key={element.category._id}
       href={"/categorie/" + element.category.slug}
     >
       <a>
