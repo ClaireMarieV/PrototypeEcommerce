@@ -61,7 +61,7 @@ const IndexPage = () => {
 
   useEffect(() => {
     if (slug) {
-      fetch("/api/categories/")
+      fetch("/api/categories/" + slug)
         .then((response) => response.json())
         .then((category) => {
           setCategory(category);
