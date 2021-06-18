@@ -44,7 +44,7 @@ const Footer = () => (
     <style jsx>{`
       footer {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         justify-items: center;
         align-items: center;
         text-decoration: none;
