@@ -11,26 +11,12 @@ const Footer = () => (
       </Link>
     </div>
     <div>
-      <span>Aide</span>
+      <span>Contact</span>
       <ul>
         <li>
           <Link href="/about">
             <a>
               <span>about us</span>
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact">
-            <a>
-              <span>contact</span>
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/aide">
-            <a>
-              <span>aide</span>
             </a>
           </Link>
         </li>
