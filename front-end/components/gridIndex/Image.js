@@ -3,7 +3,7 @@ import Image from "next/image";
 const Image3 = ({ element }) => (
   <div className="container-image-3">
     <img
-      src={`http://localhost:1337${element.image.formats.large.url}`}
+      src={`http://localhost:1337${element.image.url}`}
       width="500"
       height="500"
     />
@@ -27,7 +27,7 @@ export { Image3 };
 const Image4 = ({ element }) => (
   <div className="container-image-4">
     <img
-      src={`http://localhost:1337${element.image.formats.large.url}`}
+      src={`http://localhost:1337${element.image.url}`}
       width="500"
       height="500"
     />
@@ -51,7 +51,7 @@ export { Image4 };
 const Image6 = ({ element }) => (
   <div className="container-image-6">
     <img
-      src={`http://localhost:1337${element.image.formats.large.url}`}
+      src={`http://localhost:1337${element.image.url}`}
       width="500"
       height="500"
     />
@@ -75,9 +75,9 @@ export { Image6 };
 const Image8 = ({ element }) => (
   <div className="container-image-8">
     <img
-      src={`http://localhost:1337${element.image.formats.large.url}`}
-      width="500"
-      height="500"
+      src={`http://localhost:1337${element.image.url}`}
+      width="400"
+      height="600"
     />
     <style jsx global>{`
       .container-image-8 {
@@ -99,7 +99,7 @@ export { Image8 };
 const Image9 = ({ element }) => (
   <div className="container-image-9">
     <img
-      src={`http://localhost:1337${element.image.formats.large.url}`}
+      src={`http://localhost:1337${element.image.url}`}
       width="800"
       height="500"
     />
@@ -123,7 +123,7 @@ export { Image9 };
 const Image12 = ({ element }) => (
   <div className="container-image-12">
     <img
-      src={`http://localhost:1337${element.image.formats.large.url}`}
+      src={`http://localhost:1337${element.image.url}`}
       width="1400"
       height="500"
     />
