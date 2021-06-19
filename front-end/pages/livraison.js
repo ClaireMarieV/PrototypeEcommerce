@@ -24,24 +24,21 @@ const DeliveryPage = () => {
     100;
 
   const order = () => {
+    console.log("error");
+    const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+    console.log("error");
+
     setLoading(true);
     setError(null);
-    fetch("/api/orders", {
+    fetch("/api/cart/payment", {
       method: "POST",
-      body: JSON.stringify({
-        lastname,
-        firstname,
-        email,
-        address,
-        postal,
-        town,
-        number,
-      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(products),
     })
       .then((response) => response.json())
-      .then(({ jwt }) => {
-        Cookies.set("token", jwt);
-      })
+      .then((session) => stripe.redirectToCheckout({ sessionId: session.id }))
       .catch((error) => {
         setError(error);
         setLoading(false);
@@ -119,11 +116,7 @@ const DeliveryPage = () => {
               <span>Frais de port:</span>
               <span className="total">TOTAL: {total}</span>
             </div>
-            <Link href="/paiement">
-              <a>
-                <button onClick={order}>Paiement</button>
-              </a>
-            </Link>
+            <button onClick={order}>Paiement</button>
           </section>
         </OneColumn>
       </TwoColumns>
