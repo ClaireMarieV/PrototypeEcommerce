@@ -4,7 +4,7 @@ const Alert = () => (
   <section className="section-claire">
     <img src="/public/svg/exclamationPoint.svg" />
     <p className="p-claire">
-      D'un point de vue utilisateur, il est préférable de n'afficher que 3
+      D'un point de vue utilisateur, il est préférable d'afficher au maximum 4
       rangées pour une attention plus importante et une mémorisation plus
       efficace des éléments souhaités.
     </p>
