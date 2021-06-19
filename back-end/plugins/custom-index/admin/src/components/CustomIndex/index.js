@@ -189,7 +189,7 @@ const reducer = (state, action) => {
   }
 };
 
-const App = () => {
+const App = (first, second) => {
   const [rows, dispatch] = useReducer(reducer, []);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -267,7 +267,7 @@ const App = () => {
         <button className="button-claire" onClick={addRow}>
           Ajouter une rangée
         </button>
-        {rows.length > 3 && <Alert />}
+        {rows.length > 4 && <Alert />}
         <button className="button-claire" onClick={removeRow}>
           Supprimer la derniere rangée
         </button>
@@ -278,7 +278,7 @@ const App = () => {
       <div className="list-rows">
         <ul>
           {rows.map((row, rowIndex) => (
-            <li key={key}>
+            <li key={first.li}>
               <div className="numbers">
                 <h3>nombre de colonnes</h3>
                 <div className="buttons">
@@ -405,7 +405,7 @@ const App = () => {
                     }
                     if (!columnOccupied(row.elements, columnIndex)) {
                       return (
-                        <li key={key}>
+                        <li key={second.li}>
                           <button
                             onClick={() => {
                               dispatch({
