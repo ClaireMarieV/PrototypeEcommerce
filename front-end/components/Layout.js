@@ -30,9 +30,11 @@ const Layout = ({ children, currentPage }) => (
       />
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
+      <script src="https://js.stripe.com/v3/" crossOrigin="true"></script>
     </Head>
     <Header currentPage={currentPage} />
     <link rel="stylesheet" href="https://use.typekit.net/ljf5get.css" />
+
     <div
       style={{
         margin: `0 auto`,
