@@ -10,10 +10,6 @@ const DeliveryType = () => (
         <input type="checkbox" />
         <label for="scales">Livraison en magasin</label>
       </li>
-      <li>
-        <input type="checkbox" />
-        <label for="scales">Point relais</label>
-      </li>
     </ul>
     <style jsx>{`
       ul > li {
