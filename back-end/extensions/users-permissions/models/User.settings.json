@@ -29,7 +29,13 @@
     },
     "password": {
       "type": "password",
-      "minLength": 6,
+      "minLength": 8,
+      "configurable": false,
+      "private": true
+    },
+    "confirmationPassword": {
+      "type": "password",
+      "minLength": 8,
       "configurable": false,
       "private": true
     },
