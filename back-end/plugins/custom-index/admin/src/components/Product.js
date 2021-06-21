@@ -12,7 +12,7 @@ const Product = ({ element, setElementProduct, products, categories }) => {
         >
           <option>Choisissez une catégorie </option>
           {categories.map((category) => (
-            <option value={category._id} key={category.key}>
+            <option value={category._id} key={category.id}>
               {category.label}
             </option>
           ))}
@@ -31,7 +31,7 @@ const Product = ({ element, setElementProduct, products, categories }) => {
           {products
             .filter((product) => product.categorie._id === selectedCategory)
             .map((product) => (
-              <option value={product._id} key={product.key}>
+              <option value={product._id} key={product.id}>
                 {product.label}
               </option>
             ))}

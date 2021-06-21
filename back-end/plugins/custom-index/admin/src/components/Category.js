@@ -12,7 +12,7 @@ const Category = ({ element, setElementCategory, categories }) => {
       >
         <option>Choisissez une catégorie</option>
         {categories.map((category) => (
-          <option value={category._id} key={category.key}>
+          <option value={category._id} key={category.id}>
             {category.label}
           </option>
         ))}
