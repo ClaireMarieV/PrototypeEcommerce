@@ -1,14 +1,12 @@
 export default (req, res) => {
   const body = JSON.parse(req.body);
   const customers = {
+    username: body.firstname + " " + body.lastname,
     firstname: body.firstname,
     lastname: body.lastname,
     email: body.email,
     password: body.password,
-    postal: body.postal,
-    address: body.address,
-    town: body.town,
-    number: body.number,
+    confirmationPassword: body.confirmationPassword,
   };
 
   if (customers) {

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import OneColumn from "../components/OneColumn";
+
 const InscriptionPage = () => {
   const [lastname, setLastname] = useState("");
   const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [address, setAddress] = useState("");
-  const [postal, setPostal] = useState("");
-  const [town, setTown] = useState("");
-  const [number, setNumber] = useState("");
-
+  const [confirmationPassword, setConfirmationPassword] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -18,24 +15,18 @@ const InscriptionPage = () => {
     setLoading(true);
     setError(null);
     fetch("/api/register", {
-      method: "post",
+      method: "POST",
       body: JSON.stringify({
         lastname,
         firstname,
         email,
         password,
-        postal,
-        address,
-        town,
-        number,
+        confirmationPassword,
       }),
     })
       .then((response) => response.json())
-      .then(({ jwt }) => {
-        Cookies.set("token", jwt);
-      })
       .then(() => {
-        window.location = "/";
+        window.location = "/profil";
       })
       .catch((error) => {
         setError(error);
@@ -86,43 +77,23 @@ const InscriptionPage = () => {
               />
             </label>
             <label>
-              Adresse
+              Password Confirmation
               <input
                 required
-                type="text"
-                value={address}
-                onChange={(event) => setAddress(event.target.value)}
-              />
-            </label>
-            <label>
-              Code postal
-              <input
-                required
-                type="text"
-                value={postal}
-                onChange={(event) => setPostal(event.target.value)}
-              />
-            </label>
-            <label>
-              Ville
-              <input
-                required
-                type="text"
-                value={town}
-                onChange={(event) => setTown(event.target.value)}
-              />
-            </label>
-            <label>
-              Numero de telephone
-              <input
-                required
-                type="text"
-                value={number}
-                onChange={(event) => setNumber(event.target.value)}
+                type="password"
+                value={confirmationPassword}
+                onChange={(event) =>
+                  setConfirmationPassword(event.target.value)
+                }
               />
             </label>
           </section>
-          <button onClick={register}>Bienvenue</button>
+          {password === confirmationPassword && (
+            <button onClick={register}>Bienvenue</button>
+          )}
+          {password != confirmationPassword && (
+            <span>Les mots ne sont pas identiques</span>
+          )}
         </section>
       </OneColumn>
       <style jsx>{`
