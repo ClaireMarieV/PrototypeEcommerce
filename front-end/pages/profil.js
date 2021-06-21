@@ -31,7 +31,7 @@ const ProfilPage = () => {
   return (
     <Layout>
       <OneColumn>
-        <h2>Bienvenue sur votre profil</h2>
+        <h2>Bienvenue {firstname}</h2>
         <section className="form">
           <label>
             Nom
