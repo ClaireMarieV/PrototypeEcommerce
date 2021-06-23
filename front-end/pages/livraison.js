@@ -15,6 +15,7 @@ const DeliveryPage = () => {
   const [postal, setPostal] = useState("");
   const [town, setTown] = useState("");
   const [number, setNumber] = useState("");
+  const [clickAndCollect, setClickAndCollect] = useState(false);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -24,9 +25,7 @@ const DeliveryPage = () => {
     100;
 
   const order = () => {
-    console.log("error");
     const stripe = Stripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
-    console.log("error");
 
     setLoading(true);
     setError(null);
@@ -39,6 +38,21 @@ const DeliveryPage = () => {
     })
       .then((response) => response.json())
       .then((session) => stripe.redirectToCheckout({ sessionId: session.id }))
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+    fetch("/api/orders", {
+      method: "POST",
+      body: JSON.stringify({ clickAndCollect }),
+    })
+      .then((response) => response.json())
+      .then(({ jwt }) => {
+        Cookies.set("token", jwt);
+      })
+      .then(() => {
+        window.location = "/";
+      })
       .catch((error) => {
         setError(error);
         setLoading(false);
@@ -108,7 +122,33 @@ const DeliveryPage = () => {
           </section>
         </section>
         <OneColumn>
-          <DeliveryType />
+          <section>
+            <h2>Type de livraison</h2>
+            <ul>
+              <li>
+                <label for="magasin">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    checked={clickAndCollect}
+                    onChange={(event) => setClickAndCollect(true)}
+                  />
+                  Livraison en magasin
+                </label>
+              </li>
+              <li>
+                <label for="home">
+                  <input
+                    type="radio"
+                    name="delivery"
+                    checked={!clickAndCollect}
+                    onChange={(event) => setClickAndCollect(false)}
+                  />
+                  Standard à domicile
+                </label>
+              </li>
+            </ul>
+          </section>
           <section>
             <h2>Resumé de la commande</h2>
             <div className="order-resume">
@@ -151,6 +191,21 @@ const DeliveryPage = () => {
         .total {
           font-weight: 600;
         }
+
+        ul > li > label {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 1rem;
+        }
+        li > input {
+          margin: 0;
+          border-radius: 100%;
+        }
+        h2 {
+          text-transform: uppercase;
+        }
+
         @media (max-width: 700px) {
           .form {
             grid-template-columns: 1fr;
