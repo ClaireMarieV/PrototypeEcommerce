@@ -25,7 +25,7 @@ const Filter = ({ categorySlug }) => {
   return (
     <ul>
       {categories.map((category) => (
-        <li key={category.key}>
+        <li key={category.id}>
           <Link href={"/categorie/" + category.slug}>
             <a className={category.slug === categorySlug ? "focus" : ""}>
               {category.label}
