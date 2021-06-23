@@ -59,7 +59,7 @@ const ConnectPage = () => {
             </label>
             <div className="button">
               <button onClick={connect} disabled={loading}>
-                Se connecter
+                <span>Se connecter</span>
               </button>
             </div>
           </div>
