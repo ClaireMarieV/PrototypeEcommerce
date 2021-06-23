@@ -11,12 +11,19 @@ const Footer = () => (
       </Link>
     </div>
     <div>
-      <span>Contact</span>
+      <span>Entreprise</span>
       <ul>
         <li>
           <Link href="/about">
             <a>
-              <span>about us</span>
+              <span>Contact</span>
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/mentions">
+            <a>
+              <span>Mentions légales</span>
             </a>
           </Link>
         </li>
