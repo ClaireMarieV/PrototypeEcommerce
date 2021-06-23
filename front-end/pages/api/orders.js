@@ -10,6 +10,7 @@ export default (req, res) => {
     number: body.number,
     price: body.price,
     products: body.products,
+    clickAndCollect: body.clickAndCollect,
   };
   if (req.method === "POST") {
     return fetch(`${process.env.BACKOFFICE_HOST}/orders`, {
