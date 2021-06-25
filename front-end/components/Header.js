@@ -134,8 +134,8 @@ const Header = ({ currentPage }) => {
         }
 
         img {
-          max-width: 2rem;
-          width: 100%;
+          max-width: 100%;
+          width: 2rem;
         }
         .logo img {
           width: 100%;
