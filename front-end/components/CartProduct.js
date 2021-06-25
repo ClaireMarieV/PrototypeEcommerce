@@ -22,7 +22,7 @@ const CartProduct = ({ products }) => {
   return (
     <>
       {aggregatedProducts.map((product) => (
-        <div className="one-product">
+        <div className="one-product" key={product.id}>
           <div className="label">
             <span>{product.label}</span>
             <span onClick={() => removeProductFromCart(product.id)}>
