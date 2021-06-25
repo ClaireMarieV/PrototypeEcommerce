@@ -10,6 +10,8 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "pg": "^8.6.0",
+    "pg-connection-string": "^2.5.0",
     "slugify": "^1.5.0",
     "strapi": "3.5.4",
     "strapi-admin": "3.5.4",
