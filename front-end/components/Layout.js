@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./header";
+import Header from "./Header";
 import Head from "next/head";
 import Footer from "./Footer";
 const Layout = ({ children, currentPage }) => (
@@ -73,7 +73,6 @@ const Layout = ({ children, currentPage }) => (
           margin: 0;
           overflow-x: hidden;
           overflow-y: auto;
-          perspective: 1px;
           background-color: #fbfbfb;
           font-size: 1rem;
         }
