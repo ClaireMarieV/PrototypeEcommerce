@@ -58,7 +58,7 @@ const Connexion = () => {
           </a>
         </Link>
 
-        <style jsx global>{`
+        <style jsx>{`
           .connect,
           .register {
             display: flex;
