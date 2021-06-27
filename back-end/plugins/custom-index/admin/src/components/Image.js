@@ -12,7 +12,7 @@ const Image = ({ element, setElementImage }) => {
 
     setLoading(true);
     setError(null);
-    fetch("http://localhost:1337/upload", {
+    fetch("http://admin.habaah.com/upload", {
       method: "POST",
       body: formData,
     })
