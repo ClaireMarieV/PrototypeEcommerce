@@ -18,15 +18,10 @@ module.exports = {
     const rowEntities = await strapi
       .query("index-row", "custom-index")
       .find({}, [
-        {
-          path: "index_elements",
-          populate: [
-            "category",
-            "category.produits",
-            "product",
-            "product.categorie",
-          ],
-        },
+        "category",
+        "category.produits",
+        "product",
+        "product.categorie",
       ]);
 
     console.log(rowEntities);
