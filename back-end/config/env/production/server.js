@@ -1,4 +1,5 @@
 module.exports = ({ env }) => ({
+  port: env.int("PORT", 1337),
   url: env("MY_HEROKU_URL"),
   admin: {
     auth: {
