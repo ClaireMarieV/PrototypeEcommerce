@@ -15,21 +15,26 @@ module.exports = {
 
   index: async (ctx) => {
     // Add your own logic here.
-    const rowEntities = console.log(rowEntities);
-    await strapi.query("index-row", "custom-index").find({}, [
-      {
-        path: "index_elements",
-        populate: [
-          {
-            path: "category",
-            populate: [{ path: "produits" }],
-          },
-          { path: "product", populate: [{ path: "categorie" }] },
-        ],
-      },
-    ]);
+    console.log(rowEntities);
+    const rowEntities = await strapi
+      .query("index-row", "custom-index")
+      .find({}, [
+        {
+          path: "index_elements",
+          populate: [
+            {
+              path: "category",
+              populate: [{ path: "produits" }],
+            },
+            { path: "product", populate: [{ path: "categorie" }] },
+          ],
+        },
+      ]);
+    console.log(rowEntities);
+    console.log("index-row");
 
     return rowEntities
+
       .map((rowEntity) =>
         sanitizeEntity(rowEntity, {
           model: strapi.plugins["custom-index"].models["index-row"],
@@ -39,6 +44,7 @@ module.exports = {
         ...rowEntity,
         elements: rowEntity.index_elements,
       }));
+    console.log(rowEntity);
   },
 
   async update(ctx) {
