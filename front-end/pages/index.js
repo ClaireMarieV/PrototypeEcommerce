@@ -48,7 +48,11 @@ const IndexPage = () => {
     setLoading(true);
     setError(null);
     fetch("/api/structure-index")
-      .then((response) => response.json())
+      .then((res) =>
+        res.ok
+          ? res.json()
+          : res.json().then((result) => Promise.reject(result))
+      )
       .then((structure) => {
         setStructure(structure);
         setLoading(false);
@@ -62,7 +66,11 @@ const IndexPage = () => {
   useEffect(() => {
     if (slug) {
       fetch("/api/categories/" + slug)
-        .then((response) => response.json())
+        .then((res) =>
+          res.ok
+            ? res.json()
+            : res.json().then((result) => Promise.reject(result))
+        )
         .then((category) => {
           setCategory(category);
           setLoading(false);
@@ -77,7 +85,11 @@ const IndexPage = () => {
   useEffect(() => {
     if (slug) {
       fetch("/api/produits/")
-        .then((response) => response.json())
+        .then((res) =>
+          res.ok
+            ? res.json()
+            : res.json().then((result) => Promise.reject(result))
+        )
         .then((product) => {
           setProduct(product);
           setLoading(false);
