@@ -200,7 +200,7 @@ const App = (first, second) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:1337/custom-index/")
+    fetch("http://admin.habaah.com/custom-index/")
       .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
       .then((rows) => {
         dispatch({ type: "init", payload: rows });
@@ -208,7 +208,7 @@ const App = (first, second) => {
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:1337/upload/files")
+    fetch("http://admin.habaah.com/upload/files")
       .then((res) => (res.ok ? res.json() : res.json.then(Promise.reject)))
       .then((rows) => {
         setImages({});
@@ -222,7 +222,7 @@ const App = (first, second) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:1337/categories/")
+    fetch("http://admin.habaah.com/categories/")
       .then((response) => response.json())
       .then((categories) => {
         setCategories(categories);
@@ -235,7 +235,7 @@ const App = (first, second) => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:1337/produits/")
+    fetch("http://admin.habaah.com/produits/")
       .then((response) => response.json())
       .then((products) => {
         setProducts(products);
@@ -255,7 +255,7 @@ const App = (first, second) => {
   };
 
   const saveStructure = () => {
-    fetch("http://localhost:1337/custom-index/", {
+    fetch("http://admin.habaah.com/custom-index/", {
       method: "POST",
       body: JSON.stringify(rows),
     });
