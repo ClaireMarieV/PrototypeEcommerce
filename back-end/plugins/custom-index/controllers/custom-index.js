@@ -21,11 +21,10 @@ module.exports = {
         {
           path: "index_elements",
           populate: [
-            {
-              path: "category",
-              populate: [{ path: "produits" }],
-            },
-            { path: "product", populate: [{ path: "categorie" }] },
+            "category",
+            "category.produits",
+            "product",
+            "product.categorie",
           ],
         },
       ]);
