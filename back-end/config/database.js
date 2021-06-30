@@ -19,12 +19,12 @@ module.exports = ({ env }) => {
           database: config.database,
           username: config.user,
           password: config.password,
-          ssl: {
-            rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false), // For self-signed certificates
-          },
+          ssl: "${process.env.DATABASE_SSL || false}",
         },
         options: {
-          ssl: true,
+          ssl: "${process.env.DATABASE_SSL || false}",
+          authenticationDatabase:
+            "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}",
         },
       },
     },
