@@ -1,25 +1,29 @@
 const parse = require("pg-connection-string").parse;
-const config = parse(env("DATABASE_URL", "localhost"));
 
-module.exports = ({ env }) => ({
-  defaultConnection: "default",
-  connections: {
-    default: {
-      connector: "bookshelf",
-      settings: {
-        client: "postgres",
-        host: config.host,
-        port: config.port,
-        database: config.database,
-        username: config.user,
-        password: config.password,
-        ssl: {
-          rejectUnauthorized: false,
+module.exports = ({ env }) => {
+  const config = parse(
+    env(
+      "DATABASE_URL",
+      "postgres://postgres:S*ezane88@localhost:5432/ecommerceHabaah"
+    )
+  );
+  return {
+    defaultConnection: "default",
+    connections: {
+      default: {
+        connector: "bookshelf",
+        settings: {
+          client: "postgres",
+          host: config.host,
+          port: config.port,
+          database: config.database,
+          username: config.user,
+          password: config.password,
+        },
+        options: {
+          ssl: false,
         },
       },
-      options: {
-        ssl: true,
-      },
     },
-  },
-});
+  };
+};
