@@ -20,7 +20,7 @@ module.exports = ({ env }) => {
           username: config.user,
           password: config.password,
           ssl: {
-            rejectUnauthorized: env.bool(false), // For self-signed certificates
+            rejectUnauthorized: false, // For self-signed certificates
           },
         },
         options: {
