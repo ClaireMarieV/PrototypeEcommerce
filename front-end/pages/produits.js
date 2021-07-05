@@ -40,8 +40,8 @@ const ProductsPage = () => {
     if (slug) {
       fetch("/api/categories/" + slug)
         .then((response) => response.json())
-        .then((category) => {
-          setCategory(category);
+        .then((categories) => {
+          setCategories(categories);
           setLoading(false);
         })
         .catch((error) => {
