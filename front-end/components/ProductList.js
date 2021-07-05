@@ -38,13 +38,12 @@ const ProductList = ({ products }) => {
         a {
           display: flex;
           flex-direction: column;
-          align-items: center;
         }
         .info {
           display: flex;
           flex-direction: column;
-          padding: 1rem 0 1rem 0;
-          align-items: center;
+          padding: 0.5rem 0 0.5rem 0;
+          align-items: baseline;
           gap: 1rem;
         }
         .info > span:last-child {
@@ -60,6 +59,7 @@ const ProductList = ({ products }) => {
         .new-products {
           font-weight: 600;
           text-transform: uppercase;
+          font-size: x-small;
         }
       `}</style>
     </FourColumns>
