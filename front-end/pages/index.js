@@ -52,7 +52,7 @@ const IndexPage = () => {
     <Layout>
       <TwelveColumns>
         <section className="image">
-          <Image src="/pictures/croquis.png " width={300} height={650} />
+          <Image src="/pictures/croquis.png" width={300} height={650} />
         </section>
         <div className="category">
           <ul>
