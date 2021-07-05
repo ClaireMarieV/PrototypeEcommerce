@@ -52,7 +52,7 @@ const IndexPage = () => {
     <Layout>
       <TwelveColumns>
         <section className="image">
-          <Image src="/pictures/croquis.png " width={650} height={800} />
+          <Image src="/pictures/croquis.png " width={300} height={650} />
         </section>
         <div className="category">
           <ul>
@@ -89,12 +89,14 @@ const IndexPage = () => {
       </TwelveColumns>
       <style jsx>{`
         .image {
+          display: flex;
+          justify-content: center;
           grid-column-start: 2;
           grid-column-end: 8;
         }
         .category {
           grid-column-start: 9;
-          grid-column-end: 12;
+          grid-column-end: 10;
           justify-self: center;
           align-self: center;
           width: 100%;
@@ -103,7 +105,10 @@ const IndexPage = () => {
         }
         .product {
           grid-row-start: 2;
-          grid-column-start: 3;
+          grid-column-start: 2;
+          grid-column-end: 7;
+          display: flex;
+          justify-content: center;
         }
         .category > ul,
         .product > ul {
@@ -116,11 +121,11 @@ const IndexPage = () => {
         .category > ul > li:nth-child(1),
         .product > ul > li:nth-child(1) {
           font-family: Felt-Tip-Senior, serif;
-          font-size: 1.5rem;
+          font-size: 2.5rem;
         }
         .category > ul > li:nth-child(2),
         .product > ul > li:nth-child(2) {
-          font-size: 2rem;
+          font-size: 3rem;
           text-transform: uppercase;
         }
       `}</style>
