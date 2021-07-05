@@ -8,7 +8,6 @@ import Cookie from "js-cookie";
 const Header = ({ currentPage }) => {
   const products = useStore((state) => (state.cart ? state.cart.products : []));
   const setUser = useStore((state) => state.setUser);
-  const [categories, setCategories] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const username = useStore((state) =>
@@ -19,21 +18,6 @@ const Header = ({ currentPage }) => {
     setUser(null);
     window.location = "/";
   };
-
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
-    fetch("/api/categories")
-      .then((response) => response.json())
-      .then((categories) => {
-        setCategories(categories);
-        setLoading(false);
-      })
-      .catch((error) => {
-        setError(error);
-        setLoading(false);
-      });
-  }, []);
 
   return (
     <header>
@@ -93,7 +77,7 @@ const Header = ({ currentPage }) => {
           display: grid;
           grid-template-columns: repeat(3, auto);
           justify-items: center;
-          justify-content: space-around;
+          justify-content: space-between;
           gap: 2rem;
           align-items: center;
           text-decoration: none;
