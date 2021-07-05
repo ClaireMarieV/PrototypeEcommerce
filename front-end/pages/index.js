@@ -1,60 +1,28 @@
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
-import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import TwelveColumns from "../components/TwelveColumns";
-import {
-  Text3,
-  Text4,
-  Text6,
-  Text8,
-  Text9,
-  Text12,
-} from "../components/gridIndex/Text";
-import {
-  Image3,
-  Image4,
-  Image6,
-  Image8,
-  Image9,
-  Image12,
-} from "../components/gridIndex/Image";
-import {
-  Category3,
-  Category4,
-  Category6,
-  Category8,
-  Category9,
-  Category12,
-} from "../components/gridIndex/Category";
-import {
-  Product3,
-  Product4,
-  Product6,
-  Product8,
-  Product9,
-  Product12,
-} from "../components/gridIndex/Product";
+import Flex from "../components/Flex";
+import ProductList from "../components/ProductList";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Link from "next/link";
+import Image from "next/image";
 
 const IndexPage = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [structure, setStructure] = useState(null);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    setLoading(true);
-    setError(null);
-    fetch("/api/structure-index")
+    fetch("/api/categories/")
       .then((res) =>
         res.ok
           ? res.json()
           : res.json().then((result) => Promise.reject(result))
       )
-      .then((structure) => {
-        setStructure(structure);
+      .then((categories) => {
+        setCategories(categories);
         setLoading(false);
       })
       .catch((error) => {
@@ -64,257 +32,98 @@ const IndexPage = () => {
   }, []);
 
   useEffect(() => {
-    if (slug) {
-      fetch("/api/categories/" + slug)
-        .then((res) =>
-          res.ok
-            ? res.json()
-            : res.json().then((result) => Promise.reject(result))
-        )
-        .then((category) => {
-          setCategory(category);
-          setLoading(false);
-        })
-        .catch((error) => {
-          setError(error);
-          setLoading(false);
-        });
-    }
-  }, [slug]);
-
-  useEffect(() => {
-    if (slug) {
-      fetch("/api/produits/")
-        .then((res) =>
-          res.ok
-            ? res.json()
-            : res.json().then((result) => Promise.reject(result))
-        )
-        .then((product) => {
-          setProduct(product);
-          setLoading(false);
-        })
-        .catch((error) => {
-          setError(error);
-          setLoading(false);
-        });
-    }
-  }, [slug]);
+    fetch("/api/produits/")
+      .then((res) =>
+        res.ok
+          ? res.json()
+          : res.json().then((result) => Promise.reject(result))
+      )
+      .then((products) => {
+        setProducts(products);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
 
   return (
     <Layout>
       <TwelveColumns>
-        {structure &&
-          structure.flatMap((row) =>
-            row.elements.map((element) => {
-              switch (
-                `${element.type}${row.columnCount}${element.columnSpan}`
-              ) {
-                case "text31":
-                  return (
-                    <Text4
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "text32":
-                  return (
-                    <Text8
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "text33":
-                case "text44":
-                  return (
-                    <Text12
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "text41":
-                  return (
-                    <Text3
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "text42":
-                  return (
-                    <Text6
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "text43":
-                  return (
-                    <Text9
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "text44":
-                  return (
-                    <Text4
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "image31":
-                  return (
-                    <Image8
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "image32":
-                  return (
-                    <Image8
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "image33":
-                case "image44":
-                  return (
-                    <Image12
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "image41":
-                  return (
-                    <Image3
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "image42":
-                  return (
-                    <Image6
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "image43":
-                  return (
-                    <Image9
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "image44":
-                  return (
-                    <Image4
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "category31":
-                  return (
-                    <Category8
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "category32":
-                  return (
-                    <Category8
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "category33":
-                case "category44":
-                  return (
-                    <Category12
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "category41":
-                  return (
-                    <Category3
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "category42":
-                  return (
-                    <Category6
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "category43":
-                  return (
-                    <Category9
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "category44":
-                  return (
-                    <Category4
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "product31":
-                  return (
-                    <Product8
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "product32":
-                  return (
-                    <Product8
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "product33":
-                case "product44":
-                  return (
-                    <Product12
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "product41":
-                  return (
-                    <Product3
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "product42":
-                  return (
-                    <Product6
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "product43":
-                  return (
-                    <Product9
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-                case "product44":
-                  return (
-                    <Product4
-                      element={element}
-                      gridMultiplier={12 / row.columnCount}
-                    />
-                  );
-              }
-            })
-          )}
+        <section className="image">
+          <Image src="/pictures/croquis.png " width={650} height={800} />
+        </section>
+        <div className="category">
+          <ul>
+            <li>CATEGORIE</li>
+            {categories
+              .filter((category) => category.label === "Robe")
+              .map((category) => (
+                <li key={category.id}>
+                  <Link href={"/categories/" + category.slug}>
+                    <a>{category.label}</a>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
+        <div className="product">
+          <ul>
+            {categories
+              .filter((category) => category.label === "Boots")
+              .map((category) => (
+                <li key={category.id}>{category.label}</li>
+              ))}
+            {products
+              .filter((product) => product.label === "Dr Martens")
+              .map((product) => (
+                <li key={product.id}>
+                  <Link href={"/produits/" + product.slug}>
+                    <a>{product.label}</a>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
       </TwelveColumns>
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .image {
+          grid-column-start: 2;
+          grid-column-end: 8;
+        }
+        .category {
+          grid-column-start: 9;
+          grid-column-end: 12;
+          justify-self: center;
+          align-self: center;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        .product {
+          grid-row-start: 2;
+          grid-column-start: 3;
+        }
+        .category > ul,
+        .product > ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: baseline;
+          margin: 0;
+        }
+        .category > ul > li:nth-child(1),
+        .product > ul > li:nth-child(1) {
+          font-family: Felt-Tip-Senior, serif;
+          font-size: 1.5rem;
+        }
+        .category > ul > li:nth-child(2),
+        .product > ul > li:nth-child(2) {
+          font-size: 2rem;
+          text-transform: uppercase;
+        }
+      `}</style>
     </Layout>
   );
 };
