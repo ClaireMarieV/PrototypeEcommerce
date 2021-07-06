@@ -14,8 +14,8 @@ const Product = ({ product }) => {
           {product.images.length && (
             <Image
               src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + currentImage.url}
-              width={1800}
-              height={2400}
+              width={900}
+              height={1300}
             />
           )}
         </div>
@@ -25,7 +25,7 @@ const Product = ({ product }) => {
               onClick={() => {
                 setCurrentImage(image);
               }}
-              src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + image.url}
+              src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + images.url}
               width={300}
               height={400}
             />
