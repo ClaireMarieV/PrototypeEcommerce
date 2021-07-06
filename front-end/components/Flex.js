@@ -4,11 +4,12 @@ const Flex = ({ children }) => (
     <style jsx>{`
       .container {
         display: flex;
-        gap: 2rem;
+        gap: 6rem;
         justify-self: center;
         width: 85vw;
         height: 100%;
         overflow: auto;
+        margin: auto;
       }
       @media (max-width: 800px) {
         .container {
