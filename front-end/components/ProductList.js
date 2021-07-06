@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FourColumns from "../components/FourColumns";
+import ThreeColumns from "../components/ThreeColumns";
 import ShopButton from "../components/ShopButton";
 import Image from "next/image";
 import sub from "date-fns/sub";
@@ -9,7 +9,7 @@ const ProductList = ({ products }) => {
     months: 1,
   });
   return (
-    <FourColumns>
+    <ThreeColumns>
       {products.map((product) => (
         <Link key={product.id} href={"/produit/" + product.slug}>
           <a>
@@ -57,12 +57,13 @@ const ProductList = ({ products }) => {
           flex-grow: 1;
         }
         .new-products {
+          font-family: Felt-Tip-Senior, serif;
           font-weight: 600;
           text-transform: uppercase;
-          font-size: x-small;
+          font-size: larger;
         }
       `}</style>
-    </FourColumns>
+    </ThreeColumns>
   );
 };
 export default ProductList;
