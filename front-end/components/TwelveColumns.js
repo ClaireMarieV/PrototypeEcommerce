@@ -8,9 +8,10 @@ const HorizontalFocus = ({ children }) => (
         column-gap: 3rem;
         row-gap: 10rem;
       }
-      @media (max-width: 500px) {
+      @media (max-width: 800px) {
         .container-twelve-columns {
           width: 100%;
+          grid-template-columns: auto;
         }
       }
     `}</style>
