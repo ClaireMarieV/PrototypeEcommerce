@@ -52,7 +52,7 @@ const IndexPage = () => {
     <Layout>
       <TwelveColumns>
         <section className="image">
-          <Image src="/pictures/croquis.png" width={300} height={650} />
+          <Image src="/pictures/VogueSuit.png" width={300} height={650} />
         </section>
         <div className="category">
           <ul>
@@ -127,6 +127,9 @@ const IndexPage = () => {
         .product > ul > li:nth-child(2) {
           font-size: 3rem;
           text-transform: uppercase;
+        }
+        .image {
+          filter: hue-rotate(-105deg);
         }
       `}</style>
     </Layout>
