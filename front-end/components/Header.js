@@ -143,6 +143,7 @@ const Header = ({ currentPage }) => {
           nav {
             grid-template-columns: auto;
             justify-items: center;
+            justify-content: inherit;
           }
           nav > h2 {
             margin-left: 0.5em;
@@ -150,6 +151,10 @@ const Header = ({ currentPage }) => {
           }
         }
         @media (max-width: 600px) {
+          .nav {
+            display: flex;
+            flex-direction: column;
+          }
           nav > .title {
             padding-left: 1.5rem;
           }

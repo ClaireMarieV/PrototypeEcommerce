@@ -131,6 +131,14 @@ const IndexPage = () => {
         .image {
           filter: hue-rotate(-105deg);
         }
+        @media (max-width: 800px) {
+          .image,
+          .category,
+          .product {
+            grid-column-start: auto;
+            grid-column-end: auto;
+          }
+        }
       `}</style>
     </Layout>
   );

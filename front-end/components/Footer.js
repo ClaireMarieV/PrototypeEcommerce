@@ -82,7 +82,17 @@ const Footer = () => (
           font-size: 1.5em;
         }
       }
-      @media (max-width: 600px) {
+      @media (max-width: 800px) {
+        footer {
+          display: flex;
+          flex-direction: column;
+          justify-items: center;
+          text-decoration: none;
+          align-items: inherit;
+          margin-top: 2rem 0 0 0;
+          padding: 1.5rem;
+          gap: 1rem;
+        }
         nav {
           display: block;
         }
