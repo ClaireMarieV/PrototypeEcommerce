@@ -61,7 +61,7 @@ const IndexPage = () => {
               .filter((category) => category.label === "Robe")
               .map((category) => (
                 <li key={category.id}>
-                  <Link href={"/categories/" + category.slug}>
+                  <Link href={"/categorie/" + category.slug}>
                     <a>{category.label}</a>
                   </Link>
                 </li>
@@ -79,7 +79,7 @@ const IndexPage = () => {
               .filter((product) => product.label === "Dr Martens")
               .map((product) => (
                 <li key={product.id}>
-                  <Link href={"/produits/" + product.slug}>
+                  <Link href={"/produit/" + product.slug}>
                     <a>{product.label}</a>
                   </Link>
                 </li>
