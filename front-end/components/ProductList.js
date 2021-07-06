@@ -17,7 +17,7 @@ const ProductList = ({ products }) => {
               <Image
                 src={
                   process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                  product.images[0].formats.small.url
+                  product.images[0].url
                 }
                 width={550}
                 height={450}

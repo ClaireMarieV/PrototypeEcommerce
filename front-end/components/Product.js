@@ -25,10 +25,7 @@ const Product = ({ product }) => {
               onClick={() => {
                 setCurrentImage(image);
               }}
-              src={
-                process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                image.formats.small.url
-              }
+              src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + image.url}
               width={300}
               height={400}
             />
