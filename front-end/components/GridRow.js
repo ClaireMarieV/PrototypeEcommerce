@@ -4,7 +4,7 @@ const Container = ({ children }) => (
     <style jsx>{`
       .container {
         display: grid;
-        grid-template-rows: repeat(2);
+        grid-template-rows: repeat(2, auto);
         justify-items: center;
         gap: 2rem;
       }
