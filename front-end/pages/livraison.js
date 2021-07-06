@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Layout from "../components/Layout";
-import OneColumn from "../components/OneColumn";
 import TwoColumns from "../components/TwoColumns";
 import DeliveryType from "../components/DeliveryType";
 import CartProduct from "../components/CartProduct";
@@ -44,7 +43,15 @@ const DeliveryPage = () => {
       });
     fetch("/api/orders", {
       method: "POST",
-      body: JSON.stringify({ clickAndCollect }),
+      body: JSON.stringify({
+        lastname,
+        firstname,
+        email,
+        address,
+        postal,
+        town,
+        clickAndCollect,
+      }),
     })
       .then((response) => response.json())
       .then(({ jwt }) => {
@@ -121,7 +128,7 @@ const DeliveryPage = () => {
             </label>
           </section>
         </section>
-        <OneColumn>
+        <div className="container">
           <section>
             <h2>Type de livraison</h2>
             <ul>
@@ -158,7 +165,7 @@ const DeliveryPage = () => {
             </div>
             <button onClick={order}>Paiement</button>
           </section>
-        </OneColumn>
+        </div>
       </TwoColumns>
       <style jsx>{`
         display: flex;
@@ -171,6 +178,11 @@ const DeliveryPage = () => {
         section {
           gap: 1rem;
         }
+        .container {
+          display: flex;
+          flex-direction: column;
+          margin: 0 auto;
+        }
         .form {
           display: grid;
           flex-direction: column;
@@ -181,10 +193,7 @@ const DeliveryPage = () => {
           flex-direction: column;
           margin: 0.5rem;
         }
-        section > button {
-          width: fit-content;
-          align-self: flex-end;
-        }
+
         h2 {
           width: fit-content;
         }
