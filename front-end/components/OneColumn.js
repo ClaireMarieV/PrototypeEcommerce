@@ -8,6 +8,7 @@ const OneColumn = ({ children }) => (
         gap: 5rem;
         justify-self: center;
         height: 100%;
+        width: 75vw;
         margin: auto;
       }
     `}</style>
