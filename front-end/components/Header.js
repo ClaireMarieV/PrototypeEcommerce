@@ -65,7 +65,7 @@ const Header = ({ currentPage }) => {
             <Link href="/panier">
               <a>
                 <img src="/svg/sale.svg" />
-                <span>{products.length}</span>
+                <span>PANIER ({products.length})</span>
               </a>
             </Link>
           </li>
@@ -125,8 +125,15 @@ const Header = ({ currentPage }) => {
           width: 100%;
         }
         .cart span {
-          font-weight: 500;
+          font-weight: 600;
+          font-size: 0.8rem;
         }
+        .cart > a {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
         nav > ul:nth-child(3) > li:nth-child(2) {
           display: flex;
           align-items: baseline;
