@@ -58,12 +58,10 @@ const ProductsPage = () => {
       {!loading && !error && (
         <GridRow>
           <Filter />
-          <OneColumn>
-            <ProductList products={produits} />
-            {produits.length > 11 && (
-              <button onClick={loadProducts}>Load More</button>
-            )}
-          </OneColumn>
+          <ProductList products={produits} />
+          {produits.length > 11 && (
+            <button onClick={loadProducts}>Load More</button>
+          )}
         </GridRow>
       )}
 
