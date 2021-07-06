@@ -38,7 +38,7 @@ const Search = (product) => {
           display: flex;
           align-self: center;
         }
-        .search img {
+        .search {
           width: 2rem;
         }
         .input-search {
