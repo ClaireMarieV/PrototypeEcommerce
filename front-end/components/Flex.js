@@ -8,7 +8,6 @@ const Flex = ({ children }) => (
         justify-self: center;
         width: 85vw;
         height: 100%;
-        margin: 4rem auto;
         overflow: auto;
       }
       @media (max-width: 800px) {
