@@ -17,7 +17,7 @@ const ProductList = ({ products }) => {
               <Image
                 src={
                   process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                  product.images[0].url
+                  product.images[0].formats.large.url
                 }
                 width={550}
                 height={450}
@@ -57,10 +57,10 @@ const ProductList = ({ products }) => {
           flex-grow: 1;
         }
         .new-products {
-          font-family: Felt-Tip-Senior, serif;
+          // font-family: Felt-Tip-Senior, serif;
           font-weight: 600;
           text-transform: uppercase;
-          font-size: larger;
+          font-size: smaller;
         }
       `}</style>
     </ThreeColumns>
