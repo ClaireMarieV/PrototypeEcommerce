@@ -10,13 +10,16 @@ export default (req, res) => {
   };
 
   if (customers) {
-    return fetch(`${process.env.BACKOFFICE_HOST}/auth/local/register`, {
-      method: "POST",
-      body: JSON.stringify(customers),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    return fetch(
+      `${process.env.NEXT_PUBLIC_BACKOFFICE_HOST}/auth/local/register`,
+      {
+        method: "POST",
+        body: JSON.stringify(customers),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((response) => res.end(JSON.stringify(response)))
       .catch((error) => {
