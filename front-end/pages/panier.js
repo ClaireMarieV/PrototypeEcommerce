@@ -18,7 +18,7 @@ const CartPage = () => {
           <>
             <CartProduct products={products} />
             <div className="checkout">
-              <span>Total : {total}</span>
+              <span>Total : {total}€</span>
               <Link href="/livraison">
                 <a>
                   <button>Traiter la commande</button>

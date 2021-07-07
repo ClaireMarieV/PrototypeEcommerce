@@ -159,9 +159,9 @@ const DeliveryPage = () => {
           <section>
             <h2>Resumé de la commande</h2>
             <div className="order-resume">
-              <span>Total des articles: {total}</span>
+              <span>Total des articles: {total}€</span>
               <span>Frais de port:</span>
-              <span className="total">TOTAL: {total}</span>
+              <span className="total">TOTAL: {total}€</span>
             </div>
             <button onClick={order}>Paiement</button>
           </section>
