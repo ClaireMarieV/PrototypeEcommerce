@@ -35,8 +35,7 @@ const CartProduct = ({ products }) => {
                 {product.images.length && (
                   <Image
                     src={
-                      process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                      product.images[0].url
+                      process.env.NEXT_PUBLIC_IMAGE_HOST + product.images[0].url
                     }
                     width={250}
                     height={350}
@@ -53,7 +52,7 @@ const CartProduct = ({ products }) => {
                   <span>{product.quantity}</span>
                 </div>
                 <div className="price">
-                  <span>{product.prix * product.quantity}</span>
+                  <span>{product.prix * product.quantity}€</span>
                 </div>
               </div>
             </section>
