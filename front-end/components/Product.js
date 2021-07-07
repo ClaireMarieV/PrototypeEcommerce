@@ -13,7 +13,7 @@ const Product = ({ product }) => {
         <div>
           {product.images.length && (
             <Image
-              src={process.env.NEXT_PUBLIC_BACKOFFICE_HOST + currentImage.url}
+              src={process.env.NEXT_PUBLIC_IMAGE_HOST + currentImage.url}
               width={900}
               height={1300}
             />
