@@ -27,7 +27,7 @@ const Product = ({ product }) => {
               }}
               src={
                 process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
-                image.formats.large.url
+                image.formats.small.url
               }
               width={300}
               height={400}
