@@ -1,6 +1,6 @@
 export default async (req, res) => {
   if (req.method === "GET") {
-    return fetch(process.env.BACKOFFICE_HOST + "/categories/")
+    return fetch(process.env.NEXT_PUBLIC_BACKOFFICE_HOST + "/categories/")
       .then((response) => response.json())
       .then((categories) => {
         res.statusCode = 200;

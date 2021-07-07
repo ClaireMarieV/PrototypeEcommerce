@@ -5,7 +5,9 @@ export default async (req, res) => {
     } = req;
     //passage du token a strapi pour verifier si authentification
     return fetch(
-      process.env.BACKOFFICE_HOST + "/paniers/produits/" + productId,
+      process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
+        "/paniers/produits/" +
+        productId,
       {
         method: "POST",
         headers: { Authorization: `Bearer ${req.cookies.token}` },
@@ -25,7 +27,9 @@ export default async (req, res) => {
     } = req;
     //passage du token a strapi pour verifier si authentification
     return fetch(
-      process.env.BACKOFFICE_HOST + "/paniers/produits/" + productId,
+      process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
+        "/paniers/produits/" +
+        productId,
       {
         method: "DELETE",
         headers: { Authorization: `Bearer ${req.cookies.token}` },

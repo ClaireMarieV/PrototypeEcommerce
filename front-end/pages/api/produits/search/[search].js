@@ -3,7 +3,9 @@ export default async (req, res) => {
     const {
       query: { search },
     } = req;
-    return fetch(process.env.BACKOFFICE_HOST + "/produits?_q=" + search)
+    return fetch(
+      process.env.NEXT_PUBLIC_BACKOFFICE_HOST + "/produits?_q=" + search
+    )
       .then((response) => response.json())
       .then((produit) => {
         res.statusCode = 200;

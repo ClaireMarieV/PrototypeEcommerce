@@ -7,13 +7,11 @@ export default (req, res) => {
     address: body.address,
     postal: body.postal,
     town: body.town,
-    number: body.number,
-    price: body.price,
     products: body.products,
     clickAndCollect: body.clickAndCollect,
   };
   if (req.method === "POST") {
-    return fetch(`${process.env.BACKOFFICE_HOST}/orders`, {
+    return fetch(`${process.env.NEXT_PUBLIC_BACKOFFICE_HOST}/orders`, {
       method: "POST",
       body: JSON.stringify(customers),
       headers: {

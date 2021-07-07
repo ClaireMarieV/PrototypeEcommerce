@@ -3,7 +3,9 @@ export default async (req, res) => {
     const {
       query: { slug },
     } = req;
-    return fetch(process.env.BACKOFFICE_HOST + "/categories?slug=" + slug)
+    return fetch(
+      process.env.NEXT_PUBLIC_BACKOFFICE_HOST + "/categories?slug=" + slug
+    )
       .then((response) => response.json())
       .then((categorie) => {
         res.status(200).json(categorie[0]);

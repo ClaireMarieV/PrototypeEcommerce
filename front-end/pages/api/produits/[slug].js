@@ -3,7 +3,9 @@ export default async (req, res) => {
     const {
       query: { slug },
     } = req;
-    return fetch(process.env.BACKOFFICE_HOST + "/produits?slug=" + slug)
+    return fetch(
+      process.env.NEXT_PUBLIC_BACKOFFICE_HOST + "/produits?slug=" + slug
+    )
       .then((response) => response.json())
       .then((produit) => {
         res.statusCode = 200;

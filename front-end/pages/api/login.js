@@ -6,7 +6,7 @@ export default (req, res) => {
   };
 
   if (customers) {
-    return fetch(`${process.env.BACKOFFICE_HOST}/auth/local`, {
+    return fetch(`${process.env.NEXT_PUBLIC_BACKOFFICE_HOST}/auth/local`, {
       method: "POST",
       body: JSON.stringify(customers),
       headers: {

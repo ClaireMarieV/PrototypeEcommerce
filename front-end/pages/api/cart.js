@@ -1,7 +1,7 @@
 export default async (req, res) => {
   if (req.method === "GET") {
     //passage du token a strapi pour verifier si authentification
-    return fetch(process.env.BACKOFFICE_HOST + "/paniers", {
+    return fetch(process.env.NEXT_PUBLIC_BACKOFFICE_HOST + "/paniers", {
       headers: { Authorization: `Bearer ${req.cookies.token}` },
     })
       .then((response) => response.json())

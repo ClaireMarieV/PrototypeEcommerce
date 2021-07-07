@@ -1,7 +1,7 @@
 export default async (req, res) => {
   if (req.method === "GET") {
     //passage du token a strapi pour verifier si authentification
-    return fetch(process.env.BACKOFFICE_HOST + "/users/me", {
+    return fetch(process.env.NEXT_PUBLIC_BACKOFFICE_HOST + "/users/me", {
       headers: { Authorization: `Bearer ${req.cookies.token}` },
     })
       .then((response) => response.json())
@@ -14,7 +14,7 @@ export default async (req, res) => {
       });
   } else if (req.method === "POST") {
     console.log(req.body);
-    return fetch(process.env.BACKOFFICE_HOST + "/users/me", {
+    return fetch(process.env.NEXT_PUBLIC_BACKOFFICE_HOST + "/users/me", {
       headers: { Authorization: `Bearer ${req.cookies.token}` },
       method: "POST",
       body: req.body,

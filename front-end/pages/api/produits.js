@@ -3,7 +3,9 @@ export default async (req, res) => {
   // res.end();
   if (req.method === "GET") {
     return fetch(
-      process.env.BACKOFFICE_HOST + "/produits?_start=" + (req.query.skip || 0)
+      process.env.NEXT_PUBLIC_BACKOFFICE_HOST +
+        "/produits?_start=" +
+        (req.query.skip || 0)
     )
       .then((response) => response.json())
       .then((produit) => {
