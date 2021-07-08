@@ -71,12 +71,12 @@ const IndexPage = () => {
         <div className="product">
           <ul>
             {categories
-              .filter((category) => category.label === "Boots")
+              .filter((category) => category.label === "Pantalon")
               .map((category) => (
                 <li key={category.id}>{category.label}</li>
               ))}
             {products
-              .filter((product) => product.label === "Dr Martens")
+              .filter((product) => product.label === "Pantalon de costume")
               .map((product) => (
                 <li key={product.id}>
                   <Link href={"/produit/" + product.slug}>
@@ -122,6 +122,7 @@ const IndexPage = () => {
         .product > ul > li:nth-child(1) {
           font-family: Felt-Tip-Senior, serif;
           font-size: 2.5rem;
+          text-transform: uppercase;
         }
         .category > ul > li:nth-child(2),
         .product > ul > li:nth-child(2) {
