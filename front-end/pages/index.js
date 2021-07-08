@@ -106,7 +106,7 @@ const IndexPage = () => {
         .product {
           grid-row-start: 2;
           grid-column-start: 2;
-          grid-column-end: 10;
+          grid-column-end: 9;
           display: flex;
           justify-content: center;
         }
