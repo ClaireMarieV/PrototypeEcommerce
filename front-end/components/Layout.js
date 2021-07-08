@@ -50,7 +50,7 @@ const Layout = ({ children, currentPage }) => (
           height: 100%;
         }
         main {
-          width: 80vw;
+          width: 95vw;
           margin: 6rem auto 6rem auto;
         }
         @media (max-width: 600px) {
@@ -73,8 +73,9 @@ const Layout = ({ children, currentPage }) => (
           margin: 0;
           overflow-x: hidden;
           overflow-y: auto;
-          background-color: #fbfbfb;
+          background-color: #f7eee4;
           font-size: 1rem;
+          letter-spacing: 0.2rem;
         }
         ::-webkit-scrollbar {
           scrollbar-width: 5px;
@@ -143,14 +144,17 @@ const Layout = ({ children, currentPage }) => (
           width: 100%;
         }
         button {
-          border: 2px solid #141414;
+          border: none;
           padding: 1rem 3rem;
           width: fit-content;
           background: transparent;
           color: #141414;
           text-transform: uppercase;
           font-weight: 600;
-          letter-spacing: 0.05rem;
+          letter-spacing: 0.2rem;
+          font-family: p22-underground, sans-serif;
+          font-weight: 400;
+          font-style: normal;
         }
         label {
           display: flex;
@@ -158,7 +162,7 @@ const Layout = ({ children, currentPage }) => (
         }
         input {
           border: none;
-          border-bottom: 1.5px solid;
+          border-bottom: 2px solid;
           margin-top: 0.5rem;
           padding: 1rem;
           background-color: #fbfbfb;
