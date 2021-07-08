@@ -71,12 +71,12 @@ const IndexPage = () => {
         <div className="product">
           <ul>
             {categories
-              .filter((category) => category.label === "Pantalon")
+              .filter((category) => category.label == "Pantalon")
               .map((category) => (
                 <li key={category.id}>{category.label}</li>
               ))}
             {products
-              .filter((product) => product.label === "Pantalon de costume")
+              .filter((product) => product.slug === "pantalon-de-costume")
               .map((product) => (
                 <li key={product.id}>
                   <Link href={"/produit/" + product.slug}>
@@ -106,7 +106,7 @@ const IndexPage = () => {
         .product {
           grid-row-start: 2;
           grid-column-start: 2;
-          grid-column-end: 7;
+          grid-column-end: 10;
           display: flex;
           justify-content: center;
         }
