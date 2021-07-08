@@ -52,8 +52,6 @@ const Footer = () => (
       footer {
         display: flex;
         justify-content: space-evenly;
-        justify-items: center;
-        align-items: center;
         text-decoration: none;
         margin-top: 2rem 0 0 0;
         padding: 1.5rem;
