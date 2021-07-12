@@ -165,7 +165,7 @@ const Layout = ({ children, currentPage }) => (
           border-bottom: 2px solid;
           margin-top: 0.5rem;
           padding: 1rem;
-          background-color: #f7eee4;
+          background-color: #f9f1ea;
           font-size: 1rem;
           color: #141414;
           letter-spacing: 0.1rem;
