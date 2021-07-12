@@ -73,7 +73,7 @@ const Layout = ({ children, currentPage }) => (
           margin: 0;
           overflow-x: hidden;
           overflow-y: auto;
-          background-color: #f7eee4;
+          background-color: #f9f1ea;
           font-size: 1rem;
           letter-spacing: 0.2rem;
         }
