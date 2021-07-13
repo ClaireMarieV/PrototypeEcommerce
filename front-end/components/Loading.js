@@ -1,57 +1,47 @@
 const Loading = () => (
   <div className="loading">
-    <div className="dots">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
+    <div></div>
+    <div></div>
     <style jsx>{`
-      .dots span {
-        width: 96px;
-        height: 96px;
-        position: absolute;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        margin: auto;
-        border: 4px solid transparent;
-        border-top-color: #e4d9ff;
-        border-radius: 64px;
-        animation: spin 1s ease infinite;
-      }
-
-      span:nth-child(1) {
-        opacity: 0.2;
-        animation-delay: 0.4s;
-      }
-
-      span:nth-child(2) {
-        opacity: 0.4;
-        animation-delay: 0.3s;
-      }
-
-      span:nth-child(3) {
-        opacity: 0.6;
-        animation-delay: 0.2s;
-      }
-
-      span:nth-child(4) {
-        opacity: 0.8;
-        animation-delay: 0.1s;
-      }
-
-      span:nth-child(5) {
-        opacity: 1;
-        animation-delay: 0s;
-      }
-
-      @keyframes spin {
-        100% {
-          transform: rotate(360deg);
+      @keyframes pulse {
+        0% {
+          transform: scale(0.1);
+          opacity: 0;
         }
+        25% {
+          transform: scale(0.3);
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+        75% {
+          transform: scale(1.3);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(1.6);
+          opacity: 0;
+        }
+      }
+      div {
+        background-color: black;
+        border-radius: 50%;
+        position: absolute;
+        margin: auto auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+      }
+
+      div:nth-child(1) {
+        animation: pulse 2s infinite;
+      }
+      div:nth-child(2) {
+        animation: pulse 2s infinite 0.3s;
       }
     `}</style>
   </div>
