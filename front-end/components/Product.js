@@ -10,12 +10,12 @@ const Product = ({ product }) => {
   return (
     <Flex>
       <div className="images">
-        <div>
+        <div className="large-image">
           {product.images.length && (
             <Image
               src={process.env.NEXT_PUBLIC_IMAGE_HOST + currentImage.url}
-              width={900}
-              height={1300}
+              width={850}
+              height={1400}
             />
           )}
         </div>
@@ -81,6 +81,9 @@ const Product = ({ product }) => {
           .images {
             gap: 1rem;
             flex-direction: column;
+          }
+          .large-image {
+            display: none;
           }
         }
       `}</style>
