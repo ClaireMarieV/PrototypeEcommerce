@@ -39,7 +39,7 @@ const CartPage = () => {
           width: fit-content;
           display: flex;
           flex-direction: column;
-          gap: 1rem;
+          gap: 3rem;
         }
         .checkout span {
           font-weight: 500;
