@@ -147,8 +147,8 @@ const Layout = ({ children, currentPage }) => (
           border: none;
           padding: 1rem 3rem;
           width: fit-content;
-          background: transparent;
-          color: #141414;
+          background: rgb(36, 36, 36);
+          color: white;
           text-transform: uppercase;
           font-weight: 600;
           letter-spacing: 0.2rem;
