@@ -24,9 +24,6 @@ const ProductList = ({ products }) => {
               {new Date(product.published_at) > oneMonthAgo && (
                 <span className="new-products">new</span>
               )}
-
-              <span>{product.label}</span>
-              <span>{product.prix}€</span>
             </div>
           </a>
         </Link>
