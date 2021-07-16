@@ -11,6 +11,11 @@ const OneColumn = ({ children }) => (
         width: 75vw;
         margin: auto;
       }
+      @media (max-width: 1000px) {
+        .container {
+          width: 100%;
+        }
+      }
     `}</style>
   </div>
 );

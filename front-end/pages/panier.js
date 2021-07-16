@@ -3,6 +3,7 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 import CartProduct from "../components/CartProduct";
 import OneColumn from "../components/OneColumn";
+import TwoColumns from "../components/TwoColumns";
 import { useStore } from "../lib/store";
 
 const CartPage = () => {
@@ -14,35 +15,34 @@ const CartPage = () => {
     <Layout>
       <OneColumn>
         <h2>Resumé de la commande ({products.length})</h2>
-        {products.length >= 1 && (
-          <>
-            <CartProduct products={products} />
-            <div className="checkout">
-              <span>Total : {total}€</span>
+        <TwoColumns>
+          {products.length >= 1 && <CartProduct products={products} />}
+          {products.length === 0 && <span>Votre panier est vide.</span>}
+          <section className="checkout">
+            <div className="title-resume">
+              <h2>Resumé de la commande</h2>({products.length} articles)
+            </div>
+            <div className="order-resume">
+              <span>Total des articles: {total}€</span>
+              <span>Taxes comprises</span>
+              <span className="total">TOTAL: {total}€</span>
+            </div>
+            <div className="link-delivery">
               <Link href="/livraison">
                 <a>
                   <button>Traiter la commande</button>
                 </a>
               </Link>
             </div>
-          </>
-        )}
+          </section>
+        </TwoColumns>
       </OneColumn>
-      {products.length === 0 && (
-        <div className="empty">
-          <span>Votre panier est vide.</span>
-        </div>
-      )}
       <style jsx>{`
         .checkout {
           margin: 3rem auto;
-          width: fit-content;
           display: flex;
           flex-direction: column;
-          gap: 3rem;
-        }
-        .checkout span {
-          font-weight: 500;
+          gap: 2rem;
         }
         .empty {
           display: flex;
@@ -54,6 +54,20 @@ const CartPage = () => {
         .empty > span {
           font-weight: 600;
           font-size: 1.5rem;
+        }
+        .order-resume {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        .title-resume {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .total {
+          font-weight: 600;
         }
       `}</style>
     </Layout>
