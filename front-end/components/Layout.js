@@ -50,7 +50,7 @@ const Layout = ({ children, currentPage }) => (
           height: 100%;
         }
         main {
-          width: 95vw;
+          width: 90vw;
           margin: 6rem auto 6rem auto;
         }
         @media (max-width: 600px) {
