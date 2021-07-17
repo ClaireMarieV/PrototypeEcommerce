@@ -10,48 +10,51 @@ const Footer = () => (
         </a>
       </Link>
     </div>
-    <div>
-      <span>Entreprise</span>
-      <ul>
-        <li>
-          <Link href="/about">
-            <a>
-              <span>Contact</span>
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/mentions">
-            <a>
-              <span>Mentions légales</span>
-            </a>
-          </Link>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <span>Nous suivre</span>
-      <ul>
-        <li>
-          <Link href="/about">
-            <a>
-              <span>Facebook</span>
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/contact">
-            <a>
-              <span>Instagram</span>
-            </a>
-          </Link>
-        </li>
-      </ul>
-    </div>
+    <section>
+      <div>
+        <span>Entreprise</span>
+        <ul>
+          <li>
+            <Link href="/about">
+              <a>
+                <span>Contact</span>
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/mentions">
+              <a>
+                <span>Mentions légales</span>
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <span>Nous suivre</span>
+        <ul>
+          <li>
+            <Link href="/about">
+              <a>
+                <span>Facebook</span>
+              </a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a>
+                <span>Instagram</span>
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </section>
     <style jsx>{`
       footer {
-        display: flex;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-tems: center;
         text-decoration: none;
         margin-top: 2rem 0 0 0;
         padding: 1.5rem;
@@ -71,6 +74,10 @@ const Footer = () => (
       .logo img {
         width: 100%;
       }
+      section {
+        display: flex;
+        justify-content: space-around;
+      }
       @media (max-width: 730px) {
         nav {
           grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -80,16 +87,14 @@ const Footer = () => (
           font-size: 1.5em;
         }
       }
-      @media (max-width: 800px) {
+      @media (max-width: 600px) {
         footer {
-          display: flex;
-          flex-direction: column;
+          grid-template-columns: auto;
           justify-items: center;
           text-decoration: none;
-          align-items: inherit;
           margin-top: 2rem 0 0 0;
           padding: 1.5rem;
-          gap: 1rem;
+          gap: 3rem;
         }
         nav {
           display: block;
