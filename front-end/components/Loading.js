@@ -16,11 +16,11 @@ const Loading = () => (
           opacity: 1;
         }
         75% {
-          transform: scale(1.3);
+          transform: scale(0.3);
           opacity: 0.5;
         }
         100% {
-          transform: scale(1.6);
+          transform: scale(0.1);
           opacity: 0;
         }
       }
