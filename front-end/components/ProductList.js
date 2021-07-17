@@ -5,7 +5,7 @@ import Image from "next/image";
 import sub from "date-fns/sub";
 
 const ProductList = ({ products }) => {
-  const oneMonthAgo = sub(new Date(), {
+  const oneWeekAgo = sub(new Date(), {
     days: 7,
   });
   return (
@@ -21,7 +21,7 @@ const ProductList = ({ products }) => {
               />
             )}
             <div className="info">
-              {new Date(product.published_at) > oneMonthAgo && (
+              {new Date(product.published_at) > oneWeekAgo && (
                 <span className="new-products">new</span>
               )}
 
