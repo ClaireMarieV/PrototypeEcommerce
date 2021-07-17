@@ -77,6 +77,7 @@ const Footer = () => (
       section {
         display: flex;
         justify-content: space-around;
+        gap: 2rem;
       }
       @media (max-width: 730px) {
         nav {
