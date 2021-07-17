@@ -34,13 +34,11 @@ const NewProductsPage = () => {
       {error && <Error />}
       {loading && <Loading />}
       {!loading && !error && (
-        <OneColumn>
-          <ProductList
-            products={products.filter(
-              (product) => new Date(product.published_at) > oneMonthAgo
-            )}
-          />
-        </OneColumn>
+        <ProductList
+          products={products.filter(
+            (product) => new Date(product.published_at) > oneMonthAgo
+          )}
+        />
       )}
     </Layout>
   );
