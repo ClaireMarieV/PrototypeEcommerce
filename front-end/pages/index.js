@@ -129,9 +129,7 @@ const IndexPage = () => {
           font-size: 3rem;
           text-transform: uppercase;
         }
-        .image {
-          filter: hue-rotate(-105deg);
-        }
+
         @media (max-width: 800px) {
           .image,
           .category,
