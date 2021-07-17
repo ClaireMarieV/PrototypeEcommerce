@@ -6,7 +6,7 @@ import sub from "date-fns/sub";
 
 const ProductList = ({ products }) => {
   const oneMonthAgo = sub(new Date(), {
-    months: 1,
+    days: 7,
   });
   return (
     <ThreeColumns>
@@ -17,13 +17,15 @@ const ProductList = ({ products }) => {
               <Image
                 src={process.env.NEXT_PUBLIC_IMAGE_HOST + product.images[0].url}
                 width={550}
-                height={450}
+                height={350}
               />
             )}
             <div className="info">
               {new Date(product.published_at) > oneMonthAgo && (
                 <span className="new-products">new</span>
               )}
+
+              <span>{product.label}</span>
             </div>
           </a>
         </Link>
@@ -32,6 +34,7 @@ const ProductList = ({ products }) => {
         a {
           display: flex;
           flex-direction: column;
+          width: 100%;
         }
         .info {
           display: flex;
