@@ -101,7 +101,7 @@ const IndexPage = () => {
         }
         .category {
           grid-column-start: 9;
-          grid-column-end: 10;
+          grid-column-end: 13;
           justify-self: center;
           align-self: center;
           width: 100%;
