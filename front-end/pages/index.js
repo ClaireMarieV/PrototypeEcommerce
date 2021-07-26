@@ -149,7 +149,7 @@ const IndexPage = () => {
             font-size: 2rem;
           }
         }
-        @media (max-width: 450px) {
+        @media (max-width: 500px) {
           .category {
             justify-content: initial;
           }
