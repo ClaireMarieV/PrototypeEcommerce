@@ -213,6 +213,7 @@ const DeliveryPage = () => {
         .order-resume > p {
           padding: 0;
           color: #cf884a;
+          margin: 2rem 0;
         }
         ul > li > label {
           display: flex;
