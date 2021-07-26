@@ -76,7 +76,7 @@ const IndexPage = () => {
         <div className="product">
           <ul>
             {categories
-              .filter((category) => category.label == "Pantalon")
+              .filter((category) => category.label == "Pantalons & Tops")
               .map((category) => (
                 <li key={category.id}>{category.label}</li>
               ))}
