@@ -38,6 +38,7 @@ const CartProduct = ({ products }) => {
                     src={
                       process.env.NEXT_PUBLIC_IMAGE_HOST + product.images[0].url
                     }
+                    alt={product.label}
                     width={250}
                     height={350}
                   />

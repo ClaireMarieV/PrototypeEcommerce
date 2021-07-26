@@ -16,6 +16,7 @@ const ProductList = ({ products }) => {
             {product.images.length && product.images[0] && (
               <Image
                 src={process.env.NEXT_PUBLIC_IMAGE_HOST + product.images[0].url}
+                alt={product.label}
                 width={550}
                 height={350}
               />

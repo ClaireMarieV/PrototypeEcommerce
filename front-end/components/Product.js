@@ -14,6 +14,7 @@ const Product = ({ product }) => {
           {product.images.length && (
             <Image
               src={process.env.NEXT_PUBLIC_IMAGE_HOST + currentImage.url}
+              alt={product.label}
               width={850}
               height={1400}
             />
@@ -26,6 +27,7 @@ const Product = ({ product }) => {
                 setCurrentImage(image);
               }}
               src={process.env.NEXT_PUBLIC_IMAGE_HOST + image.url}
+              alt={product.label}
               width={300}
               height={400}
             />
