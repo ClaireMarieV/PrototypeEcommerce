@@ -39,9 +39,9 @@ const CartPage = () => {
       </OneColumn>
       <style jsx>{`
         .checkout {
-          margin: 3rem auto;
           display: flex;
           flex-direction: column;
+          align-items: baseline;
           gap: 2rem;
         }
         .empty {
