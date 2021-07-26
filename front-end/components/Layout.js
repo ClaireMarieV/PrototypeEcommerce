@@ -169,7 +169,7 @@ const Layout = ({ children, currentPage }) => (
         }
         input {
           border: none;
-          border-bottom: 2px solid;
+          border-bottom: 1.5px solid;
           margin-top: 0.5rem;
           padding: 1rem;
           background-color: #f9f1ea;
