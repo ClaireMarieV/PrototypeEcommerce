@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ThreeColumns from "../components/ThreeColumns";
+import FourColumns from "../components/FourColumns";
 import ShopButton from "../components/ShopButton";
 import Image from "next/image";
 import sub from "date-fns/sub";
@@ -9,7 +9,7 @@ const ProductList = ({ products }) => {
     days: 7,
   });
   return (
-    <ThreeColumns>
+    <FourColumns>
       {products.map((product) => (
         <Link key={product.id} href={"/produit/" + product.slug}>
           <a>
@@ -17,8 +17,8 @@ const ProductList = ({ products }) => {
               <Image
                 src={process.env.NEXT_PUBLIC_IMAGE_HOST + product.images[0].url}
                 alt={product.label}
-                width={550}
-                height={350}
+                width={450}
+                height={600}
               />
             )}
             <div className="info">
@@ -49,19 +49,17 @@ const ProductList = ({ products }) => {
         }
         img {
           width: 100%;
-          object-fit: cover;
           max-width: 22.22rem;
           max-height: 29.99rem;
           flex-grow: 1;
         }
         .new-products {
-          // font-family: Felt-Tip-Senior, serif;
           font-weight: 600;
           text-transform: uppercase;
           font-size: smaller;
         }
       `}</style>
-    </ThreeColumns>
+    </FourColumns>
   );
 };
 export default ProductList;
