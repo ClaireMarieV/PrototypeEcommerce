@@ -36,13 +36,14 @@ const ProductList = ({ products }) => {
           display: flex;
           flex-direction: column;
           width: 100%;
+          gap: 1rem;
         }
         .info {
           display: flex;
           flex-direction: column;
           padding: 0.5rem 0 0.5rem 0;
           align-items: baseline;
-          gap: 1rem;
+          gap: 0.5rem;
         }
         .info > span:last-child {
           font-weight: 600;
