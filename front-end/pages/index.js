@@ -142,11 +142,14 @@ const IndexPage = () => {
             grid-column-end: auto;
           }
         }
-        @media (max-width: 700px) {
+
+        @media (max-width: 600px) {
           .category > ul > li:nth-child(2),
           .product > ul > li:nth-child(2) {
             font-size: 2rem;
           }
+        }
+        @media (max-width: 450px) {
           .category {
             justify-content: initial;
           }
