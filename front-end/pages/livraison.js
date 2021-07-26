@@ -162,13 +162,13 @@ const DeliveryPage = () => {
               <span>Total des articles: {total}€</span>
               <span>Frais de port:</span>
               <span className="total">TOTAL: {total}€</span>
-            </div>
-            <section>
               <p>
-                Ne pouvant pas vendre mes vetements sur ce site, si vous cliquez
-                sur "Paiement" vous allez etre rediriger vers mon profil Vinted
+                Ne pouvant pas vendre mes vêtements sur ce site, si vous cliquez
+                sur "Paiement" vous allez être redirigé vers mon profil Vinted.
+                En vous remerciant de votre compréhension
               </p>
-            </section>
+            </div>
+
             <Link href="https://www.vinted.fr/member/12178429-clmvva">
               <a>
                 <button onClick={order}>Paiement</button>
@@ -210,7 +210,10 @@ const DeliveryPage = () => {
         .total {
           font-weight: 600;
         }
-
+        .order-resume > p {
+          padding: 0;
+          color: #cf884a;
+        }
         ul > li > label {
           display: flex;
           flex-direction: row;
