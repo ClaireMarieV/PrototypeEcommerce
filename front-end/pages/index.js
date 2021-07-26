@@ -97,10 +97,10 @@ const IndexPage = () => {
           display: flex;
           justify-content: center;
           grid-column-start: 2;
-          grid-column-end: 8;
+          grid-column-end: 6;
         }
         .category {
-          grid-column-start: 9;
+          grid-column-start: 7;
           grid-column-end: 13;
           justify-self: center;
           align-self: center;
