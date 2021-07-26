@@ -41,7 +41,6 @@ const Product = ({ product }) => {
             <span>{product.prix}€</span>
           </div>
         </div>
-        <span>REF.{product.reference}</span>
 
         <span>{product.description}</span>
 
