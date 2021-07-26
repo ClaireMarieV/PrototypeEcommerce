@@ -31,6 +31,9 @@ const Layout = ({ children, currentPage }) => (
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="theme-color" content="#ffffff" />
       <script src="https://js.stripe.com/v3/" crossOrigin="true"></script>
+      <title>Habaah</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="Habaah" />
     </Head>
     <Header currentPage={currentPage} />
     <link rel="stylesheet" href="https://use.typekit.net/ljf5get.css" />
