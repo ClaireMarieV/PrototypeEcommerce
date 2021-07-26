@@ -7,9 +7,7 @@ const TwoColumns = ({ children }) => (
         grid-template-columns: repeat(2, 1fr);
         justify-self: center;
         align-items: baseline;
-        grid-gap: 2rem;
-        height: 100%;
-        width: 100%;
+        grid-gap: 10rem;
       }
       @media (max-width: 1430px) {
         .container {
