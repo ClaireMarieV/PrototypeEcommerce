@@ -4,7 +4,11 @@ import Head from "next/head";
 import Footer from "./Footer";
 const Layout = ({ children, currentPage }) => (
   <div className="layout">
-    <Head>
+    <Head
+      htmlAttributes={{
+        lang: "fr",
+      }}
+    >
       <link
         rel="apple-touch-icon"
         sizes="180x180"
