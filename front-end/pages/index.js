@@ -63,7 +63,7 @@ const IndexPage = () => {
           <ul>
             <li>CATEGORIE</li>
             {categories
-              .filter((category) => category.label === "Robe")
+              .filter((category) => category.label === "Robes & Jupes")
               .map((category) => (
                 <li key={category.id}>
                   <Link href={"/categorie/" + category.slug}>
