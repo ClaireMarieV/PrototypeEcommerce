@@ -165,7 +165,7 @@ const DeliveryPage = () => {
               <p>
                 Ne pouvant pas vendre mes vêtements sur ce site, si vous cliquez
                 sur "Paiement" vous allez être redirigé vers mon profil Vinted.
-                En vous remerciant de votre compréhension
+                <span>En vous remerciant de votre compréhension!</span>
               </p>
             </div>
 
