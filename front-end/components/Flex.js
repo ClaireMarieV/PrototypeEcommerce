@@ -14,7 +14,9 @@ const Flex = ({ children }) => (
       @media (max-width: 800px) {
         .container {
           width: 100%;
-          display: inherit;
+          display: flex;
+          gap: 3rem;
+          flex-direction: column;
         }
       }
     `}</style>

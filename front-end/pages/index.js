@@ -63,7 +63,7 @@ const IndexPage = () => {
           <ul>
             <li>CATEGORIE</li>
             {categories
-              .filter((category) => category.label === "Robes & Jupes")
+              .filter((category) => category.label === "Robe")
               .map((category) => (
                 <li key={category.id}>
                   <Link href={"/categorie/" + category.slug}>
@@ -76,7 +76,7 @@ const IndexPage = () => {
         <div className="product">
           <ul>
             {categories
-              .filter((category) => category.label == "Pantalons & Tops")
+              .filter((category) => category.label == "Pantalon")
               .map((category) => (
                 <li key={category.id}>{category.label}</li>
               ))}
@@ -102,7 +102,6 @@ const IndexPage = () => {
         .category {
           grid-column-start: 7;
           grid-column-end: 13;
-          justify-self: center;
           align-self: center;
           width: 100%;
           display: flex;
@@ -141,6 +140,15 @@ const IndexPage = () => {
           .product {
             grid-column-start: auto;
             grid-column-end: auto;
+          }
+        }
+        @media (max-width: 700px) {
+          .category > ul > li:nth-child(2),
+          .product > ul > li:nth-child(2) {
+            font-size: 2rem;
+          }
+          .category {
+            justify-content: initial;
           }
         }
       `}</style>

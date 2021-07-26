@@ -60,11 +60,7 @@ const Layout = ({ children, currentPage }) => (
           width: 90vw;
           margin: 6rem auto 6rem auto;
         }
-        @media (max-width: 700px) {
-          main {
-            width: inherit;
-          }
-        }
+
         html,
         body {
           margin: 0;
