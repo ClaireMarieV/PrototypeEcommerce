@@ -60,9 +60,9 @@ const Layout = ({ children, currentPage }) => (
           width: 90vw;
           margin: 6rem auto 6rem auto;
         }
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
           main {
-            width: 90vw;
+            width: inherit;
           }
         }
         html,
@@ -80,7 +80,7 @@ const Layout = ({ children, currentPage }) => (
           margin: 0;
           overflow-x: hidden;
           overflow-y: auto;
-          background-color: #f9f1ea;
+          background-color: #faf2eb;
           font-size: 1rem;
           letter-spacing: 0.2rem;
         }

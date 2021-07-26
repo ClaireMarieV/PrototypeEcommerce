@@ -10,6 +10,11 @@ const Container = ({ children }) => (
         row-gap: 3rem;
         width: 100%;
       }
+      @media (max-width: 1600px) {
+        .container {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
       @media (max-width: 1200px) {
         .container {
           grid-template-columns: repeat(2, 1fr);
