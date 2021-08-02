@@ -20,7 +20,8 @@ const CartPage = () => {
           {products.length === 0 && <span>Votre panier est vide.</span>}
           <section className="checkout">
             <div className="title-resume">
-              <h2>Resumé de la commande</h2>({products.length} articles)
+              <h2>Resumé de la commande</h2>
+              <span>({products.length} articles)</span>
             </div>
             <div className="order-resume">
               <span>Total des articles: {total}€</span>
@@ -68,6 +69,11 @@ const CartPage = () => {
         }
         .total {
           font-weight: 600;
+        }
+        @media (max-width: 1000px) {
+          .title-resume {
+            align-items: baseline;
+          }
         }
       `}</style>
     </Layout>

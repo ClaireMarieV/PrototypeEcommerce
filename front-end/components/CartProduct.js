@@ -53,7 +53,6 @@ const CartProduct = ({ products }) => {
                 </span>
               </div>
               <div className="info-price">
-                <span>Ref.{product.ref}</span>
                 <span>{product.prix}€</span>
                 <div className="quantity">
                   <span>Qté</span>
@@ -110,6 +109,7 @@ const CartProduct = ({ products }) => {
             gap: 1rem;
             flex-direction: column;
             width: 100%;
+            align-items: center;
           }
           section > .label {
             visibility: hidden;
@@ -139,7 +139,7 @@ const CartProduct = ({ products }) => {
         }
         .info-price {
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           gap: 1rem;
         }
         .quantity {
